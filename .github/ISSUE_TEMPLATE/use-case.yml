@@ -1,0 +1,25 @@
+name: FAIR Mappings Use Case submission
+description: Use this template to submit a FAIR Mappings Use Case for the RDA FAIR Mappings Working Group.
+title: FAIR Mappings Use Case submission
+labels: [ use-case ]
+assignees: jkesanie
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Some instructions for the submission.
+  - type: input
+    id: use-case-title
+    attributes:
+      label: The title of your use case
+      description: A short but descriptive title that describes your use case.
+    validations:
+      required: true
+  - type: textarea
+    id: comments
+    attributes:
+      label: Additional comments
+      description: |
+        Please provide any additional comments here.
+    validations:
+      required: false

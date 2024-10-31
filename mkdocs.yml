@@ -17,6 +17,7 @@ theme:
     - content.code.select
 plugins:
   - search
+  - awesome-pages
 markdown_extensions:
   - toc:
       permalink: true
@@ -50,8 +51,10 @@ extra_javascript:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
 
 nav:
-  - About the course: index.md
-  - Use cases: use_cases.md
+  - About our work: index.md
+  - Use Cases:
+      - use_cases.md
+      - Cases: !include 'use-cases/'
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
 edit_uri: edit/main/docs/
