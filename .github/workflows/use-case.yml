@@ -1,0 +1,38 @@
+name: Create Use Case Documentation
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  generate-use-case:
+    if: contains(github.event.issue.labels.*.name, 'use-case')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+
+      - name: Extract Issue Data
+        id: extract_data
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          ISSUE_NUMBER="${{ github.event.issue.number }}"
+          FILE_NAME="use-case-${{ github.event.issue.number }}".md
+          
+          # Create the markdown file
+          echo "# $ISSUE_TITLE" > "docs/use-cases/$FILE_NAME"
+          echo "" >> "docs/use-cases/$FILE_NAME"
+          echo "${{ github.event.issue.body }}" >> "docs/use-cases/$FILE_NAME"
+          
+      - name: Create Pull Request for Use Case
+        uses: peter-evans/create-pull-request@v5
+        with:
+            branch-suffix: short-commit-hash
+            title: "Add Use Case Description from Issue #${{ github.event.issue.number }}"
+            body: "This PR adds use case description provided in Issue #${{ github.event.issue.number }}."
+            labels: ["use-case", "documentation"]
+            base: main
+            branch: use-case-${{ github.event.issue.number }}
+            token: ${{ secrets.GITHUB_TOKEN }}
+            reviewers: ["jkesanie"]
+
