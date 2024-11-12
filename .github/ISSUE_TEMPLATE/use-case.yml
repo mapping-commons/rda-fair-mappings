@@ -1,5 +1,5 @@
 name: FAIR Mappings Use Case submission
-description: Use this template to submit a FAIR Mappings Use Case for the RDA FAIR Mappings Working Group.
+description: Use this template to submit a FAIR Mappings Use Case for the RDA FAIR Mappings Working Group. Please notice that we are looking for already implemented mapping use cases. 
 title: FAIR Mappings Use Case submission
 labels: [ use-case ]
 assignees: jkesanie
@@ -15,11 +15,69 @@ body:
       description: A short but descriptive title that describes your use case.
     validations:
       required: true
-  - type: textarea
-    id: comments
+  - type: dropdown
+    id: use-case-purpose-classified
     attributes:
-      label: Additional comments
-      description: |
-        Please provide any additional comments here.
+      label: Purpose of the mapping
+      description: Use this field as the primary way of selecting the purpose of your mappings. If the dropdown does not contain a suitable value, please add it throught the other option below. You can use both of the fields if dropdown options cover your case only partially.
+      multiple: true
+      options:
+        - Semantic interoperability
+        - Discovery
+        - Data integration
+    validations:
+      required: false  
+  - type: input
+    id: use-case-purpose-string
+    attributes:
+      label: Other purpose of the mapping
+      description: 
+    validations:
+      required: false       
+  - type: textarea
+    id: use-case-mapped-resources
+    attributes:
+      label: Type of mapped resources
+      description: What kind of things are being mapped?
+    validations:
+      required: true       
+  - type: textarea
+    id: use-case-links
+    attributes:
+      label: Links to an existing mappings
+      description: Links to resources that represent the actual mappings. Can be for example a service, api, code or a document. 
+    validations:
+      required: false
+  - type: textarea
+    id: use-case-tools
+    attributes:
+      label: Tools used for creating the mapping
+    validations:
+      required: true       
+  - type: dropdown
+    id: use-case-mapping-relations-classified
+    attributes:
+      label: Types of relations between batween mapped resources.
+      description: 
+      multiple: true
+      options:
+        - Value transformation
+        - Structural transformation
+        - Format transformation
+        - Semantic relation
+    validations:
+      required: false  
+  - type: textarea
+    id: use-case-mapping-relations-string
+    attributes:
+      label: Other relation type.
+      description: 
+    validations:
+      required: false
+  - type: textarea
+    id: use-case-extra-info
+    attributes:
+      label: Documentation related to the implementation of the mappings. 
+      description: 
     validations:
       required: false
