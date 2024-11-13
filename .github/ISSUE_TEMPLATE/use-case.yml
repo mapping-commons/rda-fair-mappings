@@ -15,6 +15,13 @@ body:
       description: A short but descriptive title that describes your use case.
     validations:
       required: true
+  - type: input
+    id: use-case-domain
+    attributes:
+      label: Domain
+      description: Which scientific/activity domain do the mappings apply to?
+    validations:
+      required: true      
   - type: dropdown
     id: use-case-purpose-classified
     attributes:
@@ -40,44 +47,31 @@ body:
       label: Type of mapped resources
       description: What kind of things are being mapped?
     validations:
-      required: true       
+      required: true      
   - type: textarea
     id: use-case-links
     attributes:
       label: Links to an existing mappings
       description: Links to resources that represent the actual mappings. Can be for example a service, api, code or a document. 
     validations:
-      required: false
+      required: true
   - type: textarea
     id: use-case-tools
     attributes:
       label: Tools used for creating the mapping
     validations:
       required: true       
-  - type: dropdown
-    id: use-case-mapping-relations-classified
-    attributes:
-      label: Types of relations between batween mapped resources.
-      description: 
-      multiple: true
-      options:
-        - Value transformation
-        - Structural transformation
-        - Format transformation
-        - Semantic relation
-    validations:
-      required: false  
   - type: textarea
-    id: use-case-mapping-relations-string
+    id: use-case-mapping-relations
     attributes:
-      label: Other relation type.
-      description: 
+      label: Type of mapping relations
+      description: e.g., unit conversion, synonymy, shared extension/referent, entity mappings, one to many, many to one
     validations:
-      required: false
+      required: true
   - type: textarea
-    id: use-case-extra-info
+    id: use-case-implemenation-samples
     attributes:
-      label: Documentation related to the implementation of the mappings. 
-      description: 
+      label: Examples (samples) of different types of mapping implementations 
+      description: e.g. using pseudo-code, code-snippets, graph-based representation (nodes and edges), examples of source and target documents for transformations, …
     validations:
-      required: false
+      required: true
