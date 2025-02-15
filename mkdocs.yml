@@ -55,6 +55,7 @@ nav:
   - Use Cases:
       - use_cases.md
       - Cases: !include 'use-cases/'
+  - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
 edit_uri: edit/main/docs/
