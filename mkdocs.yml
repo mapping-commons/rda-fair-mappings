@@ -53,8 +53,10 @@ extra_javascript:
 nav:
   - About our work: index.md
   - Use Cases:
-      - use_cases.md
-      - Cases: !include 'use-cases/'
+      - use-cases.md
+      - Cases:
+          - Lunaris: use-cases/use-case-lunaris.md
+          - Mondo: use-cases/use-case-mondo.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
