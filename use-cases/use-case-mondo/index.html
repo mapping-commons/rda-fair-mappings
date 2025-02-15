@@ -7,6 +7,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
+        <meta name="author" content="Nicolas Matentzoglu">
+      
       
         <link rel="canonical" href="https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-mondo/">
       
@@ -22,7 +24,7 @@
     
     
       
-        <title>Use case mondo - RDA Fair Mappings Working Group</title>
+        <title>Mondo Use Case - RDA Fair Mappings Working Group</title>
       
     
     
@@ -64,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lunaris-use-case" class="md-skip">
+        <a href="#domain" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Use case mondo
+              Mondo Use Case
             
           </span>
         </div>
@@ -342,7 +344,7 @@
         
   
   <span class="md-ellipsis">
-    Use case lunaris
+    Lunaris
     
   </span>
   
@@ -371,9 +373,16 @@
           
   
   <span class="md-ellipsis">
-    Use case mondo
+    Mondo
     
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--Draft"></span>
+  
+
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -383,9 +392,16 @@
         
   
   <span class="md-ellipsis">
-    Use case mondo
+    Mondo
     
   </span>
+  
+    
+  
+  
+    <span class="md-status md-status--Draft"></span>
+  
+
   
 
       </a>
@@ -402,15 +418,6 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#lunaris-use-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      "Lunaris" use case
-    </span>
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#domain" class="md-nav__link">
@@ -449,9 +456,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#links-to-an-existing-mappings" class="md-nav__link">
+  <a href="#links-to-existing-mappings" class="md-nav__link">
     <span class="md-ellipsis">
-      Links to an existing mappings
+      Links to existing mappings
     </span>
   </a>
   
@@ -554,15 +561,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lunaris-use-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      "Lunaris" use case
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#domain" class="md-nav__link">
     <span class="md-ellipsis">
       Domain
@@ -599,9 +597,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#links-to-an-existing-mappings" class="md-nav__link">
+  <a href="#links-to-existing-mappings" class="md-nav__link">
     <span class="md-ellipsis">
-      Links to an existing mappings
+      Links to existing mappings
     </span>
   </a>
   
@@ -658,54 +656,54 @@
   
 
 
-  <h1>Use case mondo</h1>
+  <h1>Mondo</h1>
 
-<hr />
-<p>title: "Mondo Use Case"
-author: "Nicolas Matentzoglu"
-date: "2025-02-15"
-tags:
-  - Ontology Mapping
-  - Data Integration
-category: "Use Cases"
-status: "Draft"</p>
-<hr />
-<h3 id="lunaris-use-case">"Lunaris" use case<a class="headerlink" href="#lunaris-use-case" title="Permanent link">&para;</a></h3>
-<p>Mapping Canadian metadata records from their source schema to a unified schema for centralized discovery</p>
+<p>Mapping disease terminologies into a harmonized ontology of diseases.</p>
 <h3 id="domain">Domain<a class="headerlink" href="#domain" title="Permanent link">&para;</a></h3>
-<p>The mappings apply to Canadian research (regardless of scientific domain) and government and government open data.</p>
+<p>Biomedical and clinical informatics, focusing on disease classification and standardization.</p>
 <h3 id="purpose-of-the-mapping">Purpose of the mapping<a class="headerlink" href="#purpose-of-the-mapping" title="Permanent link">&para;</a></h3>
-<p>Discovery</p>
+<p>To create a unified disease ontology by integrating multiple disease vocabularies and classifications, ensuring semantic interoperability across biomedical databases.</p>
 <h3 id="other-purpose-of-the-mapping">Other purpose of the mapping<a class="headerlink" href="#other-purpose-of-the-mapping" title="Permanent link">&para;</a></h3>
-<p>Harvest and aggregate Canadian metadata records at https://lunaris.ca</p>
+<ul>
+<li>Facilitating disease data integration for translational research.</li>
+<li>Enabling cross-resource disease annotations in knowledge graphs.</li>
+<li>Supporting clinical decision support systems and patient stratification.</li>
+</ul>
 <h3 id="type-of-mapped-resources">Type of mapped resources<a class="headerlink" href="#type-of-mapped-resources" title="Permanent link">&para;</a></h3>
-<p>Metadata records describing datasets from a variety of data sources are mapped to an internal metadata schema. Those sources represent their metadata using different schemas, some of which are sparsely documented. Fields from a source schema are therefore mapped to fields in the Lunaris schema, but in some cases these mappings are not direct and require some conditional logic. Geospatial fields indicating a region that is relevant to the dataset are a particular point of emphasis.</p>
-<h3 id="links-to-an-existing-mappings">Links to an existing mappings<a class="headerlink" href="#links-to-an-existing-mappings" title="Permanent link">&para;</a></h3>
-<p>Our mappings are not isolated enough from the rest of the metadata harvesting code to be shareable concisely and the code is not currently open, but we aim to make those mappings public as this group's work progresses.</p>
+<ul>
+<li>Biomedical ontologies (e.g., <strong>DOID</strong>, <strong>NCIT</strong>).</li>
+<li>Terminologies and classifications (e.g., <strong>ORDO</strong>, <strong>ICD10</strong>, <strong>ICD11</strong>).</li>
+<li>Disease-related data from biomedical databases (eg <strong>NORD</strong>, <strong>GARD</strong>, <strong>OMIM</strong>).</li>
+</ul>
+<h3 id="links-to-existing-mappings">Links to existing mappings<a class="headerlink" href="#links-to-existing-mappings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mappings">Mappings in Mondo Disease Ontology on GitHub</a></li>
+<li><a href="https://www.ebi.ac.uk/ols4/ontologies/mondo">Mondo Mappings on OLS</a></li>
+</ul>
 <h3 id="tools-used-for-creating-the-mapping">Tools used for creating the mapping<a class="headerlink" href="#tools-used-for-creating-the-mapping" title="Permanent link">&para;</a></h3>
-<p>Source metadata is collected with API calls to our data sources, then Python code performs the mappings.</p>
+<ul>
+<li><strong>Lexical matching tools</strong> (e.g., <a href="https://github.com/INCATools/ontology-access-kit">OAK lexmatch</a>)</li>
+<li><strong>Custom scripts</strong> (e.g., Python), see <a href="https://github.com/monarch-initiative/mondo-ingest">Mondo Ingest</a></li>
+<li><strong>Manual curation</strong> (Domain expert review and ontology alignment)</li>
+</ul>
 <h3 id="type-of-mapping-relations">Type of mapping relations<a class="headerlink" href="#type-of-mapping-relations" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Direct one-to-one synonymy (e.g. titles, full names)</li>
-<li>Many-to-one mappings (e.g. file-level access conditions collated to a dataset-level description of access, addition of auxiliary description fields to an overall description field.</li>
+<li><strong>Exact match</strong> (<code>skos:exactMatch</code>): A term in an external source is conceptually identical to a term in Mondo. </li>
+<li><strong>Broad match</strong> (<code>skos:broadMatch</code>): A term in an external source is conceptually narrower to a term in Mondo.</li>
+<li><strong>Narrow match</strong> (<code>skos:narrowMatch</code>):  A term in an external source is conceptually broader to a term in Mondo.</li>
+<li><strong>Related match</strong> (<code>skos:relatedMatch</code>):  A term in an external source is conceptually related, but neither identical, nor broader, nor narrower to a term in Mondo.</li>
 </ul>
 <h3 id="examples-samples-of-different-types-of-mapping-implementations">Examples (samples) of different types of mapping implementations<a class="headerlink" href="#examples-samples-of-different-types-of-mapping-implementations" title="Permanent link">&para;</a></h3>
-<p>Here's an example of a many-to-one field mapping with some conditional logic as part of a broader mapping from the Dataverse API (<a href="https://borealisdata.ca/api/datasets/export?exporter=dataverse_json&amp;persistentId=doi%3A10.5683/SP3/NCEIJ1">example record</a>) to Lunaris (<a href="https://www.lunaris.ca/catalog/96ca56a3-9b7a-52dc-8803-3876e600d9f9?locale=en">post-mapping record</a>).
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># dataverse_record is the source record crawled from the Dataverse API</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># We search the whole dataset for any file that is flagged as restricted</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">access</span> <span class="o">=</span> <span class="s2">&quot;Public&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">if</span> <span class="s2">&quot;files&quot;</span> <span class="ow">in</span> <span class="n">dataverse_record</span><span class="p">[</span><span class="s2">&quot;latestVersion&quot;</span><span class="p">]:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">dataverse_record</span><span class="p">[</span><span class="s2">&quot;latestVersion&quot;</span><span class="p">][</span><span class="s2">&quot;files&quot;</span><span class="p">]:</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="k">if</span> <span class="s2">&quot;restricted&quot;</span> <span class="ow">in</span> <span class="n">file</span> <span class="ow">and</span> <span class="n">file</span><span class="p">[</span><span class="s2">&quot;restricted&quot;</span><span class="p">]:</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="n">access</span> <span class="o">=</span> <span class="s2">&quot;Restricted&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="k">break</span>
-</code></pre></div></p>
+<p>See <a href="https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mappings/mondo.sssom.tsv">here</a>.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
