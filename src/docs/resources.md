@@ -26,4 +26,5 @@ The FAIR Mappings Working Group will, where possible, build on existing technolo
 ### Matching
 
 - [AgreementMakerLight (AML)](https://github.com/AgreementMakerLight/AML-Project): An automated and efficient ontology matching system.
-
+- [LogMap](https://github.com/ernestojimenezruiz/logmap-matcher): An Ontology Alignment and Alignment Repair System
+- [OntoAligner](https://github.com/sciknoworg/OntoAligner): A Comprehensive Modular and Robust Python Toolkit for Ontology Alignment
