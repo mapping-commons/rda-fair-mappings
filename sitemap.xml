@@ -5,6 +5,10 @@
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/decision-log/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
          <loc>https://mapping-commons.github.io/rda-fair-mappings/resources/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
@@ -13,27 +17,35 @@
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
-         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-bodc/</loc>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-bodc/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
-         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-icos/</loc>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-ceon/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
-         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-inrae/</loc>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-icos/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
-         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-lunaris/</loc>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-inrae/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
-         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-mondo/</loc>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-lunaris/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
     <url>
-         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-uberon/</loc>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-mondo/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-uberon/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-wheatontology/</loc>
          <lastmod>2025-02-17</lastmod>
     </url>
 </urlset>
