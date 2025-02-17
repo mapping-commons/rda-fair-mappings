@@ -2,22 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mapping-commons.github.io/rda-fair-mappings/</loc>
-         <lastmod>2025-02-15</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://mapping-commons.github.io/rda-fair-mappings/resources/</loc>
-         <lastmod>2025-02-15</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/</loc>
-         <lastmod>2025-02-15</lastmod>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-bodc/</loc>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-icos/</loc>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-lunaris/</loc>
-         <lastmod>2025-02-15</lastmod>
+         <lastmod>2025-02-17</lastmod>
     </url>
     <url>
          <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-mondo/</loc>
-         <lastmod>2025-02-15</lastmod>
+         <lastmod>2025-02-17</lastmod>
+    </url>
+    <url>
+         <loc>https://mapping-commons.github.io/rda-fair-mappings/use-cases/use-case-uberon/</loc>
+         <lastmod>2025-02-17</lastmod>
     </url>
 </urlset>
