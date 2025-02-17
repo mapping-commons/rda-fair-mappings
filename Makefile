@@ -31,3 +31,6 @@ install:
 
 #docs/%.md: docs/%.md.in
 #	jinjanator $^ > $@
+
+deploy-use-cases:
+	cp -r src/use-cases/use-case-*.md docs/use-cases/
