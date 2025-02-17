@@ -1,12 +1,11 @@
-
 ---
-title: "Lunaris Use Case"
+title: "Lunaris Case Study"
 author: "Tristan Kuehn"
 date: "2025-01-30"
 tags:
   - FAIR
   - Data Integration
-category: "Use Cases"
+category: "Case Studies"
 status: "Draft"
 ---
 
