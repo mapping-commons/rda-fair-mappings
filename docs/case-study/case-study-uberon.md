@@ -1,12 +1,12 @@
-
 ---
-title: "Uberon Use Case"
+title: "Uberon Case Study"
 author: "Damien Goutte-Gattat"
+author_github: "@gouttegd"
 date: "2025-02-17"
 tags:
   - Ontology mapping
   - Data Integration
-category: "Use Cases"
+category: "Case Studies"
 status: "Draft"
 ---
 

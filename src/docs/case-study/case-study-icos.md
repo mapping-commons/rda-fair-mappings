@@ -1,12 +1,11 @@
-
 ---
-title: "ICOS Use Case"
+title: "ICOS Case Study"
 author: "Maggie Hellstrom"
 date: "2025-02-17"
 tags:
   - FAIR
   - Data Integration
-category: "Use Cases"
+category: "Case Studies"
 status: "Draft"
 ---
 

@@ -1,11 +1,12 @@
 ---
-title: "Mondo Use Case"
+title: "Mondo Case Study"
 author: "Nicolas Matentzoglu"
+author_github: "@matentzn"
 date: "2025-02-15"
 tags:
   - Ontology Mapping
   - Data Integration
-category: "Use Cases"
+category: "Case Studies"
 status: "Draft"
 ---
 

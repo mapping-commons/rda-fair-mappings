@@ -53,14 +53,17 @@ extra_javascript:
 nav:
   - About our work: index.md
   - Use Cases:
-      - Use cases: use-cases.md
-      - Cases:
-          - Lunaris: use-cases/use-case-lunaris.md
-          - Mondo Ontology: use-cases/use-case-mondo.md
-          - Uberon Ontology: use-cases/use-case-uberon.md
-          - Integrated Carbon Observation System: use-cases/use-case-icos.md
-          - British Oceanographic Data Centre: use-cases/use-case-bodc.md
-          - INRAE: use-cases/use-case-inrae.md
+      - Overview: use-cases.md
+      - Case Studies:
+          - Lunaris: case-study/case-study-lunaris.md
+          - Mondo Ontology: case-study/case-study-mondo.md
+          - Uberon Ontology: case-study/case-study-uberon.md
+          - Integrated Carbon Observation System: case-study/case-study-icos.md
+          - British Oceanographic Data Centre: case-study/case-study-bodc.md
+          - INRAE Thesaurus: case-study/case-study-inrae.md
+          - Circular Economy Ontologies: case-study/case-study-ceon.md
+          - Wheat Ontology: case-study/case-study-wheatontology.md
+  - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/

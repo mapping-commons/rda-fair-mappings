@@ -1,4 +1,3 @@
-
 ---
 title: "INRAE Case Study"
 author: "Sophie Aubin"
@@ -6,8 +5,8 @@ author_github: "@saubin78"
 date: "2025-02-17"
 tags:
   - FAIR
-  - Data Integration
-category: "Case Study"
+  - Semantic interoperability
+category: "Case Studies"
 status: "Draft"
 ---
 

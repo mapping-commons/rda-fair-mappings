@@ -1,12 +1,12 @@
-
 ---
-title: "BODC Use Case"
+title: "BODC Case Study"
 author: "Gwen Moncoiffé"
 date: "2025-02-17"
 tags:
   - FAIR
   - Data Integration
-category: "Use Cases"
+  - Semantic interoperability
+category: "Case Studies"
 status: "Draft"
 ---
 
