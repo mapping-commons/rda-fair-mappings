@@ -60,6 +60,7 @@ nav:
           - Uberon Ontology: use-cases/use-case-uberon.md
           - Integrated Carbon Observation System: use-cases/use-case-icos.md
           - British Oceanographic Data Centre: use-cases/use-case-bodc.md
+          - INRAE: use-cases/use-case-inrae.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
