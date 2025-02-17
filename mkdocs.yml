@@ -53,10 +53,13 @@ extra_javascript:
 nav:
   - About our work: index.md
   - Use Cases:
-      - use-cases.md
+      - Use cases: use-cases.md
       - Cases:
           - Lunaris: use-cases/use-case-lunaris.md
-          - Mondo: use-cases/use-case-mondo.md
+          - Mondo Ontology: use-cases/use-case-mondo.md
+          - Uberon Ontology: use-cases/use-case-uberon.md
+          - Integrated Carbon Observation System: use-cases/use-case-icos.md
+          - British Oceanographic Data Centre: use-cases/use-case-bodc.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
