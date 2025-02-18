@@ -2,13 +2,12 @@
 
 <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Semantic interoperability</span> 
 
-**Author:** Toshiyuki Hiraki  (@hirakinii)
+!!! info "NII Case Study Infobox"
 
-**Last updated:** 2025-02-17  
-
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
-
-**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+    - **Author:** Toshiyuki Hiraki  (@hirakinii)
+    - **Last updated:** 2025-02-17  
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping between metadata schemas used in our research data infrastructure (NII Research Data Cloud).
 

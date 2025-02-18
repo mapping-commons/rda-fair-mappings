@@ -2,13 +2,12 @@
 
 <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Ontology mapping</span> <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Data Integration</span> 
 
-**Author:** Damien Goutte-Gattat  (@gouttegd)
+!!! info "Uberon Case Study Infobox"
 
-**Last updated:** 2025-02-17  
-
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
-
-**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+    - **Author:** Damien Goutte-Gattat  (@gouttegd)
+    - **Last updated:** 2025-02-17  
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+    - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping anatomical entities across anatomy ontologies.
 

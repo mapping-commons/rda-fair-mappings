@@ -2,13 +2,12 @@
 
 <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">FAIR</span> <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Semantic interoperability</span> 
 
-**Author:** Sophie Aubin  (@saubin78)
+!!! info "INRAE Case Study Infobox"
 
-**Last updated:** 2025-02-17  
-
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
-
-**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+    - **Author:** Sophie Aubin  (@saubin78)
+    - **Last updated:** 2025-02-17  
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+    - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping the INRAE Thesaurus with internal and external KOS.
 

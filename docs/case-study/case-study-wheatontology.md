@@ -2,13 +2,12 @@
 
 <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Discovery</span> 
 
-**Author:** Sophie Aubin  (@saubin78)
+!!! info "Wheat Trait and Phenotype Ontology and the Wheat Ontology Case Study Infobox"
 
-**Last updated:** 2025-02-17  
-
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
-
-**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+    - **Author:** Sophie Aubin  (@saubin78)
+    - **Last updated:** 2025-02-17  
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+    - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping classes between Wheat Trait and Phenotype Ontology and the Wheat Ontology (CO_321).
 
