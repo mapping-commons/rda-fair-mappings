@@ -1,13 +1,11 @@
----
-title: "ICOS Case Study"
-author: "Maggie Hellstrom"
-date: "2025-02-17"
-tags:
-  - FAIR
-  - Data Integration
-category: "Case Studies"
-status: "Draft"
----
+<!-- DO NOT EDIT: This file is auto-generated. Any changes will be overwritten. -->
+
+**Author:** Maggie Hellstrom  (@DrMaggie)
+**Last updated:** 2025-02-17  
+**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+
+<span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">FAIR</span> <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Data Integration</span> 
 
 Mapping ICOS observables to CF convention controlled vocabulary.
 

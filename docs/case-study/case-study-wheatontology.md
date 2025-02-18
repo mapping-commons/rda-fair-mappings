@@ -1,13 +1,11 @@
----
-title: "Wheat Trait and Phenotype Ontology and the Wheat Ontology Case Study"
-author: "Sophie Aubin"
-author_github: "@saubin78"
-date: "2025-02-17"
-tags:
-  - Discovery
-category: "Case Studies"
-status: "Draft"
----
+<!-- DO NOT EDIT: This file is auto-generated. Any changes will be overwritten. -->
+
+**Author:** Sophie Aubin  (@saubin78)
+**Last updated:** 2025-02-17  
+**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+
+<span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Discovery</span> 
 
 Mapping classes between Wheat Trait and Phenotype Ontology and the Wheat Ontology (CO_321).
 
