@@ -6,6 +6,7 @@ date: "2025-02-17"
 tags:
   - Discovery
 category: "Case Studies"
+mapping_type: "Entity Mapping"
 status: "Draft"
 ---
 

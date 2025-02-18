@@ -7,6 +7,7 @@ tags:
   - Ontology Mapping
   - Data Integration
 category: "Case Studies"
+mapping_type: "Entity Mapping"
 status: "Draft"
 ---
 

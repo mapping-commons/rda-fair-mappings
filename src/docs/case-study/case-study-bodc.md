@@ -1,12 +1,14 @@
 ---
 title: "BODC Case Study"
 author: "Gwen Moncoiffé"
+author_github: "@gwemon"
 date: "2025-02-17"
 tags:
   - FAIR
   - Data Integration
   - Semantic interoperability
 category: "Case Studies"
+mapping_type: "Entity Mapping"
 status: "Draft"
 ---
 

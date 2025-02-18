@@ -1,11 +1,13 @@
 ---
 title: "Lunaris Case Study"
 author: "Tristan Kuehn"
+author_github: "@tkkuehn"
 date: "2025-01-30"
 tags:
   - FAIR
   - Data Integration
 category: "Case Studies"
+mapping_type: "Schema Mapping"
 status: "Draft"
 ---
 

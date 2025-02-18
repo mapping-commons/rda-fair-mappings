@@ -1,11 +1,13 @@
 ---
 title: "ICOS Case Study"
 author: "Maggie Hellstrom"
+author_github: "@DrMaggie"
 date: "2025-02-17"
 tags:
   - FAIR
   - Data Integration
 category: "Case Studies"
+mapping_type: "Entity Mapping"
 status: "Draft"
 ---
 
