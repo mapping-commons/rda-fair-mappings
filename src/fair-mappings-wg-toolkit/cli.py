@@ -14,12 +14,15 @@ def cli():
 # Jinja template for formatted case study content
 CASE_STUDY_TEMPLATE = """<!-- DO NOT EDIT: This file is auto-generated. Any changes will be overwritten. -->
 
-**Author:** {{ author }}  ({{ author_github }})
-**Last updated:** {{ date }}  
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/{{ mapping_type }}-blue) 
-**Status of this case study:** {% if status == "Draft" %}![Status](https://img.shields.io/badge/Draft-yellow){% else %}![Status](https://img.shields.io/badge/{{ status }}-blue){% endif %}
-
 {% for tag in tags %}<span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">{{ tag }}</span> {% endfor %}
+
+**Author:** {{ author }}  ({{ author_github }})
+
+**Last updated:** {{ date }}  
+
+**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/{{ mapping_type }}-blue) 
+
+**Status of this case study:** {% if status == "Draft" %}![Status](https://img.shields.io/badge/Draft-yellow){% else %}![Status](https://img.shields.io/badge/{{ status }}-blue){% endif %}
 
 {{ content }}
 """
@@ -31,7 +34,9 @@ OVERVIEW_TEMPLATE = """<!-- DO NOT EDIT: This file is auto-generated. Any change
 
 ### Glossary
 
-**Warning:**: Mapping type classifications and definitions on this page are preliminary and subject to change.
+!!! warning
+
+    Mapping type classifications and definitions on this page are preliminary and subject to change.
 
 - **Schema Mapping**: A mapping between two or more schemas, such as a mapping between a relational database schema and an RDF ontology.
 - **Entity Mapping**: A mapping between two or more entities, such as a mapping between two gene identifiers in two different databases.
@@ -41,9 +46,10 @@ OVERVIEW_TEMPLATE = """<!-- DO NOT EDIT: This file is auto-generated. Any change
 
 {% for case in grouped_cases %}
 #### [{{ case.title }}]({{ case.filename }})
+
 - **Author:** {{ case.author }} ({{ case.author_github }})
 - **Last updated:** {{ case.date }}
-- **Status of this case study:** {% if status == "Draft" %}![Status](https://img.shields.io/badge/Draft-yellow){%- else %}![Status](https://img.shields.io/badge/{{ status }}-blue){% endif %}
+- **Status of this case study:** {% if case.status == "Draft" %}![Status](https://img.shields.io/badge/Draft-yellow){%- else %}![Status](https://img.shields.io/badge/{{ case.status }}-blue){% endif %}
 - **Tags:** {{ case.tags | join(', ') }}
 
 {% endfor %}
