@@ -1,11 +1,14 @@
 <!-- DO NOT EDIT: This file is auto-generated. Any changes will be overwritten. -->
 
-**Author:** Tristan Kuehn  (@tkkuehn)
-**Last updated:** 2025-01-30  
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
-**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-
 <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">FAIR</span> <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Data Integration</span> 
+
+**Author:** Tristan Kuehn  (@tkkuehn)
+
+**Last updated:** 2025-01-30  
+
+**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+
+**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping Canadian metadata records from their source schema to a unified schema for centralized discovery
 

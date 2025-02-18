@@ -1,11 +1,14 @@
 <!-- DO NOT EDIT: This file is auto-generated. Any changes will be overwritten. -->
 
-**Author:** Nicolas Matentzoglu  (@matentzn)
-**Last updated:** 2025-02-15  
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
-**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-
 <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Ontology Mapping</span> <span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Data Integration</span> 
+
+**Author:** Nicolas Matentzoglu  (@matentzn)
+
+**Last updated:** 2025-02-15  
+
+**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+
+**Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping disease terminologies into a harmonized ontology of diseases.
 
