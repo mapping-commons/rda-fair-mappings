@@ -16,13 +16,12 @@ CASE_STUDY_TEMPLATE = """<!-- DO NOT EDIT: This file is auto-generated. Any chan
 
 {% for tag in tags %}<span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">{{ tag }}</span> {% endfor %}
 
-**Author:** {{ author }}  ({{ author_github }})
+!!! info "{{ title }} Infobox"
 
-**Last updated:** {{ date }}  
-
-**Mapping Type:** ![Mapping Type](https://img.shields.io/badge/{{ mapping_type }}-blue) 
-
-**Status of this case study:** {% if status == "Draft" %}![Status](https://img.shields.io/badge/Draft-yellow){% else %}![Status](https://img.shields.io/badge/{{ status }}-blue){% endif %}
+    - **Author:** {{ author }}  ({{ author_github }})
+    - **Last updated:** {{ date }}  
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/{{ mapping_type }}-blue) 
+    - **Status of this case study:** {% if status == "Draft" %}![Status](https://img.shields.io/badge/Draft-yellow){% else %}![Status](https://img.shields.io/badge/{{ status }}-blue){% endif %}
 
 {{ content }}
 """
