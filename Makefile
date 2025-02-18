@@ -33,4 +33,6 @@ install:
 #	jinjanator $^ > $@
 
 deploy-use-cases:
-	cp -r src/docs/* docs/
+	python src/fair-mappings-wg-toolkit/cli.py document-case-studies -c src/docs/case-study -d docs/case-study -o src/docs/use-cases.md
+	cp src/docs/*.md docs/
+	cp -r src/docs/img docs/
