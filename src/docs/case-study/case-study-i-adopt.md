@@ -36,12 +36,13 @@ None given.
 
 
 **Use case 2: Indirect mappings of description components**
-
+2a: related mappings of description components:
 ![I-ADOPT use case 2a](../img/I-ADOPT_use_case2a.png)
 
-
+2b: description components mapped to the same reference semantic artefacts
 ![I-ADOPT use case 2b](../img/I-ADOPT_use_case2b.png)
 
+2 c: no explicit mappings existing, but automatic mappings based on term matches
 ![I-ADOPT use case 2c](../img/I-ADOPT_use_case2c.png)
 
 **Use case 3: Description components mapped between a variable and a blank node**
