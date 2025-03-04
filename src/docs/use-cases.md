@@ -23,6 +23,14 @@
 - **Tags:** FAIR, Data Integration
 
 
+#### [I-ADOPT Case Study](case-study/case-study-i-adopt.md)
+
+- **Author:** Barbara Magagna (@mabablue)
+- **Last updated:** 2025-03-01
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** FAIR, Data Integration, Semantic interoperability
+
+
 #### [INRAE Case Study](case-study/case-study-inrae.md)
 
 - **Author:** Sophie Aubin (@saubin78)

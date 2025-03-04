@@ -64,6 +64,7 @@ nav:
           - Circular Economy Ontologies: case-study/case-study-ceon.md
           - Wheat Ontology: case-study/case-study-wheatontology.md
           - NII Data Governance: case-study/case-study-nii.md
+          - I-ADOPT: case-study/case-study-i-adopt.md
   - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
