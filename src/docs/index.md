@@ -24,4 +24,4 @@ We invite everyone interested in the FAIR Mappings WG to join the working group 
 - [FAIR Mappings WG Activity](https://www.rd-alliance.org/groups/fair-mappings-wg/activity/)
 - [Statement of Work](https://www.rd-alliance.org/groups/fair-mappings-wg/work-statement/?sow=174262)
 - [Member list](https://www.rd-alliance.org/groups/fair-mappings-wg/members/all-members/)
-- [FAIR Mappings WG Slack Channel](https://www.google.com/url?q=https://join.slack.com/t/obo-communitygroup/shared_invite/zt-2uc9962yt-aa8wuXeqB16EudpD3Psdcw&sa=D&source=docs&ust=1734685826695557&usg=AOvVaw0YQ5HX2KDanlgQ3bAg1Bvz)
+- [FAIR Mappings WG Slack Channel](https://obo-communitygroup.slack.com/archives/C0811AQDC0H) (please request access on the [issue tracker](https://github.com/mapping-commons/rda-fair-mappings/issues).
