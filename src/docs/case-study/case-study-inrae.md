@@ -23,12 +23,12 @@ Semantic interoperability.
 
 ### Other purpose of the mapping
 
-Data integration.
+(Meta)data integration. The mappings allow to seamlessly search or mix resources (publications, data, code...) described through metadata using different semantic arterfacts. To a lesser extent, the mappings can be used for data integration. 
 
 ### Type of mapped resources
 
-The INRAE Thesaurus, an institutional thesaurus of 17,000 concepts used in open archives, data repositories, and other information systems managed by INRAE, serves as the main resource. It is partially mapped to thesaurus: Agrovoc, MeSH, GEMET and the French Crop Usage thesaurus (all available on public KOS portals).
-More KOS are to be mapped to INRAE Thesaurus, including ontologies created and managed by research teams to address specific scientific needs.
+The INRAE Thesaurus, an **institutional thesaurus** of 17,000 concepts used in open archives, data repositories, and other information systems managed by INRAE, serves as the main resource. It is partially mapped to other **thesauri** managed by tiers organisations: Agrovoc, MeSH, GEMET and one thesaurus managed by an INRAE research team the French Crop Usage thesaurus (all available on public KOS portals).
+More KOS are to be mapped to INRAE Thesaurus, including **ontologies** created and managed by research teams to address specific scientific needs.
 
 ### Links to an existing mappings
 
