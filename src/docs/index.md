@@ -7,7 +7,7 @@ The FAIR Mappings WG works with various communities and RDA Working Groups that 
 The <b>expected outputs</b> of the FAIR Mappings WG include:
 - A set of <b>technical recommendations</b> to enable the creation of FAIR-by-design mappings and support the FAIRification of existing mappings;
 - A <b>methodology and practical framework covering the different steps of mapping life cycle</b> to support communities undertaking mappings;
-- A <b>collection of hamonised use case descriptions</b> which support the identification of various typesof mappings;
+- A <b>collection of hamonised use case descriptions</b> which support the identification of various types of mappings;
 - A <b>classification of mappings</b> describing the various types of mappings as well as the mapping process;
 - A <b>set of data models and the associated metadata</b> for sharing the different types of mappings and mappings related operations as captures by the classification of mappings;
 - A <b>Knowledge Base</b> which brings together all the above-mentioned outputs and show-cases mapping scenarios with associated data models and links to the mappings classification.
