@@ -30,7 +30,7 @@ By combining the the use case of [Semantic mappings of datamodels](https://githu
 
 The figure below shows three datamodels and three mapping functions that are all mapped to ontological concepts.
 
-![mappings](https://github.com/user-attachments/assets/eb66235d-12a5-4bac-9608-457260500ee4)
+![DLITE Example Transformation](../img/dlite_example1.png)
 **Figure 1**. Example of semantic transformations.
 
 Lets assume that we have instances of the `Structure` and `CalcResults` datamodels (named `C3H6` and `C3H6_result` in the figure). Given that it is possible to ask a semantic system to instantiate an instance of the `Molecule` datamodel. If the system can find a route from the properties of the `Molecule` datamodel, via the mappings and mapping functions, to existing data, it will be able to return a `Molecule` instance.
