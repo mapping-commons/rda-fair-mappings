@@ -31,6 +31,14 @@
 - **Tags:** FAIR, Data Integration, Semantic interoperability
 
 
+#### [DLITE Mapping Case Study](case-study/case-study-dlite.md)
+
+- **Author:** Jesper Friis (@jesper-friis)
+- **Last updated:** 2025-03-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
+
+
 #### [INRAE Case Study](case-study/case-study-inrae.md)
 
 - **Author:** Sophie Aubin (@saubin78)
@@ -97,5 +105,17 @@
 - **Last updated:** 2025-01-30
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** FAIR, Data Integration
+
+
+
+### TBD
+
+
+#### [DLITE Transformation Case Study](case-study/case-study-dlite-transform.md)
+
+- **Author:** Jesper Friis (@jesper-friis)
+- **Last updated:** 2025-03-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
 
 
