@@ -76,7 +76,7 @@ mol:energy rdfs:subClassOf emmo:PotentialEnergy .
 mol:maxforce rdfs:subClassOf don:MaxForce .
 ```
 
-Here `struct:symbols` is a unique IRI that refer to the `symbols` property of the datamodel [http://onto-ns.org/meta/0.1/Structure](http://onto-ns.org/meta/0.1/Structure).
+Here `struct:symbols` is a unique IRI that refer to the `symbols` property of the datamodel [http://onto-ns.com/meta/0.1/Structure](http://onto-ns.com/meta/0.1/Structure).
 Hence, the mapping relation `struct:symbols rdfs:subClassOf don:ChemicalSymbol` states that the `symbols` property of the Structure data model is a chemical symbol.
 Similar for the other mapping relations.
 
