@@ -156,3 +156,5 @@ don:MaxForce a emmo:EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a ;
 emmo:EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef a emmo:EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a ;
     rdfs:label "array"@en .
 ```
+
+The [EMMO](https://github.com/emmo-repo/EMMO) ontology is used to express the mapping function input ([emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22](https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22)) and output ([emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840](https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840)) as well as some chemical concepts like [ChemicalElement](https://w3id.org/emmo#EMMO_4f40def1_3cd7_4067_9596_541e9a5134cf) and [ChemicalFormula](https://w3id.org/emmo#EMMO_9236d0aa_cb39_43a1_bbdd_6a2a714951c8).
