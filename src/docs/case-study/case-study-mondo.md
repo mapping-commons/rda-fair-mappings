@@ -88,9 +88,9 @@ the curator to quickly accept or dismiss this automatically generated mapping.
 | subject_id | subject_label | object_id | predicate_id | object_label | mapping_justification | mapping_tool | confidence | subject_match_field | object_match_field | match_string |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | MONDO:0005641 | aleutian mink disease | DOID:2934 | skos:exactMatch | aleutian mink disease | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | aleutian mink disorder |
-| MONDO:0005676 | borna disease | DOID:5154 | MONDO:equivalentTo | borna disease | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | borna disorder |
-| MONDO:0007744 | cholesterol-ester transfer protein deficiency | DOID:0111368 | MONDO:equivalentTo | cholesterol-ester transfer protein deficiency | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | cholesterol-ester transfer protein deficiency |
-| MONDO:0007988 | autosomal dominant primary microcephaly | DOID:0061100 | MONDO:equivalentTo | autosomal dominant primary microcephaly | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | autosomal dominant primary microcephaly |
-| MONDO:0009297 | familial renal glucosuria | DOID:0070613 | MONDO:equivalentTo | familial renal glucosuria | semapv:LexicalMatching | oaklib | 0.9411764705882353 | skos:exactMatch | skos:exactMatch | mesh:d006030 |
+| MONDO:0005676 | borna disease | DOID:5154 | skos:exactMatch | borna disease | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | borna disorder |
+| MONDO:0007744 | cholesterol-ester transfer protein deficiency | DOID:0111368 | skos:exactMatch | cholesterol-ester transfer protein deficiency | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | cholesterol-ester transfer protein deficiency |
+| MONDO:0007988 | autosomal dominant primary microcephaly | DOID:0061100 | skos:exactMatch | autosomal dominant primary microcephaly | semapv:LexicalMatching | oaklib | 0.8497788951776651 | rdfs:label | rdfs:label | autosomal dominant primary microcephaly |
+| MONDO:0009297 | familial renal glucosuria | DOID:0070613 | skos:exactMatch | familial renal glucosuria | semapv:LexicalMatching | oaklib | 0.9411764705882353 | skos:exactMatch | skos:exactMatch | mesh:d006030 |
 
 Mondo is using the [SSSOM format](https://mapping-commons.github.io/sssom/) for their representation of mappings. For a complete list of mappings see [here](https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mappings/mondo.sssom.tsv).
