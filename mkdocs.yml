@@ -65,6 +65,8 @@ nav:
           - Wheat Ontology: case-study/case-study-wheatontology.md
           - NII Data Governance: case-study/case-study-nii.md
           - I-ADOPT: case-study/case-study-i-adopt.md
+          - DLITE transform: case-study/case-study-dlite-transform.md
+          - DLITE: case-study/case-study-dlite.md
   - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/

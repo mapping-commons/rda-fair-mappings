@@ -13,7 +13,7 @@ The <b>expected outputs</b> of the FAIR Mappings WG include:
 - A <b>set of data models and the associated metadata</b> for sharing the different types of mappings and mappings related operations as captures by the classification of mappings;
 - A <b>Knowledge Base</b> which brings together all the above-mentioned outputs and show-cases mapping scenarios with associated data models and links to the mappings classification.
 
-To achieve the above, the Working Group follows three phases of work: 
+To achieve the above, the Working Group follows three phases of work:
 
 ![image](https://github.com/user-attachments/assets/fac486bb-4c99-436a-b6c1-1b2facef9ec6)
 
