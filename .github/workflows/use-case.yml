@@ -30,9 +30,9 @@ jobs:
             branch-suffix: short-commit-hash
             title: "Add Use Case Description from Issue #${{ github.event.issue.number }}"
             body: "This PR adds use case description provided in Issue #${{ github.event.issue.number }}."
-            labels: ["use-case", "documentation"]
+            labels: "use-case, documentation"
             base: main
             branch: use-case-${{ github.event.issue.number }}
             token: ${{ secrets.GITHUB_TOKEN }}
-            reviewers: ["jkesanie"]
+            reviewers: "jkesanie"
 
