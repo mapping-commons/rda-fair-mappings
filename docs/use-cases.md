@@ -31,6 +31,14 @@
 - **Tags:** FAIR, Data Integration, Semantic interoperability
 
 
+#### [Ontology Mappings COMP-LOINC Case Study](case-study/case-study-comp-loinc.md)
+
+- **Author:** Joe Flack (@joeflack4)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
 #### [DLITE Mapping Case Study](case-study/case-study-dlite.md)
 
 - **Author:** Jesper Friis (@jesper-friis)
@@ -71,6 +79,14 @@
 - **Tags:** Ontology mapping, Data Integration
 
 
+#### [Information Extraction from Biomedical Literature Case Study](case-study/case-study-ontogpt-ie.md)
+
+- **Author:** Harry Caufield (@caufieldjh)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
 #### [CEON Case Study](case-study/case-study-ceon.md)
 
 - **Author:** Huanyu Li (@huanyu-li)
@@ -99,12 +115,36 @@
 - **Tags:** Semantic interoperability
 
 
+#### [Schema normalization with LinkML-Map Case Study](case-study/case-study-linkml-map-normalization.md)
+
+- **Author:** Sierra Moxon (@sierra-moxon)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
+#### [Schema element mapping with LinkML-Map Case Study](case-study/case-study-linkml-map.md)
+
+- **Author:** Sierra Moxon (@sierra-moxon)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
 #### [Lunaris Case Study](case-study/case-study-lunaris.md)
 
 - **Author:** Tristan Kuehn (@tkkuehn)
 - **Last updated:** 2025-01-30
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** FAIR, Data Integration
+
+
+#### [Schema subsetting with LinkML-Map Case Study](case-study/case-study-linkml-map-subset.md)
+
+- **Author:** Sierra Moxon (@sierra-moxon)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
 
 
 
