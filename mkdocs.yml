@@ -67,6 +67,11 @@ nav:
           - I-ADOPT: case-study/case-study-i-adopt.md
           - DLITE transform: case-study/case-study-dlite-transform.md
           - DLITE: case-study/case-study-dlite.md
+          - COMP-LOINC: case-study/case-study-comp-loinc.md
+          - Information Extraction from Literature: case-study/case-study-linkml-map.md
+          - Schema element mapping with LinkML-Map: case-study/case-study-ontogpt-ie.md
+          - Schema subsetting with LinkML-Map: case-study/case-study-linkml-map-subset.md
+          - Schema normalization with LinkML-Map: case-study/case-study-linkml-map-normalization.md
   - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
