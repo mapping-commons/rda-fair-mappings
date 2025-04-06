@@ -1,3 +1,4 @@
 python-frontmatter
 jinja2
 click
+mkdocs-awesome-pages-plugin
