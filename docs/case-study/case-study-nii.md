@@ -5,7 +5,7 @@
 !!! info "NII Case Study Infobox"
 
     - **Author:** Toshiyuki Hiraki  (@hirakinii)
-    - **Last updated:** 2025-02-17  
+    - **Last updated:** 2025-04-03  
     - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
@@ -17,7 +17,9 @@ Research data management.
 
 ### Purpose of the mapping
 
-Semantic interoperability.
+* Semantic interoperability.
+* To make the information handled by the GakuNin RDM more interoperable so that the NII RDC becomes intra-connected and enables users to use the services seamlessly.
+    * As a function to check the quality of research data management (RDM), the NII data governance function needs mapping in order to interpret the metadata given by the GakuNin RDM, which is the RDM service of the NII RDC.
 
 ### Other purpose of the mapping
 
@@ -25,7 +27,7 @@ None given.
 
 ### Type of mapped resources
 
-Metadata handled in the GakuNin RDM and those defined by the NII RDC application profile.
+Metadata schema handled in the GakuNin RDM (GRDM) and that defined by the NII RDC application profile.
 
 ### Links to an existing mappings
 
@@ -34,7 +36,7 @@ Metadata handled in the GakuNin RDM and those defined by the NII RDC application
 ### Tools used for creating the mapping
 
 - Creation of the mapping itself: manual
-- Use of the mapping: [DG Metadata Manager](https://github.com/NII-DG/dg-metadata-manager/tree/master) (Note: documentation is in Japanese).
+- Use of the mapping: this mapping is supposed to be used via the [DG Metadata Manager](https://github.com/NII-DG/dg-metadata-manager/tree/master) (Note: documentation is in Japanese).
 
 ### Type of mapping relations
 
@@ -42,6 +44,8 @@ Metadata handled in the GakuNin RDM and those defined by the NII RDC application
 - one-to-one
 
 ### Examples (samples) of different types of mapping implementations
+
+From the metadata schema of the GakuNin RDM to that given by the NII RDC application profile:
 
 ```json
 "researcher[].email[]": {
@@ -53,3 +57,12 @@ Metadata handled in the GakuNin RDM and those defined by the NII RDC application
     }
 }
 ```
+
+### Maintainer
+
+* The NII data governance team.
+    * PL: Toshiyuki Hiraki (GitHub account: [hirakinii](https://github.com/hirakinii))
+
+### Bug tracker
+
+https://github.com/NII-DG/dg-metadata-manager/issues

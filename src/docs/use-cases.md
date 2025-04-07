@@ -26,9 +26,9 @@
 #### [I-ADOPT Case Study](case-study/case-study-i-adopt.md)
 
 - **Author:** Barbara Magagna (@mabablue)
-- **Last updated:** 2025-03-01
+- **Last updated:** 2025-04-05
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** FAIR, Data Integration, Semantic interoperability
+- **Tags:** Variable Mapping, Data Integration
 
 
 #### [Ontology Mappings COMP-LOINC Case Study](case-study/case-study-comp-loinc.md)
@@ -110,7 +110,7 @@
 #### [NII Case Study](case-study/case-study-nii.md)
 
 - **Author:** Toshiyuki Hiraki (@hirakinii)
-- **Last updated:** 2025-02-17
+- **Last updated:** 2025-04-03
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Semantic interoperability
 
