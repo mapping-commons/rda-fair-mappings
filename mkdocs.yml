@@ -72,6 +72,8 @@ nav:
           - Schema element mapping with LinkML-Map: case-study/case-study-linkml-map.md
           - Schema subsetting with LinkML-Map: case-study/case-study-linkml-map-subset.md
           - Schema normalization with LinkML-Map: case-study/case-study-linkml-map-normalization.md
+          - FoodOn to FoodEx2 mapping: case-study/case-study-food.md
+          - Mapping LGBTQ+-related thesauri: case-study/case-study-lgbtq.md
   - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
