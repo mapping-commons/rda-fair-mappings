@@ -1,7 +1,7 @@
 name: FAIR Mappings Use Case submission
 description: Use this template to submit a FAIR Mappings Use Case for the RDA FAIR Mappings Working Group. Please notice that we are looking for already implemented mapping use cases. 
-title: FAIR Mappings Use Case submission
-labels: [ use-case ]
+title: "Case study: {{ case-title }}"
+labels: [ case ]
 assignees: jkesanie
 body:
   - type: markdown
@@ -9,67 +9,85 @@ body:
       value: |
         Some instructions for the submission.
   - type: input
-    id: use-case-title
+    id: case-title
     attributes:
       label: The title of your use case
       description: A short but descriptive title that describes your use case.
     validations:
       required: true
+  - type: textarea
+    id: case-short-title
+    attributes:
+      label: Short title
+      description: Short title used in menus e.g. "BFO-PROV"
+    validations:
+      required: true        
+  - type: textarea
+    id: case-summary
+    attributes:
+      label: Summary
+      description: A high-level summary of the case study.
+    validations:
+      required: true      
   - type: input
-    id: use-case-domain
+    id: case-domain
     attributes:
       label: Domain
       description: Which scientific/activity domain do the mappings apply to?
     validations:
       required: true      
   - type: dropdown
-    id: use-case-purpose-classified
+    id: case-purpose-classified
     attributes:
-      label: Purpose of the mapping
-      description: Use this field as the primary way of selecting the purpose of your mappings. If the dropdown does not contain a suitable value, please add it throught the other option below. You can use both of the fields if dropdown options cover your case only partially.
+      label: Use case category
+      description: General use case for the mapping.
       multiple: true
       options:
         - Semantic interoperability
         - Discovery
-        - Data integration
+        - Integration
+        - Transformation
+        - Analysis
+        - Other
     validations:
       required: false  
-  - type: input
-    id: use-case-purpose-string
+  - type: textarea
+    id: case-purpose-string
     attributes:
-      label: Other purpose of the mapping
-      description: 
+      label: Purpose of the mapping
+      description: |
+        Use this field to describe the purpose of your mapping. This can include for example the reason why the mapping needed from the end-user's perspection (e.g. ...) or it can be a more practical description related to the mapping task (e.g. ....). You can use for example the user story format to describe the purpose from perspectives of different stakeholders (See [Mondo case](https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-mondo/#purpose) for an example).
     validations:
       required: false       
   - type: textarea
-    id: use-case-mapped-resources
+    id: case-mapped-resources
     attributes:
       label: Type of mapped resources
       description: What kind of things are being mapped?
     validations:
       required: true      
   - type: textarea
-    id: use-case-links
+    id: case-links
     attributes:
       label: Links to an existing mappings
       description: Links to resources that represent the actual mappings. Can be for example a service, api, code or a document. 
     validations:
       required: true
   - type: textarea
-    id: use-case-tools
+    id: case-tools
     attributes:
       label: Tools used for creating the mapping
     validations:
       required: true       
   - type: textarea
-    id: use-case-mapping-relations
+    id: case-mapping-relations
     attributes:
       label: Type of mapping relations
       description: e.g., unit conversion, synonymy, shared extension/referent, entity mappings, one to many, many to one
     validations:
       required: true
   - type: textarea
-    id: use-case-implemenation-samples
+    id: case-implemenation-samples
     attributes:
       label: Examples (samples) of different types of mapping implementations 
       description: e.g. using pseudo-code, code-snippets, graph-based representation (nodes and edges), examples of source and target documents for transformations, …
