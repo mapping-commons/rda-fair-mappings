@@ -31,6 +31,14 @@
 - **Tags:** Variable Mapping, Data Integration
 
 
+#### [LGBTQ+ Case Study](case-study/case-study-lgbtq.md)
+
+- **Author:** Clair Kronk (@Superraptor)
+- **Last updated:** 2025-04-27
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
+
+
 #### [Ontology Mappings COMP-LOINC Case Study](case-study/case-study-comp-loinc.md)
 
 - **Author:** Joe Flack (@joeflack4)
@@ -101,6 +109,14 @@
 - **Last updated:** 2025-02-17
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** FAIR, Data Integration, Semantic interoperability
+
+
+#### [Food Case Study](case-study/case-study-food.md)
+
+- **Author:** Roman Baum (@rombaum)
+- **Last updated:** 2025-04-27
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
 
 
 
