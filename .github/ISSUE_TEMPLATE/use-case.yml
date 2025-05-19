@@ -15,7 +15,7 @@ body:
       description: A short but descriptive title that describes your use case.
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: case-short-title
     attributes:
       label: Short title
