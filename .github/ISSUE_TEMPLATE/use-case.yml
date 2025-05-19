@@ -33,7 +33,7 @@ body:
     id: case-domain
     attributes:
       label: Domain
-      description: Which scientific/activity domain do the mappings apply to? For example: Medical Domain; Materials; Humanities.
+      description: "Which scientific/activity domain do the mappings apply to? For example: Medical Domain; Materials; Humanities."
     validations:
       required: true      
   - type: dropdown
