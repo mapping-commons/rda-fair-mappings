@@ -63,7 +63,7 @@ body:
     id: case-mapped-resources
     attributes:
       label: Type of mapped resources
-      description: What kind of things are being mapped? Examples: database and/or database schema, ontology, API, SPARQL endpoint, knowledge graph, etc. Give sufficient detail for a general data practitioner to understand, and ideally a link to an example resource that is being mapped.
+      description: "What kind of things are being mapped? Examples: database and/or database schema, ontology, API, SPARQL endpoint, knowledge graph, etc. Give sufficient detail for a general data practitioner to understand, and ideally a link to an example resource that is being mapped."
     validations:
       required: true      
   - type: textarea
@@ -77,20 +77,20 @@ body:
     id: case-tools
     attributes:
       label: Tools used for creating the mapping
-      description: For example, this can be tools used for automated matching (such as LogMap in the context of ontologies), or tools used for the manual curation of mappings (such as Google sheets, or more specialised software such as [Cocoda](https://github.com/gbv/cocoda)).
+      description: "For example, this can be tools used for automated matching (such as LogMap in the context of ontologies), or tools used for the manual curation of mappings (such as Google sheets, or more specialised software such as [Cocoda](https://github.com/gbv/cocoda))."
     validations:
       required: true       
   - type: textarea
     id: case-mapping-relations
     attributes:
       label: Type of mapping relations
-      description: Mapping relations in this context are the types of correspondences between a source and a target you care about, e.g., data transformation functions (incl, e.g. unit conversion), shared extension/referent, entity mappings (such as skos:exactMatch), one to many, many to one, complex expression matching (e.g. across medical ontologies).
+      description: "Mapping relations in this context are the types of correspondences between a source and a target you care about, e.g., data transformation functions (incl, e.g. unit conversion), shared extension/referent, entity mappings (such as skos:exactMatch), one to many, many to one, complex expression matching (e.g. across medical ontologies)."
     validations:
       required: true
   - type: textarea
     id: case-implemenation-samples
     attributes:
       label: Examples (samples) of different types of mapping implementations 
-      description: e.g. using pseudo-code, code-snippets, graph-based representation (nodes and edges), examples of source and target documents for transformations, …
+      description: "E.g. using pseudo-code, code-snippets, graph-based representation (nodes and edges), examples of source and target documents for transformations, SSSOM files, etc."
     validations:
       required: true
