@@ -1,7 +1,7 @@
 name: FAIR Mappings Use Case submission
 description: Use this template to submit a FAIR Mappings Use Case for the RDA FAIR Mappings Working Group. Please notice that we are looking for already implemented mapping use cases. 
-title: FAIR Mappings Use Case submission
-labels: [ use-case ]
+title: "Case study: {{ case-title }}"
+labels: [ case ]
 assignees: jkesanie
 body:
   - type: markdown
@@ -9,67 +9,86 @@ body:
       value: |
         Some instructions for the submission.
   - type: input
-    id: use-case-title
+    id: case-title
     attributes:
       label: The title of your use case
       description: A short but descriptive title that describes your use case.
     validations:
       required: true
+  - type: textarea
+    id: case-short-title
+    attributes:
+      label: Short title
+      description: Short title used in menus e.g. "BFO-PROV"
+    validations:
+      required: true        
+  - type: textarea
+    id: case-summary
+    attributes:
+      label: Summary
+      description: A high-level summary of the case study. This should be sufficient for a general data practitioner to get a good sense of what the mapping case study is all about, without being overly detailed (3-5 sentences).
+    validations:
+      required: true      
   - type: input
-    id: use-case-domain
+    id: case-domain
     attributes:
       label: Domain
-      description: Which scientific/activity domain do the mappings apply to?
+      description: Which scientific/activity domain do the mappings apply to? For example: Medical Domain; Materials; Humanities.
     validations:
       required: true      
   - type: dropdown
-    id: use-case-purpose-classified
+    id: case-purpose-classified
     attributes:
-      label: Purpose of the mapping
-      description: Use this field as the primary way of selecting the purpose of your mappings. If the dropdown does not contain a suitable value, please add it throught the other option below. You can use both of the fields if dropdown options cover your case only partially.
+      label: Use case category
+      description: General use case for the mapping.
       multiple: true
       options:
-        - Semantic interoperability
-        - Discovery
-        - Data integration
+        - Semantic interoperability (shared understanding of data across multiple systems)
+        - Discovery (finding related data across resources)
+        - Integration (Connecting data across disparate resources)
+        - Transformation (translating source data into a target schema)
+        - Analysis (Aggregating data and driving new insights)
+        - Other (My general use case is something not well reflected by the above)
     validations:
       required: false  
-  - type: input
-    id: use-case-purpose-string
+  - type: textarea
+    id: case-purpose-string
     attributes:
-      label: Other purpose of the mapping
-      description: 
+      label: Purpose of the mapping
+      description: |
+        Use this field to describe the purpose of your mapping. This can include for example the reason why the mapping needed from the end-user's perspection (e.g. discovering and aggregating data across multiple disparate resources) or it can be a more practical description related to the mapping task (e.g. mapping data from one schema to another as part of an automated ETL system). You can use, for example, the user story format to describe the purpose from perspective of different stakeholders (See [Mondo case](https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-mondo/#purpose) for an example).
     validations:
       required: false       
   - type: textarea
-    id: use-case-mapped-resources
+    id: case-mapped-resources
     attributes:
       label: Type of mapped resources
-      description: What kind of things are being mapped?
+      description: What kind of things are being mapped? Examples: database and/or database schema, ontology, API, SPARQL endpoint, knowledge graph, etc. Give sufficient detail for a general data practitioner to understand, and ideally a link to an example resource that is being mapped.
     validations:
       required: true      
   - type: textarea
-    id: use-case-links
+    id: case-links
     attributes:
       label: Links to an existing mappings
-      description: Links to resources that represent the actual mappings. Can be for example a service, api, code or a document. 
+      description: Links to resources that represent the actual mappings. Can be for example a service, api, code or a document (e.g., a SSSOM file). 
     validations:
       required: true
   - type: textarea
-    id: use-case-tools
+    id: case-tools
     attributes:
       label: Tools used for creating the mapping
+      description: For example, this can be tools used for automated matching (such as LogMap in the context of ontologies), or tools used for the manual curation of mappings (such as Google sheets, or more specialised software such as [Cocoda](https://github.com/gbv/cocoda)).
     validations:
       required: true       
   - type: textarea
-    id: use-case-mapping-relations
+    id: case-mapping-relations
     attributes:
       label: Type of mapping relations
-      description: e.g., unit conversion, synonymy, shared extension/referent, entity mappings, one to many, many to one
+      description: Mapping relations in this context are the types of correspondences between a source and a target you care about, e.g., data transformation functions (incl, e.g. unit conversion), shared extension/referent, entity mappings (such as skos:exactMatch), one to many, many to one, complex expression matching (e.g. across medical ontologies).
     validations:
       required: true
   - type: textarea
-    id: use-case-implemenation-samples
+    id: case-implemenation-samples
     attributes:
       label: Examples (samples) of different types of mapping implementations 
       description: e.g. using pseudo-code, code-snippets, graph-based representation (nodes and edges), examples of source and target documents for transformations, …
