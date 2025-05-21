@@ -87,6 +87,14 @@
 - **Tags:** Ontology mapping, Data Integration
 
 
+#### [BFO-PROV Case Study](case-study/case-study-bfoprov.md)
+
+- **Author:** Philip Strömert (@StroemPhi)
+- **Last updated:** 2025-05-19
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability, Discovery, Data integration
+
+
 #### [Information Extraction from Biomedical Literature Case Study](case-study/case-study-ontogpt-ie.md)
 
 - **Author:** Harry Caufield (@caufieldjh)
@@ -161,6 +169,14 @@
 - **Last updated:** 2025-04-02
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Data integration
+
+
+#### [Fresh Catalog Case Study](case-study/case-study-fresh.md)
+
+- **Author:** Alessandro Morichetta (@alemorigh)
+- **Last updated:** 2025-05-19
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Discovery
 
 
 

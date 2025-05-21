@@ -9,17 +9,21 @@
     - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
-Mapping disease terminologies into a harmonized ontology of diseases.
+### High-level summary
+
+The goal of Mondo is to create a unified disease ontology by integrating multiple disease vocabularies and classifications, ensuring semantic interoperability across biomedical databases.
+The Mondo mappings, in particular, connect disease concepts in the Mondo ontology to other related resources, such as medical terminologies.
 
 ### Domain
 
 Biomedical and clinical informatics, focusing on disease classification and standardization.
 
+<a id="purpose"></a>
+
 ### Purpose of the mapping
 
-To create a unified disease ontology by integrating multiple disease vocabularies and classifications, ensuring semantic interoperability across biomedical databases.
-
-#### Associated user stories (selection)
+Multiple user groups with distinct interests rely on and have a stake in the Mondo mappings.
+Here is a representative selection of user stories:
 
 - **Clinical Researcher**:
     - Map disease terms from multiple coding systems (like OMIM, Orphanet, and ICD-10) to MONDO to merge and analyze patient data from different cohorts in a consistent and interoperable way.
@@ -37,7 +41,7 @@ However, not all use cases require the exact same level of rigour. For example, 
 
 As mappings are always context (or rather, use-case-) dependent, detailed metadata is needed on confidence, mapping justifications, mapping precision (exact or broad) to separate which mappings are useful for which use case.
 
-### Other purpose of the mapping
+Other use cases for the mappings include:
 
 - Harmonizing disease concepts across multiple biomedical and clinical terminologies (e.g., OMIM, Orphanet, DOID, NCIt).
 - Enabling consistent and computable disease annotations across research datasets, biobanks, and electronic health records.
