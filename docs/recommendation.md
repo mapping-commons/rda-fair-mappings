@@ -1,6 +1,8 @@
 # FAIR Mapping Recommendations
 To formulate these recommendations, we conceptually divided the domain of mapping and crosswalks into four parts:  Format & Model, Mappings Metadata, PID, and Service & API. The recommendations were formulated based on brainstorming sessions focusing on each part using gathered community requirements and feedback collected during various events. The recommendations are broken down as “generic recommendations” and “technical recommendations”. The technical recommendations are technical implementation aspects that will ensure the machine execution of the generic recommendation that are human readable guidances.
+
 ## 1. Model & Format 
+
 #### Generic recommendation
 1.1 Use a model to represent mappings with explicit links between the mapped entities and metadata for the crosswalk and the individual mappings that can be serialised in various formats
 #### Technical recommendation
