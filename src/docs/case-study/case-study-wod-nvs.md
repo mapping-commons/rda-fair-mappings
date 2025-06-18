@@ -22,7 +22,7 @@ Marine Domain
 Map labels (string) of platform (mainly ship) names appearing in metadata documents from the WOD database to ICES shipcodes in the NVS C17 vocabulary. This is done to help filter out duplicates when accessing data from multiple sources and enable aggregators to rely on a unique identifier for identical instances of platforms across RIs and datasets
 
 ### Type of mapped resources
-string labels from unpublished vocabulary to URIs in the NVS, NERC Vocabulary Server
+string labels from unpublished vocabulary to concept URIs in the NVS (SKOS vocabulary) hosted by NERC Vocabulary Server.
 
 ### Links to an existing mappings
 None (yet)
@@ -32,7 +32,10 @@ None (yet)
 The [semantic analyser](https://semantics.bodc.ac.uk/) and manual work on spreadsheets.
 
 ### Type of mapping relations
-One to one owl:sameAs
+
+- `owl:sameAs`
+
+One-to-one mappings between literal and vocabulary concepts.
 
 ### Examples (samples) of different types of mapping implementations
 
