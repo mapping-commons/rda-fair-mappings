@@ -55,7 +55,7 @@ To formulate these recommendations, we conceptually divided the domain of mappin
 
 4.4 Mapping repositories may allow procedure of authorisation and authentication([discussion#70](https://github.com/mapping-commons/rda-fair-mappings/discussions/70)) 
 
-4.5 Mapping repositories should allow accessibility to mapping metadata even when the mapping is no longer available([discussion#71](https://github.com/mapping-commons/rda-fair-mappings/discussions/71)) 
+4.5 Mapping repositories should allow accessibility to mapping metadata even when the mapping is no longer available ([discussion#71](https://github.com/mapping-commons/rda-fair-mappings/discussions/71)) 
 
 4.6 Mapping repositories must provide search functionality  for mappings and collections of mappings ([discussion#72](https://github.com/mapping-commons/rda-fair-mappings/discussions/72)) 
 
