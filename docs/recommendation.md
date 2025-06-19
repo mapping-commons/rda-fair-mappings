@@ -20,7 +20,7 @@ T-Rec 1.3 Make sure the metadata describing the crosswalks and the individual ma
 
 #### Generic recommendation
 
-G-Rec 2. Provide metadata to describe the crosswalks and individual mappings ([discussion#76](https://github.com/mapping-commons/rda-fair-mappings/discussions/76)
+G-Rec 2. Provide metadata to describe the crosswalks and individual mappings ([discussion#76](https://github.com/mapping-commons/rda-fair-mappings/discussions/76))
 
 #### Technical recommendation
 
