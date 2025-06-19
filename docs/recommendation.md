@@ -45,7 +45,7 @@ T-Rec 3.2 Establish and publish a PID policy describing the approach for version
 
 #### Generic recommendation
 
-G-Rec 4 Publish your collection of mappings or crosswalks and the associated metadata into a specialized repository such as MSCR that provides access for humans and machines ([discussion#77](https://github.com/mapping-commons/rda-fair-mappings/discussions/77)
+G-Rec 4 Publish your collection of mappings or crosswalks and the associated metadata into a specialized repository such as MSCR that provides access for humans and machines ([discussion#77](https://github.com/mapping-commons/rda-fair-mappings/discussions/77))
 
 #### Technical recommendation
 
