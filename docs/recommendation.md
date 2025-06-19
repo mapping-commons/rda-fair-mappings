@@ -6,7 +6,7 @@ To formulate these recommendations, we conceptually divided the domain of mappin
 
 #### Generic recommendation
 
-G-Rec.1 Use a model to represent mappings with explicit links between the mapped entities and metadata for the crosswalk and the individual mappings that can be serialised in various formats ([discussion#75](https://github.com/mapping-commons/rda-fair-mappings/discussions/75)
+G-Rec.1 Use a model to represent mappings with explicit links between the mapped entities and metadata for the crosswalk and the individual mappings that can be serialised in various formats ([discussion#75](https://github.com/mapping-commons/rda-fair-mappings/discussions/75))
 
 #### Technical recommendation
 
