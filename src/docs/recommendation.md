@@ -1,5 +1,7 @@
 # FAIR Mapping Recommendations
 
+FAIR Mapping recommendations were created as part of the the [FAIR-IMPACT](https://fair-impact.eu/) project (2022-2025). One of the goals of the RDA FAIR Mappings working group is to solicit feedback for the recommendations to improve them.
+
 To formulate these recommendations, we conceptually divided the domain of mapping and crosswalks into four parts:  Format & Model, Mappings Metadata, PID, and Service & API. The recommendations were formulated based on brainstorming sessions focusing on each part using gathered community requirements and feedback collected during various events. The recommendations are broken down as “generic recommendations” and “technical recommendations”. The technical recommendations are technical implementation aspects that will ensure the machine execution of the generic recommendation that are human readable guidances.
 
 ## Rec 1. Model & Format 
