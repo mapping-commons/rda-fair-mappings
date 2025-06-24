@@ -76,7 +76,7 @@ nav:
           - Mapping LGBTQ+-related thesauri: case-study/case-study-lgbtq.md
           - Fresh Catalog: case-study/case-study-fresh.md
           - BFO-PROV-O: case-study/case-study-bfoprov.md
-          - WOD to ICES platforms: case-study/case-study-wod-nvs.md
+          - WOD to ICES platforms: case-study/case-study-wod-ices.md
   - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
