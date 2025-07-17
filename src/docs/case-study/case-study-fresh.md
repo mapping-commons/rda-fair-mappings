@@ -10,8 +10,6 @@ mapping_type: "Schema Mapping"
 status: "Draft"
 ---
 
-### The title of your use case
-
 FReSH catalog case study.
 
 ### Domain
