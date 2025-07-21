@@ -76,6 +76,7 @@ nav:
           - Mapping LGBTQ+-related thesauri: case-study/case-study-lgbtq.md
           - Fresh Catalog: case-study/case-study-fresh.md
           - BFO-PROV-O: case-study/case-study-bfoprov.md
+          - WOD to ICES platforms: case-study/case-study-wod-ices.md
           - DCAT-AP-DataCite: case-study/case-study-dcat-ap-datacite.md
           - DCAT-AP-Schema.org: case-study/case-study-dcat-ap-schemaorg.md
   - FAIR Mapping recommendations: recommendation.md
