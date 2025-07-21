@@ -57,7 +57,7 @@ The mapping is [delivered as an XSLT script](https://github.com/ec-jrc/datacite-
 ### Type of mapping relations
 
 - entity mapping (one-to-one & many-to-one)
-- structure / value mappings
+- structure / schema / value mappings
 
 ### Examples (samples) of different types of mapping implementations
 
