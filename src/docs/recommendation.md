@@ -35,7 +35,7 @@ T-Rec 2.1 Use the minimum SSSOM metadata schema defined by the FAIR IMPACT proje
    - Date of creation of this version ([publication_date](https://mapping-commons.github.io/sssom/publication_date/))
    - License ([license](https://mapping-commons.github.io/sssom/license/))
    - Source and target SAs‘ IDs ([subject_source](https://mapping-commons.github.io/sssom/subject_source/), [object_source](https://mapping-commons.github.io/sssom/object_source/))
-   - Mapping method ([?]())
+   - Mapping method  (in SSSOM the mapping method is described by the [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
    - Software used to create the mapping (if any) ([mapping_tool_id](https://mapping-commons.github.io/sssom/mapping_tool_id/), [mapping_tool](https://mapping-commons.github.io/sssom/mapping_tool/), [mapping_tool_version](https://mapping-commons.github.io/sssom/mapping_tool_version/))
    - Specific types of SA that are mapped ([?]())
    - Source term and target term label ([subject_label](https://mapping-commons.github.io/sssom/subject_label/), [object_label](https://mapping-commons.github.io/sssom/object_label/))
