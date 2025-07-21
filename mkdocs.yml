@@ -77,6 +77,9 @@ nav:
           - Fresh Catalog: case-study/case-study-fresh.md
           - BFO-PROV-O: case-study/case-study-bfoprov.md
           - WOD to ICES platforms: case-study/case-study-wod-ices.md
+          - DCAT-AP-DataCite: case-study/case-study-dcat-ap-datacite.md
+          - DCAT-AP-Schema.org: case-study/case-study-dcat-ap-schemaorg.md
+  - FAIR Mapping recommendations: recommendation.md
   - Decision log of the Working Group: decision-log.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
