@@ -79,6 +79,14 @@
 - **Tags:** Discovery
 
 
+#### [World Ocean Database (WOD) terms (unpublished) mappings to NVS Case Study](case-study/case-study-wod-ices.md)
+
+- **Author:** Alexandra Kokkinaki (@alko-k)
+- **Last updated:** 2025-06-18
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
+
+
 #### [Uberon Case Study](case-study/case-study-uberon.md)
 
 - **Author:** Damien Goutte-Gattat (@gouttegd)
@@ -131,6 +139,14 @@
 ### Schema Mapping
 
 
+#### [DCAT-AP to DataCite Case Study](case-study/case-study-dcat-ap-datacite.md)
+
+- **Author:** Philip Strömert (@StroemPhi)
+- **Last updated:** 2025-07-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability, Integration, Analysis, Discovery, Transformation
+
+
 #### [NII Case Study](case-study/case-study-nii.md)
 
 - **Author:** Toshiyuki Hiraki (@hirakinii)
@@ -177,6 +193,14 @@
 - **Last updated:** 2025-05-19
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Discovery
+
+
+#### [DCAT-AP to Schema.org Case Study](case-study/case-study-dcat-ap-schemaorg.md)
+
+- **Author:** Philip Strömert (@StroemPhi)
+- **Last updated:** 2025-07-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability, Integration, Discovery, Transformation
 
 
 
