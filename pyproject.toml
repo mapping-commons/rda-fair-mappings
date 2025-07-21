@@ -1,0 +1,13 @@
+[project]
+name = "rda-fair-mappings"
+version = "0.1.0"
+description = "Utilities for processing example mappings in the RDA FAIR Mappings Working Group."
+authors = [{ name = "Nicolas Matentzoglu", email = "nicolas.matentzoglu@gmail.com" }]
+dependencies = [
+    "requests",
+    "linkml-map",
+]
+
+[build-system]
+requires = ["uv"]
+build-backend = "uv.build"
