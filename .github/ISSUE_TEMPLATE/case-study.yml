@@ -1,5 +1,5 @@
-name: FAIR Mappings Use Case submission
-description: Use this template to submit a FAIR Mappings Use Case for the RDA FAIR Mappings Working Group. Please notice that we are looking for already implemented mapping use cases. 
+name: FAIR Mappings Case Study submission
+description: Use this template to submit a FAIR Mappings Case Study for the RDA FAIR Mappings Working Group. Please notice that we are looking for already implemented mapping case studies. 
 title: "Case study: {{ case-title }}"
 labels: [ case ]
 assignees: jkesanie
@@ -11,8 +11,8 @@ body:
   - type: input
     id: case-title
     attributes:
-      label: The title of your use case
-      description: A short but descriptive title that describes your use case.
+      label: The title of your case study
+      description: A short but descriptive title that describes your case study.
     validations:
       required: true
   - type: input
