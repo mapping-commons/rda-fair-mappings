@@ -2,13 +2,14 @@
 
 We welcome **all** contributions — from typo fixes to new case studies.  
 This short guide explains the preferred workflow for each contribution type.  
-If something is unclear, open a [GitHub Discussion](../../discussions) and we’ll help.
+If something is unclear, open a [GitHub Discussion](https://github.com/mapping-commons/rda-fair-mappings/discussions) for general question answering (QA) or
+an [issue](https://github.com/mapping-commons/rda-fair-mappings/issues) for a specific report or request and we will help.
 
 ---
 
 ## 1  Contributing a *new* case study
 
-> **Goal**: add a real-world FAIR Mapping example (data, schema, ontology, workflow).
+> **Goal**: add a _real-world, already implemented_ FAIR Mapping example (data, schema, ontology, workflow).
 
 Please use the [issue tracker](https://github.com/mapping-commons/rda-fair-mappings/issues) and select the "FAIR Mappings Case Study submission" template.
 Fill in the details, then submit the issue.
@@ -47,12 +48,12 @@ Note that this may sometimes take a while.
 
 1. Any member may propose a motion in a PR or Discussion.
 2. Label the thread **`decision-proposal`** and ping `@mapping-commons/rda-fair-mappings`.
-3. After **4 business days** of discussion, call for a vote. For example, you can use a emoticons like this:
+3. After **4 business days** of discussion, call for a vote. Use the following emoticons to cast your vote:
    - 👍  = **Yes** / accept
    - 👎 = **No** / reject
    - 😕 = Need more info
 4. Simple majority of 👍 vs 👎 decides. Tie → escalate to chair meeting.
-5. Record the outcome in the thread and, if accepted, merge the PR.
+5. Record the outcome in the thread using a screenshort of the vote (otherwise it can change after the vote is called!) and, if accepted, merge the PR.
 
 ---
 
