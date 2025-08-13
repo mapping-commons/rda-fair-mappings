@@ -1,3 +1,4 @@
 /site
 .env
 .DS_Store
+src/docs/use-cases.md
