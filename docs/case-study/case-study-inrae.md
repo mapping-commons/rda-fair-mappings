@@ -13,7 +13,7 @@ Mapping the INRAE Thesaurus with internal and external KOS.
 
 ### Domain
 
-Agriculture, food and environmental research.
+Agriculture, Food and Environmental research.
 
 ### Purpose of the mapping
 
