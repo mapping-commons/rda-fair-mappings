@@ -1,0 +1,44 @@
+name: Build and deploy FAIR Mappings Website
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - src/docs/**
+      - mkdocs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Deploy docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Install Python deps with uv
+        run:
+          uv pip install -r requirements.txt
+
+      - name: Build & deploy docs
+        run: make deploy-docs
+      
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch-suffix: short-commit-hash
+          labels: automated
+          body: "Automated update of the documentation pages."
+          title: "Update documentation pages."
+          base: ${{ github.head_ref }}
+          branch: "update_docs_gha"
+          token: ${{ secrets.GH_TOKEN }}
+          reviewers: "matentzn"
+
