@@ -16,3 +16,7 @@ examples/linkml-map/personinfo/agent.instance.yml: \
 		--source-type Person \
 		examples/linkml-map/personinfo/personinfo.instance.yaml \
 		-o $@
+
+.PHONY: examples
+
+examples: examples/linkml-map/personinfo/agent.instance.yml
