@@ -1,0 +1,13 @@
+class_derivations:
+  Individual:
+    populated_from: Person
+    slot_derivations:
+      name:
+        expr: "{given_name} + ' ' + {family_name}"
+        description: Concatenating given and family names
+          note this is a bad assumption for names in general,
+          this is just for demonstration
+      height_in_meters:
+        populated_from: height_in_cm
+        unit_conversion:
+          target_unit: m
