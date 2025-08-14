@@ -14,6 +14,7 @@ The FAIR Mappings Working Group will, where possible, build on existing technolo
 - [Cross-Domain Interoperability Framework](https://worldfair-project.eu/cross-domain-interoperability-framework/): "A set of guidelines and practice for using domain-agnostic standards to support the interoperability and reusability of FAIR data." Primarily relevant to mappings in advocating for the adoption of a single standard for various aspects of metadata that require integration, aiming to reduce the number of required mappings.
 - [SEMAF: A Proposal for a Flexible Semantic Mapping Framework](https://codata.org/report-semaf-a-proposal-for-a-flexible-semantic-mapping-framework): "A study for a flexible framework to create, document and publish semantic mappings and cross-walks linking different semantic artefacts within a particular scientific community and across scientific domains." SEMAF sets out a model for describing mappings and lays out some requirements for a proposed framework for managing mappings. SEMAF advocates for these mappings and cross-walks to be FAIR. 
   - [SEMAF Report](https://doi.org/10.5281/zenodo.4651420)
+- [The X3ML mapping definition language](https://github.com/isl/x3ml). An XML based language which describes schema mappings in such a way that they can be collaboratively created and discussed by experts.
 
 ## Mapping Tools
 
@@ -28,3 +29,7 @@ The FAIR Mappings Working Group will, where possible, build on existing technolo
 - [AgreementMakerLight (AML)](https://github.com/AgreementMakerLight/AML-Project): An automated and efficient ontology matching system.
 - [LogMap](https://github.com/ernestojimenezruiz/logmap-matcher): An Ontology Alignment and Alignment Repair System
 - [OntoAligner](https://github.com/sciknoworg/OntoAligner): A Comprehensive Modular and Robust Python Toolkit for Ontology Alignment
+
+### Concrete mapping frameworks
+
+- [RareLink](https://rarelink.readthedocs.io/en/latest/4_user_guide/4_2_import_mapper.html). Mapping Framework for Rare Disease leveraging LinkML-map and SSSOM.
