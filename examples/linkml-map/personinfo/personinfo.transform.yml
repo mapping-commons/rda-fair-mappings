@@ -3,22 +3,22 @@ title: PersonInfo to Agent example transformation
 prefixes:
   sssom: https://w3id.org/sssom/
   semapv: https://w3id.org/semapv/vocab/
-description: |
-  This mapping set demonstrates how to transform a person information schema
-  into a different format using LinkML. It includes mappings for person attributes
-  such as family name, given name, age, and height, along with derived attributes
-  like full name and height in meters.
-creator_id:
-  - https://orcid.org/0000-0002-7356-1779
-author_id:
-  - https://orcid.org/0000-0002-7356-1779
-license: https://creativecommons.org/licenses/by/4.0/
-publication_date: 2025-08-14
+#description: |
+#  This mapping set demonstrates how to transform a person information schema
+#  into a different format using LinkML. It includes mappings for person attributes
+#  such as family name, given name, age, and height, along with derived attributes
+#  like full name and height in meters.
+#creator_id:
+#  - https://orcid.org/0000-0002-7356-1779
+#author_id:
+#  - https://orcid.org/0000-0002-7356-1779
+#license: https://creativecommons.org/licenses/by/4.0/
+#publication_date: 2025-08-14
 source_schema: https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.schema.yml
 target_schema: https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.transform.yml
 #Source and target SAs’ NAME (NA in SSSOM)
 #Version of the SAs (subject_source_version, object_source_version)
-mapping_method: semapv:ManualMappingCuration # bind this to mapping_justification in sssom?
+#mapping_method: semapv:ManualMappingCuration # bind this to mapping_justification in sssom?
 #mapping_tool_version: 0.3.8
 #Specific types of SA that are mapped (?)
 # Context (NA in SSSOM)
