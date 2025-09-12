@@ -48,7 +48,7 @@ T-Rec 2.1 Use the minimum SSSOM metadata schema defined by the FAIR IMPACT proje
    - Context (No corresponding property in SSSOM)
    - Justification ([mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
    - Clarification of the rationale of this mapping ([mapping_set_description](https://mapping-commons.github.io/sssom/mapping_set_description/) for the the explanation of why a mapping set was made for what purpose, [curation_rule](https://mapping-commons.github.io/sssom/curation_rule/)/[curation_rule_text](https://mapping-commons.github.io/sssom/curation_rule_text/) for the fine-grained rationale of a specific manually curated mapping, [mapping_justification](https://mapping-commons.github.io/sssom/mapping-justifications/) for general rationale of a specific mapping)
-   - Source and target SAs’ NAME (NA in SSSOM)
+   - Source and target SAs’ NAME (Not available in SSSOM)
    - Version of the SAs ([subject_source_version](https://mapping-commons.github.io/sssom/subject_source_version/), [object_source_version](https://mapping-commons.github.io/sssom/object_source_version/))
    - Mapping method (in SSSOM the mapping method is described by the [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
 
