@@ -26,9 +26,33 @@ G-Rec 2. Provide metadata to describe the crosswalks and individual mappings ([d
 
 #### Technical recommendation
 
-T-Rec 2.1 Use the minimum SSSOM metadata schema defined by the FAIR IMPACT project to document mappings and crosswalks ([discussion#63](https://github.com/mapping-commons/rda-fair-mappings/discussions/63))
+T-Rec 2.1 Use the minimum SSSOM metadata schema defined by the FAIR IMPACT project to document mappings and crosswalks ([discussion#63](https://github.com/mapping-commons/rda-fair-mappings/discussions/63)). We recommend to adopt the following SSSOM metadata elements as mandatory metadata to describe the mappings and crosswalks:
 
-T-Rec 2.2 If the mappings are separated from the associated metadata, Include an additional metadata field containing the PID pointing to the mapping or crosswalk  ([discussion#64](https://github.com/mapping-commons/rda-fair-mappings/discussions/64))
+- Metadata elements for **Findability** (SSSOM recommended properties in parentheses):
+   - Author ([author_id](https://mapping-commons.github.io/sssom/author_id/), [author_label](https://mapping-commons.github.io/sssom/author_label/))
+   - Creator ([creator_id](https://mapping-commons.github.io/sssom/creator_id/), [creator_label](https://mapping-commons.github.io/sssom/creator_label/))
+   - Reviewer ([reviewer_id](https://mapping-commons.github.io/sssom/reviewer_id/), [reviewer_label](https://mapping-commons.github.io/sssom/reviewer_label/))
+   - Date of creation of this version ([publication_date](https://mapping-commons.github.io/sssom/publication_date/), [mapping_date](https://mapping-commons.github.io/sssom/mapping_date/))
+   - License ([license](https://mapping-commons.github.io/sssom/license/))
+   - Source and target SAs‘ IDs ([subject_source](https://mapping-commons.github.io/sssom/subject_source/), [object_source](https://mapping-commons.github.io/sssom/object_source/))
+   - Mapping method  (in SSSOM the mapping method is described by the [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
+   - Software used to create the mapping (if any) ([mapping_tool_id](https://mapping-commons.github.io/sssom/mapping_tool_id/), [mapping_tool](https://mapping-commons.github.io/sssom/mapping_tool/), [mapping_tool_version](https://mapping-commons.github.io/sssom/mapping_tool_version/))
+   - Specific types of SA that are mapped (No corresponding SSSOM property yet)
+   - Source term and target term label ([subject_label](https://mapping-commons.github.io/sssom/subject_label/), [object_label](https://mapping-commons.github.io/sssom/object_label/))
+   - Source term and target term ID ([subject_id](https://mapping-commons.github.io/sssom/subject_id/), [object_id](https://mapping-commons.github.io/sssom/subject_id/))
+   - Mapping predicate ([predicate_id](https://mapping-commons.github.io/sssom/predicate_id/), [predicate_label](https://mapping-commons.github.io/sssom/predicate_label/))
+- Metadata elements for **Reusability**:
+   - Accuracy score ([confidence](https://mapping-commons.github.io/sssom/confidence/), [similarity_score](https://mapping-commons.github.io/sssom/similarity_score/))
+   - Version ([mapping_set_version](https://mapping-commons.github.io/sssom/mapping_set_version/))
+   - License ([license](https://mapping-commons.github.io/sssom/license/))
+   - Context (No corresponding property in SSSOM)
+   - Justification ([mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
+   - Clarification of the rationale of this mapping ([mapping_set_description](https://mapping-commons.github.io/sssom/mapping_set_description/) for the the explanation of why a mapping set was made for what purpose, [curation_rule](https://mapping-commons.github.io/sssom/curation_rule/)/[curation_rule_text](https://mapping-commons.github.io/sssom/curation_rule_text/) for the fine-grained rationale of a specific manually curated mapping, [mapping_justification](https://mapping-commons.github.io/sssom/mapping-justifications/) for general rationale of a specific mapping)
+   - Source and target SAs’ NAME (Not available in SSSOM)
+   - Version of the SAs ([subject_source_version](https://mapping-commons.github.io/sssom/subject_source_version/), [object_source_version](https://mapping-commons.github.io/sssom/object_source_version/))
+   - Mapping method (in SSSOM the mapping method is described by the [mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
+
+T-Rec 2.2 If the mappings are separated from the associated metadata, Include an additional metadata field containing the PID pointing to the mapping or crosswalk ([discussion#64](https://github.com/mapping-commons/rda-fair-mappings/discussions/64))
 
 ## Rec 3. PID
 
