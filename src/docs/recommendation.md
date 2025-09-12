@@ -45,7 +45,7 @@ T-Rec 2.1 Use the minimum SSSOM metadata schema defined by the FAIR IMPACT proje
    - Accuracy score ([confidence](https://mapping-commons.github.io/sssom/confidence/), [similarity_score](https://mapping-commons.github.io/sssom/similarity_score/))
    - Version ([mapping_set_version](https://mapping-commons.github.io/sssom/mapping_set_version/))
    - License ([license](https://mapping-commons.github.io/sssom/license/))
-   - Context (NA in SSSOM)
+   - Context (No corresponding property in SSSOM)
    - Justification ([mapping_justification](https://mapping-commons.github.io/sssom/mapping_justification/))
    - Clarification of the rationale of this mapping ([mapping_set_description](https://mapping-commons.github.io/sssom/mapping_set_description/))
    - Source and target SAs’ NAME (NA in SSSOM)
