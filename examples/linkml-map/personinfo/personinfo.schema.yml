@@ -1,0 +1,37 @@
+name: test-schema
+id: http://example.org/test-schema
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  test_schema: http://example.org/test-schema/
+default_prefix: test_schema
+default_range: string
+slots:
+  family_name:
+    range: string
+  given_name:
+    range: string
+  age_in_years:
+    range: integer
+  height_in_cm:
+    range: float
+    unit:
+      ucum_code: cm
+  height_in_meters:
+    range: float
+    unit:
+      ucum_code: m
+  name:
+    range: string
+classes:
+  Person:
+    slots:
+    - family_name
+    - given_name
+    - age_in_years
+    - height_in_cm
+  Individual:
+    slots:
+    - name
+    - height_in_meters
