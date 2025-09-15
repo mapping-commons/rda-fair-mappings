@@ -95,6 +95,14 @@
 - **Tags:** Semantic interoperability
 
 
+#### [ARIADNE European Archaeology Infrastructure Project Case Study](case-study/case-study-ariadne.md)
+
+- **Author:** Doug Tudhope (@dstudhope-24)
+- **Last updated:** 2025-09-12
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Discovery
+
+
 #### [LGBTQ+ Case Study](case-study/case-study-lgbtq.md)
 
 - **Author:** Clair Kronk (@Superraptor)
