@@ -14,9 +14,8 @@ Vocabulary mappings in ARIADNE European Archaeology Infrastructure project.
 
 ### Summary
 
-The Getty Art & Architecture Thesaurus i
-https://www.getty.edu/research/tools/vocabularies/aat/about.html
-is employed as a central spine vocabulary for partners to map their native vocabularies and term lists - a hub structure enables a multilingual search capability via vocabulary mapping. Mappings are expressed via SKOS mapping relationships and output as structured JSON for use in the overall data aggregation process and in the ARIADNE portal. The approach followed offers some automatic support for final intellectual judgment. Discussed in https://doi.org/10.1177/01655515241283610 
+The [Getty Art & Architecture Thesaurus](https://www.getty.edu/research/tools/vocabularies/aat/about.html)
+is employed as a central spine vocabulary for partners to map their native vocabularies and term lists - a hub structure enables a multilingual search capability via vocabulary mapping. Mappings are expressed via SKOS mapping relationships and output as structured JSON for use in the overall data aggregation process and in the ARIADNE portal. The approach followed offers some automatic support for final intellectual judgment. Discussed in [10.1177/01655515241283610](https://doi.org/10.1177/01655515241283610).
 
 ### Domain
 
