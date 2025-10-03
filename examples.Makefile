@@ -21,13 +21,13 @@ examples/linkml-map/personinfo/agent.instance.yml: \
 examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml: \
 	examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml \
 	examples/linkml-map/datacite-dcat/datacite.schema.yml \
-	examples/linkml-map/datacite-dcat/creator.instance.yml \
+	examples/linkml-map/datacite-dcat/datacite-resource.instance.yml \
 	dependencies
 	.venv/bin/linkml-map map-data \
 		-T examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml \
 		-s examples/linkml-map/datacite-dcat/datacite.schema.yml \
-		--source-type Creator \
-		examples/linkml-map/datacite-dcat/creator.instance.yml \
+		--source-type Resource \
+		examples/linkml-map/datacite-dcat/datacite-resource.instance.yml \
 		-o $@
 
 ## WARNING USING A BRANCH UNSTABLE
