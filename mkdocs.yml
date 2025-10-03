@@ -79,8 +79,10 @@ nav:
           - WOD to ICES platforms: case-study/case-study-wod-ices.md
           - DCAT-AP-DataCite: case-study/case-study-dcat-ap-datacite.md
           - DCAT-AP-Schema.org: case-study/case-study-dcat-ap-schemaorg.md
+          - ARIADNE mappings: case-study/case-study-ariadne.md
   - FAIR Mapping recommendations: recommendation.md
   - Decision log of the Working Group: decision-log.md
+  - Related efforts: related-efforts.md
   - Resources about FAIR mappings: resources.md
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
