@@ -1,25 +1,527 @@
 id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-to-dcat-ap.transform.yml
-title: DataCite to DCAT-AP Affiliations transformation
+title: DataCite to DCAT-AP transformation mapping
 description: |
-  This mapping demonstrates the Affiliations template transformation from
-  DataCite metadata schema to DCAT-AP (specifically foaf:Organization).
-  Based on the CiteDCAT-AP XSLT at:
+  This mapping demonstrates transformation from DataCite metadata schema (kernel-4)
+  to DCAT-AP (Data Catalog Application Profile) following the CiteDCAT-AP specification.
+  Based on the XSLT implementation at:
   https://github.com/ec-jrc/datacite-to-dcat-ap
+
+  File: datacite-dcat.xsl (3455 lines)
+
+  This covers all main templates from the XSLT:
+  - Affiliations (line 3021): affiliation → foaf:Organization with dct:identifier
+  - Agents (line 1525): creators/contributors → foaf:Agent/Person/Organization/vcard:Individual
+  - Funders (line 3097): funder → foaf:Organization
+  - FundingAwards (line 3177): funding reference → foaf:Project with citedcat:isAwardedBy
+  - Titles (line 485): title → dct:title
+  - Descriptions (line 538): description → dct:description
+  - Subjects (line 621): subject → dcat:theme/dcat:keyword
+  - Publisher (line 1515): publisher → dct:publisher (foaf:Agent)
+  - PublicationYear (line 1364): publicationYear → dct:issued
+  - Identifiers (line 1879): identifier/alternateIdentifier → dct:identifier/adms:identifier
+  - RelatedIdentifiers (line 1964): relatedIdentifier → various dct properties based on relationType
+  - ResourceType (line 2668): resourceType → dct:type
+  - Rights (line 783): rights → dct:rights/dct:license
+  - Version (line 777): version → owl:versionInfo/dcat:version
+  - Language (line 2653): language → dct:language
+  - Formats (line 2634): format → dct:format
+  - Size (line 1342): size → dcat:byteSize
+  - Dates (line 1388): dates → dct:issued/modified/created/available etc based on dateType
+  - Geolocations (line 987): geoLocation → dct:spatial (dcterms:Location)
+  - DateDataType (line 1370): determines XSD datatype for dates
+  - IdentifierURI (line 2906): resolves identifiers to URIs based on scheme
+  - LanguageAlpha2/Alpha3 (lines 3263, 3358): language code conversion
 prefixes:
   foaf: http://xmlns.com/foaf/0.1/
   dct: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  org: http://www.w3.org/ns/org#
   xsd: http://www.w3.org/2001/XMLSchema#
+  owl: http://www.w3.org/2002/07/owl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  adms: http://www.w3.org/ns/adms#
+  citedcat: https://w3id.org/citedcat-ap/
+  locn: http://www.w3.org/ns/locn#
+  gsp: http://www.opengis.net/ont/geosparql#
 class_derivations:
   Organization:
     populated_from: Affiliation
-    description: Maps DataCite affiliation to foaf:Organization with dct:identifier
+    description: |
+      Template: Affiliations (line 3021-3093)
+      Maps DataCite affiliation to foaf:Organization with dct:identifier.
+
+      Input: affiliation element with @affiliationIdentifier, @affiliationIdentifierScheme, @schemeURI
+      Output: foaf:Organization with rdf:about (if URI-like identifier) containing:
+        - dct:identifier with datatype (xsd:anyURI or xsd:string)
+        - foaf:name from element text content (with optional @xml:lang)
     slot_derivations:
       affiliation_name:
         populated_from: affiliation_name
-        description: The name of the affiliated organization (element text content)
+        description: Organization name → foaf:name (lines 3059-3063)
       affiliation_identifier:
         populated_from: affiliation_identifier
-        description: Identifier for the affiliation (becomes dct:identifier)
+        description: Identifier → dct:identifier and rdf:about URI (lines 3022, 3025-3056)
       affiliation_identifier_scheme:
         populated_from: affiliation_identifier_scheme
-        description: Scheme for the affiliation identifier
+        description: Identifier scheme for URI resolution (line 3023)
+
+  FunderOrganization:
+    populated_from: FundingReference
+    description: |
+      Template: Funders (line 3097-3170)
+      Maps DataCite funder to foaf:Organization with dct:identifier.
+
+      Input: funderIdentifier, @funderIdentifierType, @schemeURI, funderName
+      Output: foaf:Organization with rdf:about (if URI-like) containing:
+        - dct:identifier with datatype
+        - foaf:name from funderName (with optional @xml:lang)
+    slot_derivations:
+      funder_name:
+        populated_from: funder_name
+        description: Funder name → foaf:name (lines 3136-3140)
+      funder_identifier:
+        populated_from: funder_identifier
+        description: Funder identifier → dct:identifier and rdf:about (lines 3098, 3104-3133)
+      funder_identifier_type:
+        populated_from: funder_identifier_type
+        description: Identifier type for URI resolution (line 3102)
+
+  FundingProject:
+    populated_from: FundingReference
+    description: |
+      Template: FundingAwards (line 3177-3256)
+      Maps DataCite funding reference to foaf:Project with citedcat:isAwardedBy.
+
+      Input: awardNumber, @awardURI, awardTitle, plus funder info
+      Output: foaf:Project with rdf:about (awardURI if present) containing:
+        - dct:identifier (awardNumber) with datatype
+        - dct:title (awardTitle with optional @xml:lang)
+        - citedcat:isAwardedBy → foaf:Organization (funder)
+    slot_derivations:
+      award_number:
+        populated_from: award_number
+        description: Award number → dct:identifier (line 3225)
+      award_uri:
+        populated_from: award_uri
+        description: Award URI → rdf:about (lines 3205-3207, 3246-3247)
+      award_title:
+        populated_from: award_title
+        description: Award title → dct:title (lines 3227-3232)
+      funder_name:
+        populated_from: funder_name
+        description: Links to funder via citedcat:isAwardedBy (lines 3238-3241)
+
+  Agent:
+    populated_from: Creator
+    description: |
+      Template: Agents (line 1525-1878)
+      Maps DataCite creator/contributor to foaf:Agent, foaf:Person, foaf:Organization,
+      foaf:Group, vcard:Individual, or vcard:Organization based on nameType and contributorType.
+
+      Input: creatorName/contributorName, @nameType, @contributorType, givenName, familyName,
+             nameIdentifier, @nameIdentifierScheme, @schemeURI, affiliation
+      Output: Appropriate agent type with:
+        - foaf:name / vcard:fn (full name)
+        - foaf:givenName / vcard:given-name
+        - foaf:familyName / vcard:family-name
+        - dct:identifier (nameIdentifier with datatype)
+        - org:memberOf → foaf:Organization (affiliation) or vcard:organization-name
+
+      Type mapping (lines 1596-1632):
+        contributorType=contactperson → vcard:Individual (if personal) or vcard:Organization
+        contributorType=relatedperson → foaf:Person
+        contributorType=researchgroup → foaf:Group
+        nameType=personal → foaf:Person
+        nameType=organizational → foaf:Organization
+        default → foaf:Agent
+    slot_derivations:
+      creator_name:
+        populated_from: creator_name
+        description: Full name → foaf:name or vcard:fn (lines 1537-1545, 1647, 1660)
+      name_type:
+        populated_from: name_type
+        description: Determines RDF type (Personal/Organizational) (lines 1527-1535)
+      given_name:
+        populated_from: given_name
+        description: Given name → foaf:givenName or vcard:given-name (lines 1558-1567, 1648, 1663)
+      family_name:
+        populated_from: family_name
+        description: Family name → foaf:familyName or vcard:family-name (lines 1547-1556, 1649, 1666)
+      name_identifier:
+        populated_from: name_identifier
+        description: Identifier → dct:identifier with datatype (lines 1570, 1580-1594)
+      name_identifier_scheme:
+        populated_from: name_identifier_scheme
+        description: Identifier scheme for URI resolution (line 1571)
+      affiliations:
+        populated_from: affiliations
+        description: Affiliation → org:memberOf or vcard:organization-name (lines 1651-1672)
+
+  Contributor:
+    populated_from: Contributor
+    description: |
+      Template: Agents (line 1525-1878) - same template handles both creators and contributors
+      Same mapping as Agent/Creator but with contributorType determining additional behavior.
+    slot_derivations:
+      contributor_name:
+        populated_from: contributor_name
+        description: Full name → foaf:name or vcard:fn
+      contributor_type:
+        populated_from: contributor_type
+        description: Determines RDF type and properties (line 1569, 1598-1618)
+      name_type:
+        populated_from: name_type
+        description: Personal or Organizational
+      given_name:
+        populated_from: given_name
+        description: Given name → foaf:givenName or vcard:given-name
+      family_name:
+        populated_from: family_name
+        description: Family name → foaf:familyName or vcard:family-name
+      name_identifier:
+        populated_from: name_identifier
+        description: Identifier → dct:identifier
+      name_identifier_scheme:
+        populated_from: name_identifier_scheme
+        description: Identifier scheme
+      affiliations:
+        populated_from: affiliations
+        description: Affiliation → org:memberOf or vcard:organization-name
+
+  Title:
+    populated_from: Title
+    description: |
+      Template: Titles (line 485-537)
+      Maps DataCite title to dct:title.
+
+      Input: title text with optional @titleType, @xml:lang
+      Output: dct:title (with xml:lang if present)
+      Special handling for titleType values to determine if main title or alternative
+    slot_derivations:
+      title_text:
+        populated_from: title_text
+        description: Title text → dct:title (lines 493-519)
+      title_type:
+        populated_from: title_type
+        description: Type of title affects which dct property is used (line 488)
+      lang:
+        populated_from: lang
+        description: Language code for xml:lang attribute (line 494)
+
+  Description:
+    populated_from: Description
+    description: |
+      Template: Descriptions (line 538-620)
+      Maps DataCite description to dct:description.
+
+      Input: description text with @descriptionType, @xml:lang
+      Output: dct:description (with xml:lang if present)
+      descriptionType values: Abstract, Methods, SeriesInformation, TableOfContents, TechnicalInfo, Other
+    slot_derivations:
+      description_text:
+        populated_from: description_text
+        description: Description text → dct:description (lines 543-619)
+      description_type:
+        populated_from: description_type
+        description: Type of description (line 540)
+      lang:
+        populated_from: lang
+        description: Language code for xml:lang (line 544)
+
+  Subject:
+    populated_from: Subject
+    description: |
+      Template: Subjects (line 621-715)
+      Maps DataCite subject to dcat:theme or dcat:keyword.
+
+      Input: subject text with @subjectScheme, @schemeURI, @valueURI, @xml:lang
+      Output:
+        - If schemeURI or valueURI present → dcat:theme with skos:Concept
+        - Otherwise → dcat:keyword
+    slot_derivations:
+      subject_text:
+        populated_from: subject_text
+        description: Subject text → skos:prefLabel or dcat:keyword (lines 628-714)
+      subject_scheme:
+        populated_from: subject_scheme
+        description: Classification scheme name (line 623)
+      scheme_uri:
+        populated_from: scheme_uri
+        description: URI of the scheme → skos:inScheme (line 624)
+      value_uri:
+        populated_from: value_uri
+        description: URI of the subject term → rdf:about (line 625)
+      lang:
+        populated_from: lang
+        description: Language code (line 629)
+
+  ResourceTypeMapping:
+    populated_from: Resource
+    description: |
+      Template: ResourceType (line 2668-2905)
+      Maps DataCite resourceType/@resourceTypeGeneral to dct:type.
+
+      Extensive mapping of resourceTypeGeneral values to various ontology terms:
+      - Audiovisual → dctype:MovingImage, dctype:Sound
+      - Collection → dctype:Collection
+      - Dataset → dcat:Dataset, dctype:Dataset
+      - Event → dctype:Event
+      - Image → dctype:Image, dctype:StillImage
+      - InteractiveResource → dctype:InteractiveResource
+      - Model → various types based on context
+      - PhysicalObject → dctype:PhysicalObject
+      - Service → dctype:Service
+      - Software → dctype:Software
+      - Sound → dctype:Sound
+      - Text → dctype:Text, bibo types
+      - Workflow → various types
+      - Other → dctype:Dataset (default)
+    slot_derivations:
+      resource_type:
+        populated_from: resource_type
+        description: Resource type text → rdfs:label (line 2670)
+
+  DateMapping:
+    populated_from: Date
+    description: |
+      Template: Dates (line 1388-1514)
+      Maps DataCite dates to various dct properties based on @dateType.
+
+      dateType mapping:
+      - Accepted → dcterms:dateAccepted
+      - Available → dcterms:available
+      - Copyrighted → dcterms:dateCopyrighted
+      - Collected → prov:generatedAtTime
+      - Created → dcterms:created
+      - Issued → dcterms:issued
+      - Submitted → dcterms:dateSubmitted
+      - Updated → dcterms:modified
+      - Valid → dcterms:valid
+      - Withdrawn → prov:invalidatedAtTime
+
+      Includes DateDataType template (line 1370-1387) to determine xsd datatype:
+      - YYYY → xsd:gYear
+      - YYYY-MM → xsd:gYearMonth
+      - YYYY-MM-DD → xsd:date
+      - Full ISO 8601 → xsd:dateTime
+    slot_derivations:
+      date_value:
+        populated_from: date_value
+        description: Date value with appropriate xsd datatype (lines 1394-1513)
+      date_type:
+        populated_from: date_type
+        description: Type determines which dct property (line 1390)
+      date_information:
+        populated_from: date_information
+        description: Additional date context (line 1391)
+
+  IdentifierMapping:
+    populated_from: AlternateIdentifier
+    description: |
+      Template: Identifiers (line 1879-1963)
+      Maps primary identifier and alternateIdentifiers to dct:identifier and adms:identifier.
+
+      Uses IdentifierURI template (line 2906-3020) to resolve identifiers to URIs based on type:
+      - DOI → https://doi.org/
+      - ARK → https://n2t.net/
+      - Handle → http://hdl.handle.net/
+      - PURL → direct URL
+      - URN → direct URN
+      - URL → direct URL
+      - And many more schemes (PMID, arXiv, bibcode, EAN13, EISSN, ISSN, ISTC, LISSN, LSID, etc.)
+    slot_derivations:
+      identifier_value:
+        populated_from: identifier_value
+        description: Identifier value → dct:identifier / adms:identifier (lines 1884-1962)
+      identifier_type:
+        populated_from: identifier_type
+        description: Identifier type for URI resolution (line 1881)
+
+  RelatedIdentifierMapping:
+    populated_from: RelatedIdentifier
+    description: |
+      Template: RelatedIdentifiers (line 1964-2416)
+      Maps relatedIdentifier to various dct properties based on @relationType.
+
+      Extensive relationType mapping (template RelationTypes line 2086-2416):
+      - IsCitedBy → dcterms:isReferencedBy
+      - Cites → dcterms:references
+      - IsSupplementTo → dcterms:isPartOf
+      - IsSupplementedBy → dcterms:hasPart
+      - IsContinuedBy → dcterms:isReplacedBy
+      - Continues → dcterms:replaces
+      - HasMetadata → foaf:page / dcat:landingPage
+      - IsMetadataFor → foaf:primaryTopic
+      - IsNewVersionOf → dcterms:isVersionOf
+      - IsPreviousVersionOf → dcterms:hasVersion
+      - IsPartOf → dcterms:isPartOf
+      - HasPart → dcterms:hasPart
+      - IsReferencedBy → dcterms:isReferencedBy
+      - References → dcterms:references
+      - IsDocumentedBy → wdrs:describedby
+      - Documents → foaf:page
+      - IsCompiledBy → dcterms:provenance
+      - Compiles → dcterms:provenance
+      - IsVariantFormOf → dcterms:hasFormat
+      - IsOriginalFormOf → dcterms:hasFormat
+      - IsIdenticalTo → owl:sameAs
+      - IsReviewedBy → prov:wasInformedBy
+      - Reviews → prov:wasInformedBy
+      - IsDerivedFrom → dcterms:source / prov:wasDerivedFrom
+      - IsSourceOf → prov:hadDerivation
+      - Describes → foaf:primaryTopic
+      - IsDescribedBy → foaf:page
+      - HasVersion → dcterms:hasVersion
+      - IsVersionOf → dcterms:isVersionOf
+      - Requires → dcterms:requires
+      - IsRequiredBy → dcterms:isRequiredBy
+      - Obsoletes → dcterms:replaces
+      - IsObsoletedBy → dcterms:isReplacedBy
+    slot_derivations:
+      related_identifier_value:
+        populated_from: related_identifier_value
+        description: Related identifier with URI resolution (lines 1968-2415)
+      related_identifier_type:
+        populated_from: related_identifier_type
+        description: Identifier type (DOI, URL, etc) (line 1966)
+      relation_type:
+        populated_from: relation_type
+        description: Relation type determines dct property (line 1967, 2088)
+      resource_type_general:
+        populated_from: resource_type_general
+        description: Type of related resource (line 1970)
+
+  RightsMapping:
+    populated_from: Rights
+    description: |
+      Template: Rights (line 783-973)
+      Maps DataCite rights to dct:rights, dct:license, or dct:accessRights.
+
+      Input: rights text with @rightsURI, @rightsIdentifier, @rightsIdentifierScheme, @xml:lang
+      Output: Appropriate rights property based on URI patterns:
+        - Known license URIs → dct:license
+        - Access rights URIs → dct:accessRights
+        - Other → dct:rights
+      Special handling for Creative Commons, Open Data Commons, RightsStatements.org URIs
+    slot_derivations:
+      rights_text:
+        populated_from: rights_text
+        description: Rights text → rdfs:label (lines 788-971)
+      rights_uri:
+        populated_from: rights_uri
+        description: Rights URI → rdf:about (line 785)
+      rights_identifier:
+        populated_from: rights_identifier
+        description: Rights identifier (line 786)
+      rights_identifier_scheme:
+        populated_from: rights_identifier_scheme
+        description: Identifier scheme (line 787)
+      lang:
+        populated_from: lang
+        description: Language code (line 789)
+
+  GeoLocationMapping:
+    populated_from: GeoLocation
+    description: |
+      Template: Geolocations (line 987-1341)
+      Maps DataCite geoLocation to dct:spatial with dcterms:Location.
+
+      Input: geoLocationPlace, geoLocationPoint (lat/long), geoLocationBox (bounds),
+             geoLocationPolygon
+      Output: dcterms:Location with:
+        - locn:geometry (GeoSPARQL WKT literal)
+        - dcat:bbox (bounding box in WKT)
+        - dcat:centroid (center point in WKT)
+        - skos:prefLabel (place name)
+      Supports GML, WKT output formats for geometries
+    slot_derivations:
+      geo_location_place:
+        populated_from: geo_location_place
+        description: Place name → skos:prefLabel (lines 993-1007)
+      geo_location_point:
+        populated_from: geo_location_point
+        description: Point (lat/long) → locn:geometry WKT POINT (lines 1008-1088)
+      geo_location_box:
+        populated_from: geo_location_box
+        description: Bounding box → dcat:bbox WKT POLYGON (lines 1089-1203)
+      geo_location_polygon:
+        populated_from: geo_location_polygon
+        description: Polygon → locn:geometry WKT POLYGON (lines 1204-1340)
+
+  SizeMapping:
+    populated_from: Resource
+    description: |
+      Template: Size (line 1342-1363)
+      Maps DataCite size to dcat:byteSize.
+
+      Attempts to extract numeric byte size from size string.
+      If size contains "byte" and a number → dcat:byteSize with xsd:decimal
+      Otherwise → dct:extent as text
+    slot_derivations:
+      sizes:
+        populated_from: sizes
+        description: Size value → dcat:byteSize or dct:extent (lines 1344-1362)
+
+  FormatMapping:
+    populated_from: Resource
+    description: |
+      Template: Formats (line 2634-2652)
+      Maps DataCite format to dct:format.
+
+      Input: format text (MIME type or other format description)
+      Output: dct:format with dcterms:MediaTypeOrExtent
+    slot_derivations:
+      formats:
+        populated_from: formats
+        description: Format value → dct:format (lines 2636-2651)
+
+  LanguageMapping:
+    populated_from: Resource
+    description: |
+      Template: Language (line 2653-2664)
+      Maps DataCite language to dct:language.
+
+      Uses LanguageAlpha2/Alpha3 templates (lines 3263-3455) for language code normalization.
+      Converts between ISO 639-1 (2-letter) and ISO 639-2 (3-letter) codes for 24 EU languages.
+    slot_derivations:
+      language:
+        populated_from: language
+        description: Language code → dct:language (lines 2655-2663)
+
+  VersionMapping:
+    populated_from: Resource
+    description: |
+      Template: Version (line 777-782)
+      Maps DataCite version to owl:versionInfo and dcat:version.
+
+      Output: Both owl:versionInfo and dcat:version with same value
+    slot_derivations:
+      version:
+        populated_from: version
+        description: Version string → owl:versionInfo and dcat:version (lines 779-781)
+
+  PublisherMapping:
+    populated_from: Resource
+    description: |
+      Template: Publisher (line 1515-1524)
+      Maps DataCite publisher to dct:publisher.
+
+      Input: publisher text with optional @xml:lang
+      Output: dct:publisher → foaf:Agent with foaf:name (and xml:lang if present)
+    slot_derivations:
+      publisher:
+        populated_from: publisher
+        description: Publisher name → dct:publisher (foaf:Agent/foaf:name) (lines 1517-1523)
+
+  PublicationYearMapping:
+    populated_from: Resource
+    description: |
+      Template: PublicationYear (line 1364-1369)
+      Maps DataCite publicationYear to dct:issued.
+
+      Output: dct:issued with xsd:gYear datatype
+    slot_derivations:
+      publication_year:
+        populated_from: publication_year
+        description: Publication year → dct:issued with xsd:gYear (lines 1366-1368)

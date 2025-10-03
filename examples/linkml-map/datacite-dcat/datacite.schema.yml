@@ -1,7 +1,10 @@
 id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite.schema.yml
-name: datacite-affiliation-schema
-title: DataCite Affiliation Schema (simplified)
-description: Simplified DataCite affiliation structure for transformation example
+name: datacite-schema
+title: DataCite Metadata Schema (simplified)
+description: |
+  Simplified representation of DataCite metadata schema kernel-4 for transformation examples.
+  Covers the main elements from the DataCite-to-DCAT-AP XSLT:
+  https://github.com/ec-jrc/datacite-to-dcat-ap
 prefixes:
   linkml: https://w3id.org/linkml/
   datacite: http://datacite.org/schema/kernel-4/
@@ -10,14 +13,300 @@ imports:
 default_prefix: datacite
 
 classes:
+  Resource:
+    description: A DataCite resource (dataset, publication, software, etc.)
+    slots:
+      - identifier
+      - titles
+      - descriptions
+      - creators
+      - contributors
+      - publisher
+      - publication_year
+      - subjects
+      - dates
+      - language
+      - resource_type
+      - alternate_identifiers
+      - related_identifiers
+      - sizes
+      - formats
+      - version
+      - rights_list
+      - funding_references
+      - geo_locations
+
+  Title:
+    description: A name or title by which a resource is known
+    slots:
+      - title_text
+      - title_type
+      - lang
+
+  Description:
+    description: All additional information that does not fit in other categories
+    slots:
+      - description_text
+      - description_type
+      - lang
+
+  Creator:
+    description: The main researchers involved in producing the data (XSLT line 1525)
+    slots:
+      - creator_name
+      - name_type
+      - given_name
+      - family_name
+      - name_identifier
+      - name_identifier_scheme
+      - scheme_uri
+      - affiliations
+
+  Contributor:
+    description: Institution or person responsible for collecting, managing, or distributing (XSLT line 1525)
+    slots:
+      - contributor_name
+      - contributor_type
+      - name_type
+      - given_name
+      - family_name
+      - name_identifier
+      - name_identifier_scheme
+      - scheme_uri
+      - affiliations
+
   Affiliation:
-    description: The organizational or institutional affiliation (simplified from DataCite)
+    description: Organizational or institutional affiliation (XSLT line 3021)
     slots:
       - affiliation_name
       - affiliation_identifier
       - affiliation_identifier_scheme
+      - scheme_uri
+      - lang
+
+  Subject:
+    description: Subject, keyword, classification code, or key phrase (XSLT line 621)
+    slots:
+      - subject_text
+      - subject_scheme
+      - scheme_uri
+      - value_uri
+      - lang
+
+  Date:
+    description: Different dates relevant to the resource (XSLT line 1388)
+    slots:
+      - date_value
+      - date_type
+      - date_information
+
+  AlternateIdentifier:
+    description: An identifier other than the primary identifier (XSLT line 1879)
+    slots:
+      - identifier_value
+      - identifier_type
+
+  RelatedIdentifier:
+    description: Identifiers of related resources (XSLT line 1964)
+    slots:
+      - related_identifier_value
+      - related_identifier_type
+      - relation_type
+      - related_metadata_scheme
+      - scheme_uri
+      - scheme_type
+      - resource_type_general
+
+  FundingReference:
+    description: Information about financial support (XSLT line 716)
+    slots:
+      - funder_name
+      - funder_identifier
+      - funder_identifier_type
+      - scheme_uri
+      - award_number
+      - award_uri
+      - award_title
+
+  Rights:
+    description: Rights information for the resource (XSLT line 783)
+    slots:
+      - rights_text
+      - rights_uri
+      - rights_identifier
+      - rights_identifier_scheme
+      - scheme_uri
+      - lang
+
+  GeoLocation:
+    description: Spatial region or named place (XSLT line 987)
+    slots:
+      - geo_location_place
+      - geo_location_point
+      - geo_location_box
+      - geo_location_polygon
 
 slots:
+  # Resource-level slots
+  identifier:
+    description: The persistent identifier that identifies the resource
+    range: string
+    required: true
+
+  titles:
+    description: Names or titles by which the resource is known
+    range: Title
+    multivalued: true
+    required: true
+
+  descriptions:
+    description: All additional information about the resource
+    range: Description
+    multivalued: true
+
+  creators:
+    description: The main researchers involved in producing the data
+    range: Creator
+    multivalued: true
+    required: true
+
+  contributors:
+    description: Contributors to the resource
+    range: Contributor
+    multivalued: true
+
+  publisher:
+    description: The entity that holds, archives, publishes, or distributes the resource
+    range: string
+    required: true
+
+  publication_year:
+    description: The year when the data was made publicly available
+    range: string
+    required: true
+
+  subjects:
+    description: Subject, keywords, or classification codes
+    range: Subject
+    multivalued: true
+
+  dates:
+    description: Different dates relevant to the resource
+    range: Date
+    multivalued: true
+
+  language:
+    description: The primary language of the resource
+    range: string
+
+  resource_type:
+    description: The type of the resource
+    range: string
+
+  alternate_identifiers:
+    description: Identifiers other than the primary identifier
+    range: AlternateIdentifier
+    multivalued: true
+
+  related_identifiers:
+    description: Identifiers of related resources
+    range: RelatedIdentifier
+    multivalued: true
+
+  sizes:
+    description: Size information (e.g., bytes, pages)
+    range: string
+    multivalued: true
+
+  formats:
+    description: Technical format of the resource
+    range: string
+    multivalued: true
+
+  version:
+    description: The version number of the resource
+    range: string
+
+  rights_list:
+    description: Rights information for the resource
+    range: Rights
+    multivalued: true
+
+  funding_references:
+    description: Information about financial support
+    range: FundingReference
+    multivalued: true
+
+  geo_locations:
+    description: Spatial regions or named places
+    range: GeoLocation
+    multivalued: true
+
+  # Title slots
+  title_text:
+    description: The title text
+    range: string
+    required: true
+
+  title_type:
+    description: The type of title (e.g., AlternativeTitle, Subtitle, TranslatedTitle)
+    range: string
+
+  # Description slots
+  description_text:
+    description: The description text
+    range: string
+    required: true
+
+  description_type:
+    description: The type of description (e.g., Abstract, Methods, TechnicalInfo)
+    range: string
+
+  # Creator/Contributor slots
+  creator_name:
+    description: The full name of the creator
+    range: string
+    required: true
+
+  contributor_name:
+    description: The full name of the contributor
+    range: string
+    required: true
+
+  contributor_type:
+    description: Type of contributor (e.g., ContactPerson, DataCollector, DataCurator)
+    range: string
+
+  name_type:
+    description: The type of name (Personal or Organizational)
+    range: string
+
+  given_name:
+    description: The personal or first name
+    range: string
+
+  family_name:
+    description: The surname or last name
+    range: string
+
+  name_identifier:
+    description: Uniquely identifies an individual or legal entity (e.g., ORCID)
+    range: string
+
+  name_identifier_scheme:
+    description: The name of the identifier scheme
+    range: string
+
+  scheme_uri:
+    description: The URI of the identifier scheme
+    range: string
+
+  affiliations:
+    description: Organizational or institutional affiliations
+    range: Affiliation
+    multivalued: true
+
+  # Affiliation slots
   affiliation_name:
     description: The name of the affiliated organization
     range: string
@@ -29,4 +318,136 @@ slots:
 
   affiliation_identifier_scheme:
     description: The name of the affiliation identifier scheme (e.g., ROR, GRID, ISNI)
+    range: string
+
+  # Subject slots
+  subject_text:
+    description: The subject text
+    range: string
+    required: true
+
+  subject_scheme:
+    description: The name of the subject scheme or classification code
+    range: string
+
+  value_uri:
+    description: The URI of the subject term
+    range: string
+
+  # Date slots
+  date_value:
+    description: The date value
+    range: string
+    required: true
+
+  date_type:
+    description: The type of date (e.g., Accepted, Available, Created, Issued, Updated)
+    range: string
+    required: true
+
+  date_information:
+    description: Additional information about the date
+    range: string
+
+  # Identifier slots
+  identifier_value:
+    description: The identifier value
+    range: string
+    required: true
+
+  identifier_type:
+    description: The type of identifier (e.g., DOI, URL, URN)
+    range: string
+
+  # Related Identifier slots
+  related_identifier_value:
+    description: The identifier of the related resource
+    range: string
+    required: true
+
+  related_identifier_type:
+    description: The type of the related identifier (e.g., DOI, URL)
+    range: string
+    required: true
+
+  relation_type:
+    description: The relationship type (e.g., IsCitedBy, Cites, IsPartOf)
+    range: string
+    required: true
+
+  related_metadata_scheme:
+    description: The name of the metadata scheme
+    range: string
+
+  scheme_type:
+    description: The type of the scheme
+    range: string
+
+  resource_type_general:
+    description: The general type of the related resource
+    range: string
+
+  # Funding slots
+  funder_name:
+    description: Name of the funding provider
+    range: string
+    required: true
+
+  funder_identifier:
+    description: Uniquely identifies a funding entity
+    range: string
+
+  funder_identifier_type:
+    description: The type of funder identifier
+    range: string
+
+  award_number:
+    description: The code assigned by the funder to a sponsored award
+    range: string
+
+  award_uri:
+    description: The URI of the award
+    range: string
+
+  award_title:
+    description: The human readable title of the award
+    range: string
+
+  # Rights slots
+  rights_text:
+    description: The rights statement text
+    range: string
+
+  rights_uri:
+    description: The URI of the license or rights statement
+    range: string
+
+  rights_identifier:
+    description: A unique identifier for the license or rights statement
+    range: string
+
+  rights_identifier_scheme:
+    description: The name of the rights identifier scheme
+    range: string
+
+  # GeoLocation slots
+  geo_location_place:
+    description: A place name describing the location
+    range: string
+
+  geo_location_point:
+    description: A point location (latitude, longitude)
+    range: string
+
+  geo_location_box:
+    description: A bounding box (spatial limits)
+    range: string
+
+  geo_location_polygon:
+    description: A polygon area
+    range: string
+
+  # Common slots
+  lang:
+    description: Language code (xml:lang)
     range: string
