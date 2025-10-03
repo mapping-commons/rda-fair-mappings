@@ -1,0 +1,32 @@
+id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite.schema.yml
+name: datacite-affiliation-schema
+title: DataCite Affiliation Schema (simplified)
+description: Simplified DataCite affiliation structure for transformation example
+prefixes:
+  linkml: https://w3id.org/linkml/
+  datacite: http://datacite.org/schema/kernel-4/
+imports:
+  - linkml:types
+default_prefix: datacite
+
+classes:
+  Affiliation:
+    description: The organizational or institutional affiliation (simplified from DataCite)
+    slots:
+      - affiliation_name
+      - affiliation_identifier
+      - affiliation_identifier_scheme
+
+slots:
+  affiliation_name:
+    description: The name of the affiliated organization
+    range: string
+    required: true
+
+  affiliation_identifier:
+    description: Uniquely identifies the organizational affiliation (e.g., ROR ID)
+    range: string
+
+  affiliation_identifier_scheme:
+    description: The name of the affiliation identifier scheme (e.g., ROR, GRID, ISNI)
+    range: string

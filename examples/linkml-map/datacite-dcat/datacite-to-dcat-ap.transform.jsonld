@@ -1,0 +1,410 @@
+{
+  "description": "This mapping demonstrates the Affiliations template transformation from\nDataCite metadata schema to DCAT-AP (specifically foaf:Organization).\nBased on the CiteDCAT-AP XSLT at:\nhttps://github.com/ec-jrc/datacite-to-dcat-ap\n",
+  "id": "https://mapping-commons.github.io/rda-fair-mappings/example/datacite-to-dcat-ap.transform.yml",
+  "title": "DataCite to DCAT-AP Affiliations transformation",
+  "prefixes": {
+    "foaf": {
+      "key": "foaf",
+      "value": "http://xmlns.com/foaf/0.1/"
+    },
+    "dct": {
+      "key": "dct",
+      "value": "http://purl.org/dc/terms/"
+    },
+    "xsd": {
+      "key": "xsd",
+      "value": "http://www.w3.org/2001/XMLSchema#"
+    }
+  },
+  "class_derivations": {
+    "Organization": {
+      "description": "Maps DataCite affiliation to foaf:Organization with dct:identifier",
+      "name": "Organization",
+      "populated_from": "Affiliation",
+      "slot_derivations": {
+        "affiliation_name": {
+          "description": "The name of the affiliated organization (element text content)",
+          "name": "affiliation_name",
+          "populated_from": "affiliation_name"
+        },
+        "affiliation_identifier": {
+          "description": "Identifier for the affiliation (becomes dct:identifier)",
+          "name": "affiliation_identifier",
+          "populated_from": "affiliation_identifier"
+        },
+        "affiliation_identifier_scheme": {
+          "description": "Scheme for the affiliation identifier",
+          "name": "affiliation_identifier_scheme",
+          "populated_from": "affiliation_identifier_scheme"
+        }
+      }
+    }
+  },
+  "@type": "TransformationSpecification",
+  "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "STATO": {
+      "@id": "http://purl.obolibrary.org/obo/STATO_",
+      "@prefix": true
+    },
+    "dcterms": "http://purl.org/dc/terms/",
+    "linkml": "https://w3id.org/linkml/",
+    "linkmlmap": "https://w3id.org/linkml/transformer/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sssom": "https://w3id.org/sssom/",
+    "@vocab": "https://w3id.org/linkml/transformer/",
+    "invalid_value_handling": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "invalid_value_handling"
+    },
+    "null_handling": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "null_handling"
+    },
+    "operator": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "operator"
+    },
+    "alias": {
+      "@id": "alias"
+    },
+    "class_named": {
+      "@id": "class_named"
+    },
+    "joins": {
+      "@type": "@id",
+      "@id": "joins"
+    },
+    "populated_from": {
+      "@id": "populated_from"
+    },
+    "slot_derivations": {
+      "@type": "@id",
+      "@id": "slot_derivations"
+    },
+    "sources": {
+      "@id": "sources"
+    },
+    "target_definition": {
+      "@type": "@id",
+      "@id": "target_definition"
+    },
+    "add": {
+      "@type": "@id",
+      "@id": "add"
+    },
+    "copy_all": {
+      "@type": "xsd:boolean",
+      "@id": "copy_all"
+    },
+    "element_name": {
+      "@id": "element_name"
+    },
+    "exclude": {
+      "@type": "@id",
+      "@id": "exclude"
+    },
+    "exclude_all": {
+      "@type": "xsd:boolean",
+      "@id": "exclude_all"
+    },
+    "include": {
+      "@type": "@id",
+      "@id": "include"
+    },
+    "copy_directives": {
+      "@type": "@id",
+      "@id": "copy_directives"
+    },
+    "expression_to_expression_mappings": {
+      "@type": "@id",
+      "@id": "expression_to_expression_mappings"
+    },
+    "expression_to_value_mappings": {
+      "@type": "@id",
+      "@id": "expression_to_value_mappings"
+    },
+    "is_a": {
+      "@type": "@id",
+      "@id": "linkml:is_a"
+    },
+    "mirror_source": {
+      "@type": "xsd:boolean",
+      "@id": "mirror_source"
+    },
+    "mixins": {
+      "@type": "@id",
+      "@id": "linkml:mixins"
+    },
+    "name": {
+      "@id": "name"
+    },
+    "overrides": {
+      "@type": "@id",
+      "@id": "overrides"
+    },
+    "value_mappings": {
+      "@type": "@id",
+      "@id": "value_mappings"
+    },
+    "expr": {
+      "@id": "expr"
+    },
+    "hide": {
+      "@type": "xsd:boolean",
+      "@id": "hide"
+    },
+    "permissible_value_derivations": {
+      "@type": "@id",
+      "@id": "permissible_value_derivations"
+    },
+    "class_name": {
+      "@id": "class_name"
+    },
+    "slot_name": {
+      "@id": "slot_name"
+    },
+    "key": {
+      "@id": "key"
+    },
+    "value": {
+      "@type": "@id",
+      "@id": "value"
+    },
+    "class_derivations": {
+      "@type": "@id",
+      "@id": "class_derivations"
+    },
+    "direction": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "direction"
+    },
+    "unmelt_to_class": {
+      "@id": "unmelt_to_class"
+    },
+    "unmelt_to_slots": {
+      "@id": "unmelt_to_slots"
+    },
+    "value_slot": {
+      "@id": "value_slot"
+    },
+    "variable_slot": {
+      "@id": "variable_slot"
+    },
+    "aggregation_operation": {
+      "@type": "@id",
+      "@id": "aggregation_operation"
+    },
+    "cast_collection_as": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "cast_collection_as"
+    },
+    "derived_from": {
+      "@id": "derived_from"
+    },
+    "dictionary_key": {
+      "@id": "dictionary_key"
+    },
+    "inverse_of": {
+      "@type": "@id",
+      "@id": "inverse_of"
+    },
+    "object_derivations": {
+      "@type": "@id",
+      "@id": "object_derivations"
+    },
+    "range": {
+      "@id": "linkml:range"
+    },
+    "stringification": {
+      "@type": "@id",
+      "@id": "stringification"
+    },
+    "type_designator": {
+      "@type": "xsd:boolean",
+      "@id": "type_designator"
+    },
+    "unit_conversion": {
+      "@type": "@id",
+      "@id": "unit_conversion"
+    },
+    "comments": {
+      "@id": "rdfs:comment"
+    },
+    "description": {
+      "@id": "dcterms:description"
+    },
+    "implements": {
+      "@type": "xsd:anyURI",
+      "@id": "implements"
+    },
+    "delimiter": {
+      "@id": "delimiter"
+    },
+    "over_slots": {
+      "@id": "over_slots"
+    },
+    "reversed": {
+      "@type": "xsd:boolean",
+      "@id": "reversed"
+    },
+    "syntax": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "syntax"
+    },
+    "author_id": {
+      "@type": "xsd:anyURI",
+      "@id": "sssom:author_id"
+    },
+    "creator_id": {
+      "@type": "xsd:anyURI",
+      "@id": "sssom:creator_id"
+    },
+    "enum_derivations": {
+      "@type": "@id",
+      "@id": "enum_derivations"
+    },
+    "id": {
+      "@id": "schema:identifier"
+    },
+    "license": {
+      "@type": "xsd:anyURI",
+      "@id": "dcterms:license"
+    },
+    "mapping_method": {
+      "@type": "xsd:anyURI",
+      "@id": "sssom:mapping_justification"
+    },
+    "prefixes": {
+      "@type": "@id",
+      "@id": "sh:declare"
+    },
+    "publication_date": {
+      "@type": "xsd:date",
+      "@id": "dcterms:issued"
+    },
+    "source_schema": {
+      "@id": "source_schema"
+    },
+    "target_schema": {
+      "@id": "target_schema"
+    },
+    "title": {
+      "@id": "dcterms:title"
+    },
+    "version": {
+      "@id": "dcterms:version"
+    },
+    "source_magnitude_slot": {
+      "@id": "source_magnitude_slot"
+    },
+    "source_unit": {
+      "@id": "source_unit"
+    },
+    "source_unit_scheme": {
+      "@id": "source_unit_scheme"
+    },
+    "source_unit_slot": {
+      "@id": "source_unit_slot"
+    },
+    "target_magnitude_slot": {
+      "@id": "target_magnitude_slot"
+    },
+    "target_unit": {
+      "@id": "target_unit"
+    },
+    "target_unit_scheme": {
+      "@id": "target_unit_scheme"
+    },
+    "target_unit_slot": {
+      "@id": "target_unit_slot"
+    },
+    "AggregationOperation": {
+      "@id": "AggregationOperation"
+    },
+    "AliasedClass": {
+      "@id": "AliasedClass"
+    },
+    "Any": {
+      "@id": "linkml:Any"
+    },
+    "ClassDerivation": {
+      "@id": "ClassDerivation"
+    },
+    "CopyDirective": {
+      "@id": "CopyDirective"
+    },
+    "ElementDerivation": {
+      "@id": "ElementDerivation"
+    },
+    "EnumDerivation": {
+      "@id": "EnumDerivation"
+    },
+    "GroupingOperation": {
+      "@id": "GroupingOperation"
+    },
+    "Inverse": {
+      "@id": "Inverse"
+    },
+    "KeyVal": {
+      "@id": "KeyVal"
+    },
+    "ObjectDerivation": {
+      "@id": "ObjectDerivation"
+    },
+    "PermissibleValueDerivation": {
+      "@id": "PermissibleValueDerivation"
+    },
+    "PivotOperation": {
+      "@id": "PivotOperation"
+    },
+    "PrefixDerivation": {
+      "@id": "PrefixDerivation"
+    },
+    "SlotDerivation": {
+      "@id": "SlotDerivation"
+    },
+    "SpecificationComponent": {
+      "@id": "SpecificationComponent"
+    },
+    "StringificationConfiguration": {
+      "@id": "StringificationConfiguration"
+    },
+    "TransformationOperation": {
+      "@id": "TransformationOperation"
+    },
+    "TransformationSpecification": {
+      "@id": "TransformationSpecification"
+    },
+    "UnitConversionConfiguration": {
+      "@id": "UnitConversionConfiguration"
+    }
+  }
+}

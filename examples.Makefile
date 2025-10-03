@@ -4,6 +4,7 @@ dependencies:
 	  (echo "Install uv: https://docs.astral.sh/uv/getting-started/installation"; exit 1)
 	uv venv .venv
 	uv pip install linkml-map jinja2 linkml-runtime
+	uv pip install --no-deps "ucumvert>=0.3.0"
 
 examples/linkml-map/personinfo/agent.instance.yml: \
 	examples/linkml-map/personinfo/personinfo.transform.yml \
@@ -15,6 +16,18 @@ examples/linkml-map/personinfo/agent.instance.yml: \
 		-s examples/linkml-map/personinfo/personinfo.schema.yml \
 		--source-type Person \
 		examples/linkml-map/personinfo/personinfo.instance.yaml \
+		-o $@
+
+examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml: \
+	examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml \
+	examples/linkml-map/datacite-dcat/datacite.schema.yml \
+	examples/linkml-map/datacite-dcat/dataset.instance.yml \
+	dependencies
+	.venv/bin/linkml-map map-data \
+		-T examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml \
+		-s examples/linkml-map/datacite-dcat/datacite.schema.yml \
+		--source-type Affiliation \
+		examples/linkml-map/datacite-dcat/dataset.instance.yml \
 		-o $@
 
 ## WARNING USING A BRANCH UNSTABLE
@@ -29,11 +42,21 @@ examples/linkml-map/personinfo/personinfo.transform.jsonld: tmp/linkml-map.yml e
 examples/linkml-map/personinfo/personinfo.transform.json: tmp/linkml-map.yml examples/linkml-map/personinfo/personinfo.transform.yml
 	uv run linkml-convert -t json -f yaml -C TransformationSpecification -s $^ -o $@
 
+examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.jsonld: tmp/linkml-map.yml examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml
+	uv run linkml-convert -t json-ld -f yaml -C TransformationSpecification -s $^ -o $@
+
+examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.json: tmp/linkml-map.yml examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml
+	uv run linkml-convert -t json -f yaml -C TransformationSpecification -s $^ -o $@
+
 .PHONY: serialisations
 serialisations: \
 	examples/linkml-map/personinfo/personinfo.transform.jsonld \
 	examples/linkml-map/personinfo/personinfo.transform.json \
+	examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.jsonld \
+	examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.json \
 	dependencies
 
 .PHONY: examples
-examples: examples/linkml-map/personinfo/agent.instance.yml
+examples: \
+	examples/linkml-map/personinfo/agent.instance.yml \
+	examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml

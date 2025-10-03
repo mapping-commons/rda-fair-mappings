@@ -1,0 +1,25 @@
+id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-to-dcat-ap.transform.yml
+title: DataCite to DCAT-AP Affiliations transformation
+description: |
+  This mapping demonstrates the Affiliations template transformation from
+  DataCite metadata schema to DCAT-AP (specifically foaf:Organization).
+  Based on the CiteDCAT-AP XSLT at:
+  https://github.com/ec-jrc/datacite-to-dcat-ap
+prefixes:
+  foaf: http://xmlns.com/foaf/0.1/
+  dct: http://purl.org/dc/terms/
+  xsd: http://www.w3.org/2001/XMLSchema#
+class_derivations:
+  Organization:
+    populated_from: Affiliation
+    description: Maps DataCite affiliation to foaf:Organization with dct:identifier
+    slot_derivations:
+      affiliation_name:
+        populated_from: affiliation_name
+        description: The name of the affiliated organization (element text content)
+      affiliation_identifier:
+        populated_from: affiliation_identifier
+        description: Identifier for the affiliation (becomes dct:identifier)
+      affiliation_identifier_scheme:
+        populated_from: affiliation_identifier_scheme
+        description: Scheme for the affiliation identifier
