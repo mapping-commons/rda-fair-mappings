@@ -45,6 +45,79 @@ prefixes:
   locn: http://www.w3.org/ns/locn#
   gsp: http://www.opengis.net/ont/geosparql#
 class_derivations:
+  Dataset:
+    populated_from: Resource
+    description: |
+      Maps complete DataCite Resource to DCAT Dataset.
+      This is the main entry point that aggregates all the component mappings below.
+
+      A DataCite Resource contains all metadata about a dataset/publication, including:
+      - Basic metadata (identifier, title, description, publisher, dates)
+      - Creators and contributors (mapped via Agents template)
+      - Subjects and keywords
+      - Rights and licenses
+      - Related resources
+      - Funding information
+      - Geographic coverage
+    slot_derivations:
+      identifier:
+        populated_from: identifier
+        description: Primary identifier (DOI) → dct:identifier
+      titles:
+        populated_from: titles
+        description: Titles → dct:title (via Titles template line 485)
+      descriptions:
+        populated_from: descriptions
+        description: Descriptions → dct:description (via Descriptions template line 538)
+      creators:
+        populated_from: creators
+        description: Creators → dcat:contactPoint / dct:creator (via Agents template line 1525)
+      contributors:
+        populated_from: contributors
+        description: Contributors → various roles (via Agents template line 1525)
+      publisher:
+        populated_from: publisher
+        description: Publisher → dct:publisher (via Publisher template line 1515)
+      publication_year:
+        populated_from: publication_year
+        description: Publication year → dct:issued (via PublicationYear template line 1364)
+      subjects:
+        populated_from: subjects
+        description: Subjects → dcat:theme/dcat:keyword (via Subjects template line 621)
+      dates:
+        populated_from: dates
+        description: Dates → various dct properties (via Dates template line 1388)
+      language:
+        populated_from: language
+        description: Language → dct:language (via Language template line 2653)
+      resource_type:
+        populated_from: resource_type
+        description: Resource type → dct:type (via ResourceType template line 2668)
+      alternate_identifiers:
+        populated_from: alternate_identifiers
+        description: Alternate identifiers → adms:identifier (via Identifiers template line 1879)
+      related_identifiers:
+        populated_from: related_identifiers
+        description: Related identifiers → various relations (via RelatedIdentifiers template line 1964)
+      sizes:
+        populated_from: sizes
+        description: Sizes → dcat:byteSize (via Size template line 1342)
+      formats:
+        populated_from: formats
+        description: Formats → dct:format (via Formats template line 2634)
+      version:
+        populated_from: version
+        description: Version → owl:versionInfo/dcat:version (via Version template line 777)
+      rights_list:
+        populated_from: rights_list
+        description: Rights → dct:rights/dct:license (via Rights template line 783)
+      funding_references:
+        populated_from: funding_references
+        description: Funding → foaf:Project with citedcat:isAwardedBy (via FundingAwards template line 3177)
+      geo_locations:
+        populated_from: geo_locations
+        description: Geo locations → dct:spatial (via Geolocations template line 987)
+
   Organization:
     populated_from: Affiliation
     description: |
@@ -67,7 +140,6 @@ class_derivations:
         description: Identifier scheme for URI resolution (line 3023)
 
   FunderOrganization:
-    populated_from: FundingReference
     description: |
       Template: Funders (line 3097-3170)
       Maps DataCite funder to foaf:Organization with dct:identifier.
@@ -257,7 +329,6 @@ class_derivations:
         description: Language code (line 629)
 
   ResourceTypeMapping:
-    populated_from: Resource
     description: |
       Template: ResourceType (line 2668-2905)
       Maps DataCite resourceType/@resourceTypeGeneral to dct:type.
@@ -282,7 +353,7 @@ class_derivations:
         populated_from: resource_type
         description: Resource type text → rdfs:label (line 2670)
 
-  DateMapping:
+  Date:
     populated_from: Date
     description: |
       Template: Dates (line 1388-1514)
@@ -316,7 +387,7 @@ class_derivations:
         populated_from: date_information
         description: Additional date context (line 1391)
 
-  IdentifierMapping:
+  AlternateIdentifier:
     populated_from: AlternateIdentifier
     description: |
       Template: Identifiers (line 1879-1963)
@@ -338,7 +409,7 @@ class_derivations:
         populated_from: identifier_type
         description: Identifier type for URI resolution (line 1881)
 
-  RelatedIdentifierMapping:
+  RelatedIdentifier:
     populated_from: RelatedIdentifier
     description: |
       Template: RelatedIdentifiers (line 1964-2416)
@@ -392,7 +463,7 @@ class_derivations:
         populated_from: resource_type_general
         description: Type of related resource (line 1970)
 
-  RightsMapping:
+  Rights:
     populated_from: Rights
     description: |
       Template: Rights (line 783-973)
@@ -421,7 +492,7 @@ class_derivations:
         populated_from: lang
         description: Language code (line 789)
 
-  GeoLocationMapping:
+  GeoLocation:
     populated_from: GeoLocation
     description: |
       Template: Geolocations (line 987-1341)
@@ -450,7 +521,6 @@ class_derivations:
         description: Polygon → locn:geometry WKT POLYGON (lines 1204-1340)
 
   SizeMapping:
-    populated_from: Resource
     description: |
       Template: Size (line 1342-1363)
       Maps DataCite size to dcat:byteSize.
@@ -464,7 +534,6 @@ class_derivations:
         description: Size value → dcat:byteSize or dct:extent (lines 1344-1362)
 
   FormatMapping:
-    populated_from: Resource
     description: |
       Template: Formats (line 2634-2652)
       Maps DataCite format to dct:format.
@@ -477,7 +546,6 @@ class_derivations:
         description: Format value → dct:format (lines 2636-2651)
 
   LanguageMapping:
-    populated_from: Resource
     description: |
       Template: Language (line 2653-2664)
       Maps DataCite language to dct:language.
@@ -490,7 +558,6 @@ class_derivations:
         description: Language code → dct:language (lines 2655-2663)
 
   VersionMapping:
-    populated_from: Resource
     description: |
       Template: Version (line 777-782)
       Maps DataCite version to owl:versionInfo and dcat:version.
@@ -502,7 +569,6 @@ class_derivations:
         description: Version string → owl:versionInfo and dcat:version (lines 779-781)
 
   PublisherMapping:
-    populated_from: Resource
     description: |
       Template: Publisher (line 1515-1524)
       Maps DataCite publisher to dct:publisher.
@@ -515,7 +581,6 @@ class_derivations:
         description: Publisher name → dct:publisher (foaf:Agent/foaf:name) (lines 1517-1523)
 
   PublicationYearMapping:
-    populated_from: Resource
     description: |
       Template: PublicationYear (line 1364-1369)
       Maps DataCite publicationYear to dct:issued.

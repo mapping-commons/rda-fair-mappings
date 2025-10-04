@@ -53,6 +53,108 @@
     }
   },
   "class_derivations": {
+    "Dataset": {
+      "description": "Maps complete DataCite Resource to DCAT Dataset.\nThis is the main entry point that aggregates all the component mappings below.\n\nA DataCite Resource contains all metadata about a dataset/publication, including:\n- Basic metadata (identifier, title, description, publisher, dates)\n- Creators and contributors (mapped via Agents template)\n- Subjects and keywords\n- Rights and licenses\n- Related resources\n- Funding information\n- Geographic coverage\n",
+      "name": "Dataset",
+      "populated_from": "Resource",
+      "slot_derivations": {
+        "identifier": {
+          "description": "Primary identifier (DOI) → dct:identifier",
+          "name": "identifier",
+          "populated_from": "identifier"
+        },
+        "titles": {
+          "description": "Titles → dct:title (via Titles template line 485)",
+          "name": "titles",
+          "populated_from": "titles"
+        },
+        "descriptions": {
+          "description": "Descriptions → dct:description (via Descriptions template line 538)",
+          "name": "descriptions",
+          "populated_from": "descriptions"
+        },
+        "creators": {
+          "description": "Creators → dcat:contactPoint / dct:creator (via Agents template line 1525)",
+          "name": "creators",
+          "populated_from": "creators"
+        },
+        "contributors": {
+          "description": "Contributors → various roles (via Agents template line 1525)",
+          "name": "contributors",
+          "populated_from": "contributors"
+        },
+        "publisher": {
+          "description": "Publisher → dct:publisher (via Publisher template line 1515)",
+          "name": "publisher",
+          "populated_from": "publisher"
+        },
+        "publication_year": {
+          "description": "Publication year → dct:issued (via PublicationYear template line 1364)",
+          "name": "publication_year",
+          "populated_from": "publication_year"
+        },
+        "subjects": {
+          "description": "Subjects → dcat:theme/dcat:keyword (via Subjects template line 621)",
+          "name": "subjects",
+          "populated_from": "subjects"
+        },
+        "dates": {
+          "description": "Dates → various dct properties (via Dates template line 1388)",
+          "name": "dates",
+          "populated_from": "dates"
+        },
+        "language": {
+          "description": "Language → dct:language (via Language template line 2653)",
+          "name": "language",
+          "populated_from": "language"
+        },
+        "resource_type": {
+          "description": "Resource type → dct:type (via ResourceType template line 2668)",
+          "name": "resource_type",
+          "populated_from": "resource_type"
+        },
+        "alternate_identifiers": {
+          "description": "Alternate identifiers → adms:identifier (via Identifiers template line 1879)",
+          "name": "alternate_identifiers",
+          "populated_from": "alternate_identifiers"
+        },
+        "related_identifiers": {
+          "description": "Related identifiers → various relations (via RelatedIdentifiers template line 1964)",
+          "name": "related_identifiers",
+          "populated_from": "related_identifiers"
+        },
+        "sizes": {
+          "description": "Sizes → dcat:byteSize (via Size template line 1342)",
+          "name": "sizes",
+          "populated_from": "sizes"
+        },
+        "formats": {
+          "description": "Formats → dct:format (via Formats template line 2634)",
+          "name": "formats",
+          "populated_from": "formats"
+        },
+        "version": {
+          "description": "Version → owl:versionInfo/dcat:version (via Version template line 777)",
+          "name": "version",
+          "populated_from": "version"
+        },
+        "rights_list": {
+          "description": "Rights → dct:rights/dct:license (via Rights template line 783)",
+          "name": "rights_list",
+          "populated_from": "rights_list"
+        },
+        "funding_references": {
+          "description": "Funding → foaf:Project with citedcat:isAwardedBy (via FundingAwards template line 3177)",
+          "name": "funding_references",
+          "populated_from": "funding_references"
+        },
+        "geo_locations": {
+          "description": "Geo locations → dct:spatial (via Geolocations template line 987)",
+          "name": "geo_locations",
+          "populated_from": "geo_locations"
+        }
+      }
+    },
     "Organization": {
       "description": "Template: Affiliations (line 3021-3093)\nMaps DataCite affiliation to foaf:Organization with dct:identifier.\n\nInput: affiliation element with @affiliationIdentifier, @affiliationIdentifierScheme, @schemeURI\nOutput: foaf:Organization with rdf:about (if URI-like identifier) containing:\n  - dct:identifier with datatype (xsd:anyURI or xsd:string)\n  - foaf:name from element text content (with optional @xml:lang)\n",
       "name": "Organization",
@@ -78,7 +180,6 @@
     "FunderOrganization": {
       "description": "Template: Funders (line 3097-3170)\nMaps DataCite funder to foaf:Organization with dct:identifier.\n\nInput: funderIdentifier, @funderIdentifierType, @schemeURI, funderName\nOutput: foaf:Organization with rdf:about (if URI-like) containing:\n  - dct:identifier with datatype\n  - foaf:name from funderName (with optional @xml:lang)\n",
       "name": "FunderOrganization",
-      "populated_from": "FundingReference",
       "slot_derivations": {
         "funder_name": {
           "description": "Funder name → foaf:name (lines 3136-3140)",
@@ -292,7 +393,6 @@
     "ResourceTypeMapping": {
       "description": "Template: ResourceType (line 2668-2905)\nMaps DataCite resourceType/@resourceTypeGeneral to dct:type.\n\nExtensive mapping of resourceTypeGeneral values to various ontology terms:\n- Audiovisual → dctype:MovingImage, dctype:Sound\n- Collection → dctype:Collection\n- Dataset → dcat:Dataset, dctype:Dataset\n- Event → dctype:Event\n- Image → dctype:Image, dctype:StillImage\n- InteractiveResource → dctype:InteractiveResource\n- Model → various types based on context\n- PhysicalObject → dctype:PhysicalObject\n- Service → dctype:Service\n- Software → dctype:Software\n- Sound → dctype:Sound\n- Text → dctype:Text, bibo types\n- Workflow → various types\n- Other → dctype:Dataset (default)\n",
       "name": "ResourceTypeMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "resource_type": {
           "description": "Resource type text → rdfs:label (line 2670)",
@@ -301,9 +401,9 @@
         }
       }
     },
-    "DateMapping": {
+    "Date": {
       "description": "Template: Dates (line 1388-1514)\nMaps DataCite dates to various dct properties based on @dateType.\n\ndateType mapping:\n- Accepted → dcterms:dateAccepted\n- Available → dcterms:available\n- Copyrighted → dcterms:dateCopyrighted\n- Collected → prov:generatedAtTime\n- Created → dcterms:created\n- Issued → dcterms:issued\n- Submitted → dcterms:dateSubmitted\n- Updated → dcterms:modified\n- Valid → dcterms:valid\n- Withdrawn → prov:invalidatedAtTime\n\nIncludes DateDataType template (line 1370-1387) to determine xsd datatype:\n- YYYY → xsd:gYear\n- YYYY-MM → xsd:gYearMonth\n- YYYY-MM-DD → xsd:date\n- Full ISO 8601 → xsd:dateTime\n",
-      "name": "DateMapping",
+      "name": "Date",
       "populated_from": "Date",
       "slot_derivations": {
         "date_value": {
@@ -323,9 +423,9 @@
         }
       }
     },
-    "IdentifierMapping": {
+    "AlternateIdentifier": {
       "description": "Template: Identifiers (line 1879-1963)\nMaps primary identifier and alternateIdentifiers to dct:identifier and adms:identifier.\n\nUses IdentifierURI template (line 2906-3020) to resolve identifiers to URIs based on type:\n- DOI → https://doi.org/\n- ARK → https://n2t.net/\n- Handle → http://hdl.handle.net/\n- PURL → direct URL\n- URN → direct URN\n- URL → direct URL\n- And many more schemes (PMID, arXiv, bibcode, EAN13, EISSN, ISSN, ISTC, LISSN, LSID, etc.)\n",
-      "name": "IdentifierMapping",
+      "name": "AlternateIdentifier",
       "populated_from": "AlternateIdentifier",
       "slot_derivations": {
         "identifier_value": {
@@ -340,9 +440,9 @@
         }
       }
     },
-    "RelatedIdentifierMapping": {
+    "RelatedIdentifier": {
       "description": "Template: RelatedIdentifiers (line 1964-2416)\nMaps relatedIdentifier to various dct properties based on @relationType.\n\nExtensive relationType mapping (template RelationTypes line 2086-2416):\n- IsCitedBy → dcterms:isReferencedBy\n- Cites → dcterms:references\n- IsSupplementTo → dcterms:isPartOf\n- IsSupplementedBy → dcterms:hasPart\n- IsContinuedBy → dcterms:isReplacedBy\n- Continues → dcterms:replaces\n- HasMetadata → foaf:page / dcat:landingPage\n- IsMetadataFor → foaf:primaryTopic\n- IsNewVersionOf → dcterms:isVersionOf\n- IsPreviousVersionOf → dcterms:hasVersion\n- IsPartOf → dcterms:isPartOf\n- HasPart → dcterms:hasPart\n- IsReferencedBy → dcterms:isReferencedBy\n- References → dcterms:references\n- IsDocumentedBy → wdrs:describedby\n- Documents → foaf:page\n- IsCompiledBy → dcterms:provenance\n- Compiles → dcterms:provenance\n- IsVariantFormOf → dcterms:hasFormat\n- IsOriginalFormOf → dcterms:hasFormat\n- IsIdenticalTo → owl:sameAs\n- IsReviewedBy → prov:wasInformedBy\n- Reviews → prov:wasInformedBy\n- IsDerivedFrom → dcterms:source / prov:wasDerivedFrom\n- IsSourceOf → prov:hadDerivation\n- Describes → foaf:primaryTopic\n- IsDescribedBy → foaf:page\n- HasVersion → dcterms:hasVersion\n- IsVersionOf → dcterms:isVersionOf\n- Requires → dcterms:requires\n- IsRequiredBy → dcterms:isRequiredBy\n- Obsoletes → dcterms:replaces\n- IsObsoletedBy → dcterms:isReplacedBy\n",
-      "name": "RelatedIdentifierMapping",
+      "name": "RelatedIdentifier",
       "populated_from": "RelatedIdentifier",
       "slot_derivations": {
         "related_identifier_value": {
@@ -367,9 +467,9 @@
         }
       }
     },
-    "RightsMapping": {
+    "Rights": {
       "description": "Template: Rights (line 783-973)\nMaps DataCite rights to dct:rights, dct:license, or dct:accessRights.\n\nInput: rights text with @rightsURI, @rightsIdentifier, @rightsIdentifierScheme, @xml:lang\nOutput: Appropriate rights property based on URI patterns:\n  - Known license URIs → dct:license\n  - Access rights URIs → dct:accessRights\n  - Other → dct:rights\nSpecial handling for Creative Commons, Open Data Commons, RightsStatements.org URIs\n",
-      "name": "RightsMapping",
+      "name": "Rights",
       "populated_from": "Rights",
       "slot_derivations": {
         "rights_text": {
@@ -399,9 +499,9 @@
         }
       }
     },
-    "GeoLocationMapping": {
+    "GeoLocation": {
       "description": "Template: Geolocations (line 987-1341)\nMaps DataCite geoLocation to dct:spatial with dcterms:Location.\n\nInput: geoLocationPlace, geoLocationPoint (lat/long), geoLocationBox (bounds),\n       geoLocationPolygon\nOutput: dcterms:Location with:\n  - locn:geometry (GeoSPARQL WKT literal)\n  - dcat:bbox (bounding box in WKT)\n  - dcat:centroid (center point in WKT)\n  - skos:prefLabel (place name)\nSupports GML, WKT output formats for geometries\n",
-      "name": "GeoLocationMapping",
+      "name": "GeoLocation",
       "populated_from": "GeoLocation",
       "slot_derivations": {
         "geo_location_place": {
@@ -429,7 +529,6 @@
     "SizeMapping": {
       "description": "Template: Size (line 1342-1363)\nMaps DataCite size to dcat:byteSize.\n\nAttempts to extract numeric byte size from size string.\nIf size contains \"byte\" and a number → dcat:byteSize with xsd:decimal\nOtherwise → dct:extent as text\n",
       "name": "SizeMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "sizes": {
           "description": "Size value → dcat:byteSize or dct:extent (lines 1344-1362)",
@@ -441,7 +540,6 @@
     "FormatMapping": {
       "description": "Template: Formats (line 2634-2652)\nMaps DataCite format to dct:format.\n\nInput: format text (MIME type or other format description)\nOutput: dct:format with dcterms:MediaTypeOrExtent\n",
       "name": "FormatMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "formats": {
           "description": "Format value → dct:format (lines 2636-2651)",
@@ -453,7 +551,6 @@
     "LanguageMapping": {
       "description": "Template: Language (line 2653-2664)\nMaps DataCite language to dct:language.\n\nUses LanguageAlpha2/Alpha3 templates (lines 3263-3455) for language code normalization.\nConverts between ISO 639-1 (2-letter) and ISO 639-2 (3-letter) codes for 24 EU languages.\n",
       "name": "LanguageMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "language": {
           "description": "Language code → dct:language (lines 2655-2663)",
@@ -465,7 +562,6 @@
     "VersionMapping": {
       "description": "Template: Version (line 777-782)\nMaps DataCite version to owl:versionInfo and dcat:version.\n\nOutput: Both owl:versionInfo and dcat:version with same value\n",
       "name": "VersionMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "version": {
           "description": "Version string → owl:versionInfo and dcat:version (lines 779-781)",
@@ -477,7 +573,6 @@
     "PublisherMapping": {
       "description": "Template: Publisher (line 1515-1524)\nMaps DataCite publisher to dct:publisher.\n\nInput: publisher text with optional @xml:lang\nOutput: dct:publisher → foaf:Agent with foaf:name (and xml:lang if present)\n",
       "name": "PublisherMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "publisher": {
           "description": "Publisher name → dct:publisher (foaf:Agent/foaf:name) (lines 1517-1523)",
@@ -489,7 +584,6 @@
     "PublicationYearMapping": {
       "description": "Template: PublicationYear (line 1364-1369)\nMaps DataCite publicationYear to dct:issued.\n\nOutput: dct:issued with xsd:gYear datatype\n",
       "name": "PublicationYearMapping",
-      "populated_from": "Resource",
       "slot_derivations": {
         "publication_year": {
           "description": "Publication year → dct:issued with xsd:gYear (lines 1366-1368)",
