@@ -27,11 +27,12 @@ examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml: \
 		-T examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml \
 		-s examples/linkml-map/datacite-dcat/datacite.schema.yml \
 		--source-type Resource \
+		--unrestricted-eval \
 		examples/linkml-map/datacite-dcat/datacite-resource.instance.yml \
 		-o $@
 
 ## WARNING USING A BRANCH UNSTABLE
-LINKMAP_SCHEMA="https://raw.githubusercontent.com/linkml/linkml-map/708b94a41002b9e73125cc29bda3fa0df9e300a7/src/linkml_map/datamodel/transformer_model.yaml"
+LINKMAP_SCHEMA="https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/linkml-map-metadata/src/linkml_map/datamodel/transformer_model.yaml"
 
 tmp/linkml-map.yml:
 	wget $(LINKMAP_SCHEMA) -O $@

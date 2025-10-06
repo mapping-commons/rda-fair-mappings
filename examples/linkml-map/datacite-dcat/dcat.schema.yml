@@ -1,0 +1,338 @@
+id: https://mapping-commons.github.io/rda-fair-mappings/example/dcat.schema.yml
+name: dcat-schema
+title: DCAT-AP Schema (simplified)
+description: |
+  Simplified representation of DCAT-AP (Data Catalog Application Profile) for transformation examples.
+  Based on DCAT-AP specification and the CiteDCAT-AP profile.
+  https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dcat: http://www.w3.org/ns/dcat#
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+  vcard: http://www.w3.org/2006/vcard/ns#
+  adms: http://www.w3.org/ns/adms#
+  skos: http://www.w3.org/2004/02/skos/core#
+  locn: http://www.w3.org/ns/locn#
+imports:
+  - linkml:types
+default_prefix: dcat
+
+classes:
+  Dataset:
+    description: A DCAT Dataset representing a collection of data
+    slots:
+      - identifier
+      - title
+      - description
+      - creator
+      - contact_point
+      - publisher
+      - issued
+      - modified
+      - theme
+      - keyword
+      - spatial
+      - temporal
+      - language
+      - landing_page
+      - distribution
+      - access_rights
+      - conforms_to
+      - byte_size
+      - version_info
+      - is_version_of
+      - has_version
+      - source
+      - provenance
+      - license
+      - relation
+
+  Agent:
+    description: A FOAF Agent (person or organization)
+    slots:
+      - name
+      - identifier
+      - type
+
+  Organization:
+    is_a: Agent
+    description: A FOAF Organization
+    slots:
+      - name
+      - identifier
+
+  Person:
+    is_a: Agent
+    description: A FOAF Person
+    slots:
+      - name
+      - given_name
+      - family_name
+      - identifier
+      - affiliation
+
+  ContactPoint:
+    description: A vCard ContactPoint
+    slots:
+      - fn
+      - has_email
+      - has_telephone
+      - has_url
+
+  Concept:
+    description: A SKOS Concept
+    slots:
+      - pref_label
+      - in_scheme
+      - notation
+
+  Location:
+    description: A DCTerms Location
+    slots:
+      - pref_label
+      - geometry
+      - bbox
+      - centroid
+
+  PeriodOfTime:
+    description: A DCTerms PeriodOfTime
+    slots:
+      - start_date
+      - end_date
+
+  LicenseDocument:
+    description: A DCTerms LicenseDocument
+    slots:
+      - label
+      - uri_ref
+
+  Distribution:
+    description: A DCAT Distribution
+    slots:
+      - title
+      - description
+      - format
+      - media_type
+      - byte_size
+      - access_url
+      - download_url
+
+slots:
+  # Dataset slots
+  identifier:
+    description: Primary identifier (dct:identifier)
+    range: string
+    required: true
+
+  title:
+    description: Title (dct:title)
+    range: string
+    multivalued: true
+    required: true
+
+  description:
+    description: Description (dct:description)
+    range: string
+    multivalued: true
+
+  creator:
+    description: Creator (dct:creator)
+    range: Agent
+    multivalued: true
+
+  contact_point:
+    description: Contact point (dcat:contactPoint)
+    range: ContactPoint
+    multivalued: true
+
+  publisher:
+    description: Publisher (dct:publisher)
+    range: Agent
+
+  issued:
+    description: Issue date (dct:issued)
+    range: string
+
+  modified:
+    description: Modification date (dct:modified)
+    range: string
+
+  theme:
+    description: Category/theme (dcat:theme)
+    range: Concept
+    multivalued: true
+
+  keyword:
+    description: Keywords (dcat:keyword)
+    range: string
+    multivalued: true
+
+  spatial:
+    description: Spatial coverage (dct:spatial)
+    range: Location
+    multivalued: true
+
+  temporal:
+    description: Temporal coverage (dct:temporal)
+    range: PeriodOfTime
+    multivalued: true
+
+  language:
+    description: Language (dct:language)
+    range: string
+    multivalued: true
+
+  landing_page:
+    description: Landing page (dcat:landingPage)
+    range: string
+    multivalued: true
+
+  distribution:
+    description: Distributions (dcat:distribution)
+    range: Distribution
+    multivalued: true
+
+  access_rights:
+    description: Access rights (dct:accessRights)
+    range: string
+
+  conforms_to:
+    description: Conforms to standard (dct:conformsTo)
+    range: string
+    multivalued: true
+
+  byte_size:
+    description: Size in bytes (dcat:byteSize)
+    range: string
+
+  version_info:
+    description: Version (owl:versionInfo / dcat:version)
+    range: string
+
+  is_version_of:
+    description: Is version of (dct:isVersionOf)
+    range: string
+
+  has_version:
+    description: Has version (dct:hasVersion)
+    range: string
+    multivalued: true
+
+  source:
+    description: Source (dct:source)
+    range: string
+    multivalued: true
+
+  provenance:
+    description: Provenance (dct:provenance)
+    range: string
+    multivalued: true
+
+  license:
+    description: License (dct:license)
+    range: LicenseDocument
+
+  relation:
+    description: Related resources (dct:relation)
+    range: string
+    multivalued: true
+
+  # Agent/Organization/Person slots
+  name:
+    description: Name (foaf:name)
+    range: string
+
+  given_name:
+    description: Given name (foaf:givenName)
+    range: string
+
+  family_name:
+    description: Family name (foaf:familyName)
+    range: string
+
+  affiliation:
+    description: Affiliation (org:memberOf)
+    range: Organization
+
+  type:
+    description: Agent type
+    range: string
+
+  # ContactPoint slots
+  fn:
+    description: Full name (vcard:fn)
+    range: string
+
+  has_email:
+    description: Email (vcard:hasEmail)
+    range: string
+
+  has_telephone:
+    description: Telephone (vcard:hasTelephone)
+    range: string
+
+  has_url:
+    description: URL (vcard:hasURL)
+    range: string
+
+  # Concept slots
+  pref_label:
+    description: Preferred label (skos:prefLabel)
+    range: string
+
+  in_scheme:
+    description: In scheme (skos:inScheme)
+    range: string
+
+  notation:
+    description: Notation (skos:notation)
+    range: string
+
+  # Location slots
+  geometry:
+    description: Geometry (locn:geometry)
+    range: string
+
+  bbox:
+    description: Bounding box (dcat:bbox)
+    range: string
+
+  centroid:
+    description: Centroid (dcat:centroid)
+    range: string
+
+  # PeriodOfTime slots
+  start_date:
+    description: Start date (dcat:startDate)
+    range: string
+
+  end_date:
+    description: End date (dcat:endDate)
+    range: string
+
+  # LicenseDocument slots
+  label:
+    description: Label (rdfs:label)
+    range: string
+
+  uri_ref:
+    description: URI reference
+    range: string
+
+  # Distribution slots
+  format:
+    description: Format (dct:format)
+    range: string
+
+  media_type:
+    description: Media type (dcat:mediaType)
+    range: string
+
+  access_url:
+    description: Access URL (dcat:accessURL)
+    range: string
+
+  download_url:
+    description: Download URL (dcat:downloadURL)
+    range: string
