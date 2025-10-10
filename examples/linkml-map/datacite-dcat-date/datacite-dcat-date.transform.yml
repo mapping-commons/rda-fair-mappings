@@ -13,9 +13,17 @@ class_derivations:
         populated_from: dates
         description: Transform first collected date to temporal period
       language:
-        populated_from: language
-        expr: "{language}"
-        description: Pass through language code
+        expr: |
+          lang_map = {
+            'bg': 'bul', 'cs': 'cze', 'da': 'dan', 'de': 'ger', 'el': 'gre',
+            'en': 'eng', 'es': 'spa', 'et': 'est', 'fi': 'fin', 'fr': 'fre',
+            'ga': 'gle', 'hr': 'hrv', 'it': 'ita', 'lv': 'lav', 'lt': 'lit',
+            'hu': 'hun', 'mt': 'mlt', 'nl': 'dut', 'pl': 'pol', 'pt': 'por',
+            'ru': 'rum', 'sk': 'slo', 'sl': 'slv', 'sv': 'swe'
+          }
+          alpha3 = lang_map.get(src.language.lower() if src.language else '', src.language or '')
+          target = f"http://publications.europa.eu/resource/authority/language/{alpha3}" if alpha3 else None
+        description: Map ISO 639-1 to ISO 639-2 and construct EU authority URI
 
   PeriodOfTime:
     populated_from: Date
