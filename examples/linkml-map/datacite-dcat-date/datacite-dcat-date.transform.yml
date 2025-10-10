@@ -3,6 +3,8 @@ title: Dataset Metadata to DCAT Transformation
 description: |
   Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods
   and language code to EU authority URI.
+source_schema: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml
+target_schema: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml
 
 class_derivations:
   DatasetMetadata:

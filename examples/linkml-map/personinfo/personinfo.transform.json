@@ -1,9 +1,6 @@
 {
-  "description": "This mapping set demonstrates how to transform a person information schema\ninto a different format using LinkML. It includes mappings for person attributes\nsuch as family name, given name, age, and height, along with derived attributes\nlike full name and height in meters.\n",
   "id": "https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.transform.yml",
   "title": "PersonInfo to Agent example transformation",
-  "publication_date": "2025-08-14",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
   "prefixes": {
     "sssom": {
       "key": "sssom",
@@ -16,13 +13,6 @@
   },
   "source_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.schema.yml",
   "target_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.transform.yml",
-  "creator_id": [
-    "https://orcid.org/0000-0002-7356-1779"
-  ],
-  "author_id": [
-    "https://orcid.org/0000-0002-7356-1779"
-  ],
-  "mapping_method": "semapv:ManualMappingCuration",
   "class_derivations": {
     "Individual": {
       "name": "Individual",

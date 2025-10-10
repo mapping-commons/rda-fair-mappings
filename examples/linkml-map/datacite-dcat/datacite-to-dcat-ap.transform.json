@@ -52,6 +52,8 @@
       "value": "http://www.opengis.net/ont/geosparql#"
     }
   },
+  "source_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/datacite.schema.yml",
+  "target_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/dcat.schema.yml",
   "class_derivations": {
     "Dataset": {
       "description": "Maps complete DataCite Resource to DCAT Dataset.\nThis is the main entry point that aggregates all the component mappings below.\n\nA DataCite Resource contains all metadata about a dataset/publication, including:\n- Basic metadata (identifier, title, description, publisher, dates)\n- Creators and contributors (mapped via Agents template)\n- Subjects and keywords\n- Rights and licenses\n- Related resources\n- Funding information\n- Geographic coverage\n",

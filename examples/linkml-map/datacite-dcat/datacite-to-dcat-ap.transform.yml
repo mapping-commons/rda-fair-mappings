@@ -44,6 +44,8 @@ prefixes:
   citedcat: https://w3id.org/citedcat-ap/
   locn: http://www.w3.org/ns/locn#
   gsp: http://www.opengis.net/ont/geosparql#
+source_schema: https://mapping-commons.github.io/rda-fair-mappings/example/datacite.schema.yml
+target_schema: https://mapping-commons.github.io/rda-fair-mappings/example/dcat.schema.yml
 class_derivations:
   Dataset:
     populated_from: Resource
