@@ -13,6 +13,7 @@ default_prefix: datacite
 
 classes:
   DatasetInstance:
+    tree_root: true
     description: A simplified dataset instance with dates and language
     slots:
       - dates
@@ -23,14 +24,13 @@ classes:
     slots:
       - date_type
       - value
-      - start
-      - end
 
 slots:
   dates:
     description: List of dates relevant to the resource
     range: Date
     multivalued: true
+    inlined_as_list: true
 
   language:
     description: Primary language code
@@ -45,11 +45,3 @@ slots:
     description: Date value (can be a range like 2004-03-02/2005-06-02)
     range: string
     required: true
-
-  start:
-    description: Start date extracted from date range
-    range: string
-
-  end:
-    description: End date extracted from date range
-    range: string
