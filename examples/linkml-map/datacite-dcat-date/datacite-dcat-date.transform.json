@@ -1,0 +1,48 @@
+{
+  "description": "Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods\nand language code to EU authority URI.\n",
+  "id": "https://example.org/transforms/dataset-to-dcat",
+  "title": "Dataset Metadata to DCAT Transformation",
+  "class_derivations": {
+    "DatasetMetadata": {
+      "description": "Transform DatasetInstance to DCAT DatasetMetadata",
+      "name": "DatasetMetadata",
+      "populated_from": "DatasetInstance",
+      "slot_derivations": {
+        "temporal": {
+          "description": "Transform first collected date to temporal period",
+          "name": "temporal",
+          "populated_from": "dates"
+        },
+        "language": {
+          "description": "Convert language code to full EU authority URI",
+          "name": "language",
+          "populated_from": "language",
+          "expr": "'http://publications.europa.eu/resource/authority/language/' + {language}"
+        }
+      }
+    },
+    "PeriodOfTime": {
+      "description": "Transform Date to dct:PeriodOfTime",
+      "name": "PeriodOfTime",
+      "populated_from": "Date",
+      "slot_derivations": {
+        "type": {
+          "description": "Set RDF type",
+          "name": "type",
+          "expr": "'PeriodOfTime'"
+        },
+        "start_date": {
+          "description": "Start date of the temporal period",
+          "name": "start_date",
+          "populated_from": "start"
+        },
+        "end_date": {
+          "description": "End date of the temporal period",
+          "name": "end_date",
+          "populated_from": "end"
+        }
+      }
+    }
+  },
+  "@type": "TransformationSpecification"
+}

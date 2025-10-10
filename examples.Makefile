@@ -31,6 +31,20 @@ examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml: \
 		examples/linkml-map/datacite-dcat/datacite-resource.instance.yml \
 		-o $@
 
+examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml: \
+	examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.yml \
+	examples/linkml-map/datacite-dcat-date/datacite.schema.yml \
+	examples/linkml-map/datacite-dcat-date/datacite-date.instance.yml \
+	dependencies
+	.venv/bin/linkml-map map-data \
+		-T examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.yml \
+		-s examples/linkml-map/datacite-dcat-date/datacite.schema.yml \
+		--source-type DatasetInstance \
+		--unrestricted-eval \
+		examples/linkml-map/datacite-dcat-date/datacite-date.instance.yml \
+		-o $@
+
+
 ## WARNING USING A BRANCH UNSTABLE
 LINKMAP_SCHEMA="https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/linkml-map-metadata/src/linkml_map/datamodel/transformer_model.yaml"
 
@@ -49,15 +63,25 @@ examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.jsonld: tmp/link
 examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.json: tmp/linkml-map.yml examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.yml
 	uv run linkml-convert -t json -f yaml -C TransformationSpecification -s $^ -o $@
 
+examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.jsonld: tmp/linkml-map.yml examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.yml
+	uv run linkml-convert -t json-ld -f yaml -C TransformationSpecification -s $^ -o $@
+
+examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.json: tmp/linkml-map.yml examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.yml
+	uv run linkml-convert -t json -f yaml -C TransformationSpecification -s $^ -o $@
+
+
 .PHONY: serialisations
 serialisations: \
 	examples/linkml-map/personinfo/personinfo.transform.jsonld \
 	examples/linkml-map/personinfo/personinfo.transform.json \
 	examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.jsonld \
 	examples/linkml-map/datacite-dcat/datacite-to-dcat-ap.transform.json \
+	examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.jsonld \
+	examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.json \
 	dependencies
 
 .PHONY: examples
 examples: \
 	examples/linkml-map/personinfo/agent.instance.yml \
+	examples/linkml-map/datacite-dcat-date/datacite-date.instance.yml \
 	examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml

@@ -1,0 +1,36 @@
+id: https://example.org/transforms/dataset-to-dcat
+title: Dataset Metadata to DCAT Transformation
+description: |
+  Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods
+  and language code to EU authority URI.
+
+class_derivations:
+  DatasetMetadata:
+    populated_from: DatasetInstance
+    description: Transform DatasetInstance to DCAT DatasetMetadata
+    slot_derivations:
+      temporal:
+        populated_from: dates
+        description: Transform first collected date to temporal period
+      language:
+        populated_from: language
+        expr: "{language}"
+        description: Pass through language code
+
+  PeriodOfTime:
+    populated_from: Date
+    description: |
+      Transform Date to dct:PeriodOfTime by parsing the date range in the value field.
+      Extracts start and end dates from a date range like "2004-03-02/2005-06-02"
+    slot_derivations:
+      type:
+        expr: "'PeriodOfTime'"
+        description: Set RDF type to PeriodOfTime
+      start_date:
+        expr: |
+          target = src.value.split('/')[0]
+        description: Extract start date (before the slash) from the value field
+      end_date:
+        expr: |
+          target = src.value.split('/')[1]
+        description: Extract end date (after the slash) from the value field
