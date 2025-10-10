@@ -14,32 +14,31 @@
           "populated_from": "dates"
         },
         "language": {
-          "description": "Convert language code to full EU authority URI",
+          "description": "Map ISO 639-1 to ISO 639-2 and construct EU authority URI",
           "name": "language",
-          "populated_from": "language",
-          "expr": "'http://publications.europa.eu/resource/authority/language/' + {language}"
+          "expr": "lang_map = {\n  'bg': 'bul', 'cs': 'cze', 'da': 'dan', 'de': 'ger', 'el': 'gre',\n  'en': 'eng', 'es': 'spa', 'et': 'est', 'fi': 'fin', 'fr': 'fre',\n  'ga': 'gle', 'hr': 'hrv', 'it': 'ita', 'lv': 'lav', 'lt': 'lit',\n  'hu': 'hun', 'mt': 'mlt', 'nl': 'dut', 'pl': 'pol', 'pt': 'por',\n  'ru': 'rum', 'sk': 'slo', 'sl': 'slv', 'sv': 'swe'\n}\nalpha3 = lang_map.get(src.language.lower() if src.language else '', src.language or '')\ntarget = f\"http://publications.europa.eu/resource/authority/language/{alpha3}\" if alpha3 else None\n"
         }
       }
     },
     "PeriodOfTime": {
-      "description": "Transform Date to dct:PeriodOfTime",
+      "description": "Transform Date to dct:PeriodOfTime by parsing the date range in the value field.\nExtracts start and end dates from a date range like \"2004-03-02/2005-06-02\"\n",
       "name": "PeriodOfTime",
       "populated_from": "Date",
       "slot_derivations": {
         "type": {
-          "description": "Set RDF type",
+          "description": "Set RDF type to PeriodOfTime",
           "name": "type",
           "expr": "'PeriodOfTime'"
         },
         "start_date": {
-          "description": "Start date of the temporal period",
+          "description": "Extract start date (before the slash) from the value field",
           "name": "start_date",
-          "populated_from": "start"
+          "expr": "target = src.value.split('/')[0]\n"
         },
         "end_date": {
-          "description": "End date of the temporal period",
+          "description": "Extract end date (after the slash) from the value field",
           "name": "end_date",
-          "populated_from": "end"
+          "expr": "target = src.value.split('/')[1]\n"
         }
       }
     }
