@@ -78,6 +78,15 @@ examples/linkml-map/datacite-dcat-date/datacite-date.instance.json: examples/lin
 examples/linkml-map/datacite-dcat-date/datacite-date.instance.ttl: examples/linkml-map/datacite-dcat-date/datacite.schema.yml examples/linkml-map/datacite-dcat-date/datacite-date.instance.yml
 	uv run linkml-convert -t ttl -f yaml -C DatasetInstance -s $^ -o $@
 
+examples/linkml-map/datacite-dcat-date/dcat-date.instance.jsonld: examples/linkml-map/datacite-dcat-date/dcat.schema.yml examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml
+	uv run linkml-convert -t json-ld -f yaml -C DatasetMetadata -s $^ -o $@
+
+examples/linkml-map/datacite-dcat-date/dcat-date.instance.json: examples/linkml-map/datacite-dcat-date/dcat.schema.yml examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml
+	uv run linkml-convert -t json -f yaml -C DatasetMetadata -s $^ -o $@
+
+examples/linkml-map/datacite-dcat-date/dcat-date.instance.ttl: examples/linkml-map/datacite-dcat-date/dcat.schema.yml examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml
+	uv run linkml-convert -t ttl -f yaml -C DatasetMetadata -s $^ -o $@
+
 
 .PHONY: serialisations
 serialisations: \
@@ -89,10 +98,12 @@ serialisations: \
 	examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.json \
 	examples/linkml-map/datacite-dcat-date/datacite-date.instance.jsonld \
 	examples/linkml-map/datacite-dcat-date/datacite-date.instance.json \
-	examples/linkml-map/datacite-dcat-date/datacite-date.instance.ttl | dependencies
+	examples/linkml-map/datacite-dcat-date/datacite-date.instance.ttl \
+	examples/linkml-map/datacite-dcat-date/dcat-date.instance.jsonld \
+	examples/linkml-map/datacite-dcat-date/dcat-date.instance.json \
+	examples/linkml-map/datacite-dcat-date/dcat-date.instance.ttl | dependencies
 
 .PHONY: examples
 examples: \
 	examples/linkml-map/personinfo/agent.instance.yml \
-	examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml \
-	examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml
+	examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml

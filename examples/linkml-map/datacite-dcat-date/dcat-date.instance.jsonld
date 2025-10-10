@@ -1,0 +1,40 @@
+{
+  "temporal": [
+    {
+      "type": "PeriodOfTime",
+      "start_date": "2004-03-02",
+      "end_date": "2005-06-02"
+    }
+  ],
+  "language": "http://publications.europa.eu/resource/authority/language/eng",
+  "@type": "DatasetMetadata",
+  "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "linkml": "https://w3id.org/linkml/",
+    "@vocab": "http://www.w3.org/ns/dcat#",
+    "end_date": {
+      "@id": "end_date"
+    },
+    "language": {
+      "@id": "language"
+    },
+    "start_date": {
+      "@id": "start_date"
+    },
+    "temporal": {
+      "@type": "@id",
+      "@id": "temporal"
+    },
+    "type": {
+      "@id": "type"
+    },
+    "DatasetMetadata": {
+      "@id": "DatasetMetadata"
+    },
+    "PeriodOfTime": {
+      "@id": "PeriodOfTime"
+    }
+  }
+}

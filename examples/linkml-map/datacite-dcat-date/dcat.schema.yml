@@ -29,6 +29,8 @@ slots:
   temporal:
     description: Temporal coverage (dct:temporal)
     range: PeriodOfTime
+    multivalued: true
+    inlined_as_list: true
 
   language:
     description: Language code or URI (dct:language)
