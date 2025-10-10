@@ -1,0 +1,35 @@
+{
+  "dates": [
+    {
+      "date_type": "Collected",
+      "value": "2004-03-02/2005-06-02"
+    }
+  ],
+  "language": "en",
+  "@type": "DatasetInstance",
+  "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "datacite": "http://datacite.org/schema/kernel-4/",
+    "linkml": "https://w3id.org/linkml/",
+    "@vocab": "http://datacite.org/schema/kernel-4/",
+    "date_type": {
+      "@id": "date_type"
+    },
+    "dates": {
+      "@type": "@id",
+      "@id": "dates"
+    },
+    "language": {
+      "@id": "language"
+    },
+    "value": {
+      "@id": "value"
+    },
+    "DatasetInstance": {
+      "@id": "DatasetInstance"
+    },
+    "Date": {
+      "@id": "Date"
+    }
+  }
+}

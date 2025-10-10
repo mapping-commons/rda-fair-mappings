@@ -1,0 +1,8 @@
+@prefix datacite: <http://datacite.org/schema/kernel-4/> .
+
+[] a datacite:DatasetInstance ;
+    datacite:dates [ a datacite:Date ;
+            datacite:date_type "Collected" ;
+            datacite:value "2004-03-02/2005-06-02" ] ;
+    datacite:language "en" .
+
