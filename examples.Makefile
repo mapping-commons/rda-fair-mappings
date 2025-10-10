@@ -83,5 +83,5 @@ serialisations: \
 .PHONY: examples
 examples: \
 	examples/linkml-map/personinfo/agent.instance.yml \
-	examples/linkml-map/datacite-dcat-date/datacite-date.instance.yml \
+	examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml \
 	examples/linkml-map/datacite-dcat/dcat-dataset.instance.yml
