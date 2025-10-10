@@ -5,6 +5,9 @@ description: |
   and language code to EU authority URI.
 source_schema: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml
 target_schema: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml
+#license: https://creativecommons.org/licenses/by/4.0/
+#mapping_method: sempav:ManualMappingCuration
+#version: 0.1.0
 
 class_derivations:
   DatasetMetadata:
