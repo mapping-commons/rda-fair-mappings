@@ -1,0 +1,27 @@
+id: https://example.org/transforms/dataset-to-dcat/python
+name: Dataset Metadata to DCAT Transformation
+description: Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods
+  and language code to EU authority URI.
+author: 
+  id: https://orcid.org/0000-0002-3770-0006
+  name: Joonas Kesäniemi
+publication_date: 2025-10-10
+license: https://creativecommons.org/licenses/by/4.0/
+version: "0.1.0"
+representation_technique: python
+mapping_method: https://w3id.org/semapv/vocab/ManualMappingCuration
+content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/python/datacite-dcat-date/datacite-dcat-date.transform.py
+subject_source:
+  id: https://doi.org/10.14454/fxws-0523
+  name: DataCite 4.4 XML Schema
+  version: "4.4"
+  type: schema
+  documentation: https://doi.org/10.14454/3w3z-sa82
+  content_url: https://schema.datacite.org/meta/kernel-4.4/metadata.xsd
+  representation_technique: xmlschema
+object_source:
+  id: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.shacl.ttl
+  name: DCAT Date Schema (simplified for date transformation example)
+  type: schema
+  content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/python/datacite-dcat-date/dcat.shacl.ttl
+  representation_technique: shacl

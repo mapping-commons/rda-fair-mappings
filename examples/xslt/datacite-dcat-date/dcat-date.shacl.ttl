@@ -1,0 +1,54 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://semiceu.github.io/DCAT-AP/releases/3.0.0/html/shacl/shapes.ttl#> .
+
+:PeriodOfTime_Shape
+    a sh:NodeShape ;
+    rdfs:label "PeriodOfTime"@en ;
+    sh:property [
+        sh:maxCount 1 ;
+        sh:path dcat:endDate ;
+        sh:severity sh:Violation ;
+        sh:shape :DateOrDateTimeDataType_Shape
+    ], [
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:path dcat:startDate ;
+        sh:severity sh:Violation ;
+        sh:shape :DateOrDateTimeDataType_Shape
+    ] ;
+    sh:targetClass dct:PeriodOfTime .
+
+:DateOrDateTimeDataType_Shape
+    a sh:NodeShape ;
+    rdfs:comment "Date time date disjunction shape checks that a datatype property receives a temporal value: date, dateTime, gYear or gYearMonth literal" ;
+    rdfs:label "Date time date disjunction" ;
+    sh:message "The values must be data typed as either xsd:date, xsd:dateTime, xsd:gYear or xsd:gYearMonth" ;
+    sh:or ([
+            sh:datatype xsd:date
+        ]
+        [
+            sh:datatype xsd:dateTime
+        ]
+		[
+            sh:datatype xsd:gYear
+        ]
+		[
+            sh:datatype xsd:gYearMonth
+        ]
+    ) .   
+
+:Test_shape
+    a sh:NodeShape ;
+    sh:targetClass dcat:Dataset ;
+    rdfs:label "Test"@en ;
+    sh:property [
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:path dct:language ;
+        sh:pattern "^http://publications.europa.eu/resource/authority/language/" ;
+        sh:severity sh:Violation
+    ] .    
