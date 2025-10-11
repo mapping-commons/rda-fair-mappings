@@ -1,30 +1,27 @@
-id: 21.13101/EOSC-111111111111111
-name: "DataCite to DCAT-AP Mapping"
-description: This XSLT is a proof of concept for the implementation of the specification
-  concerning the DataCite profile of DCAT-AP (CiteDCAT-AP)
+id: https://example.org/transforms/dataset-to-dcat/xslt
+name: Example XSLT mapping specification created for the RDA FAIR Mappings Working Group
+description: This example has been create by creating a subset of the CiteDCAP-AP XSLT script (https://raw.githubusercontent.com/ec-jrc/datacite-to-dcat-ap/master/datacite-to-dcat-ap.xsl) created by European Commission, Joint Research Centre (JRC) and Andrea Perego (https://github.com/andrea-perego).
 author: 
-  id: https://ror.org/02qezmz13
-  name: European Commission
-publication_date: 2021-03-31
+  id: https://orcid.org/0000-0002-3770-0006
+  name: Joonas Kesäniemi
+publication_date: 2025-10-11
 license: https://joinup.ec.europa.eu/collection/eupl
-version: "Unofficial Draft 31 March 2021"
+version: "0.1.0"
 representation_technique: xslt
 mapping_method: https://w3id.org/semapv/vocab/ManualMappingCuration
 documentation: https://ec-jrc.github.io/datacite-to-dcat-ap/
-content_url: https://github.com/ec-jrc/datacite-to-dcat-ap/raw/079ce5f72f21ca34e1b7af62441108679933e80a/datacite-to-dcat-ap.xsl
+content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/xslt/datacite-dcat-date/datacite-dcat-date.transform.xslt
 subject_source:
-  id: https://doi.org/10.14454/fxws-0523
-  name: DataCite 4.4 XML Schema
-  version: "4.4"
+  id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.xsd
+  name: DataCite 4.4 XML Schema (RDA FAIR Mappings WG P25 example subset)
+  version: "0.1.0"
   type: schema
-  documentation: https://doi.org/10.14454/3w3z-sa82
-  content_url: https://schema.datacite.org/meta/kernel-4.4/metadata.xsd
+  content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/xslt/datacite-dcat-date/datacite.schema.xsd
   representation_technique: xmlschema
 object_source:
-  id: https://w3id.org/citedcat-ap/
-  name: DataCite profile of DCAT-AP
-  version: "1.0.0"
-  type: ontology
-  documentation: https://ec-jrc.github.io/datacite-to-dcat-ap
-  content_url: https://ec-jrc.github.io/datacite-to-dcat-ap/citedcat-ap.ttl
-  representation_technique: owl
+  id: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.shacl
+  name: DataCite profile of DCAT-AP (RDA FAIR Mappings WG P25 example subset)
+  version: "0.1.0"
+  type: schema
+  content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/xslt/datacite-dcat-date/dcat-date.schema.shacl
+  representation_technique: shacl
