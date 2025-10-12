@@ -1,0 +1,38 @@
+identifier: 10.5281/zenodo.1234567
+creator:
+- name: Smith, Jane
+  given_name: Jane
+  family_name: Smith
+  identifier: https://orcid.org/0000-0002-1234-5678
+  affiliation:
+  - name: University of Example
+    identifier: https://ror.org/012345678
+  - name: Climate Research Institute
+    identifier: https://ror.org/087654321
+- name: European Climate Consortium
+  identifier: https://ror.org/098765432
+publisher: Example University Press
+issued: '2024'
+theme:
+- pref_label: Climate change
+  in_scheme: http://id.loc.gov/authorities/subjects
+  notation: http://id.loc.gov/authorities/subjects/sh85027037
+- pref_label: Meteorological data
+- pref_label: Europe
+  in_scheme: http://id.loc.gov/authorities/subjects
+  notation: http://id.loc.gov/authorities/subjects/sh85045631
+language: en
+byte_size: 25600000 bytes
+version_info: 2.1.0
+license:
+- label: Creative Commons Attribution 4.0 International
+  uri_ref: https://creativecommons.org/licenses/by/4.0/
+- label: Open Access
+  uri_ref: http://purl.org/coar/access_right/c_abf2
+spatial:
+- pref_label: European Union
+  geometry: 50.85 4.35
+  bbox: 35.0 -10.0 71.0 40.0
+- pref_label: Central Europe
+  geometry: 48.85 2.35
+  centroid: 48.0 2.0 49.0 2.0 49.0 3.0 48.0 3.0 48.0 2.0

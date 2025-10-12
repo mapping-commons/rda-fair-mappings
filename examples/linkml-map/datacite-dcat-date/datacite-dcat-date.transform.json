@@ -1,0 +1,49 @@
+{
+  "description": "Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods\nand language code to EU authority URI.\n",
+  "id": "https://example.org/transforms/dataset-to-dcat",
+  "title": "Dataset Metadata to DCAT Transformation",
+  "source_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml",
+  "target_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml",
+  "class_derivations": {
+    "DatasetMetadata": {
+      "description": "Transform DatasetInstance to DCAT DatasetMetadata",
+      "name": "DatasetMetadata",
+      "populated_from": "DatasetInstance",
+      "slot_derivations": {
+        "temporal": {
+          "description": "Transform first collected date to temporal period",
+          "name": "temporal",
+          "populated_from": "dates"
+        },
+        "language": {
+          "description": "Map ISO 639-1 to ISO 639-2 and construct EU authority URI",
+          "name": "language",
+          "expr": "lang_map = {\n  'bg': 'bul', 'cs': 'cze', 'da': 'dan', 'de': 'ger', 'el': 'gre',\n  'en': 'eng', 'es': 'spa', 'et': 'est', 'fi': 'fin', 'fr': 'fre',\n  'ga': 'gle', 'hr': 'hrv', 'it': 'ita', 'lv': 'lav', 'lt': 'lit',\n  'hu': 'hun', 'mt': 'mlt', 'nl': 'dut', 'pl': 'pol', 'pt': 'por',\n  'ru': 'rum', 'sk': 'slo', 'sl': 'slv', 'sv': 'swe'\n}\nalpha3 = lang_map.get(src.language.lower() if src.language else '', src.language or '')\ntarget = f\"http://publications.europa.eu/resource/authority/language/{alpha3}\" if alpha3 else None\n"
+        }
+      }
+    },
+    "PeriodOfTime": {
+      "description": "Transform Date to dct:PeriodOfTime by parsing the date range in the value field.\nExtracts start and end dates from a date range like \"2004-03-02/2005-06-02\"\n",
+      "name": "PeriodOfTime",
+      "populated_from": "Date",
+      "slot_derivations": {
+        "type": {
+          "description": "Set RDF type to PeriodOfTime",
+          "name": "type",
+          "expr": "'PeriodOfTime'"
+        },
+        "start_date": {
+          "description": "Extract start date (before the slash) from the value field",
+          "name": "start_date",
+          "expr": "target = src.value.split('/')[0]\n"
+        },
+        "end_date": {
+          "description": "Extract end date (after the slash) from the value field",
+          "name": "end_date",
+          "expr": "target = src.value.split('/')[1]\n"
+        }
+      }
+    }
+  },
+  "@type": "TransformationSpecification"
+}

@@ -1,0 +1,9 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+[] a dcat:DatasetMetadata ;
+    dcat:language "http://publications.europa.eu/resource/authority/language/eng" ;
+    dcat:temporal [ a dcat:PeriodOfTime ;
+            dcat:end_date "2005-06-02" ;
+            dcat:start_date "2004-03-02" ;
+            dcat:type "PeriodOfTime" ] .
+

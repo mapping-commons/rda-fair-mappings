@@ -1,0 +1,415 @@
+{
+  "description": "Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods\nand language code to EU authority URI.\n",
+  "id": "https://example.org/transforms/dataset-to-dcat",
+  "title": "Dataset Metadata to DCAT Transformation",
+  "source_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml",
+  "target_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml",
+  "class_derivations": {
+    "DatasetMetadata": {
+      "description": "Transform DatasetInstance to DCAT DatasetMetadata",
+      "name": "DatasetMetadata",
+      "populated_from": "DatasetInstance",
+      "slot_derivations": {
+        "temporal": {
+          "description": "Transform first collected date to temporal period",
+          "name": "temporal",
+          "populated_from": "dates"
+        },
+        "language": {
+          "description": "Map ISO 639-1 to ISO 639-2 and construct EU authority URI",
+          "name": "language",
+          "expr": "lang_map = {\n  'bg': 'bul', 'cs': 'cze', 'da': 'dan', 'de': 'ger', 'el': 'gre',\n  'en': 'eng', 'es': 'spa', 'et': 'est', 'fi': 'fin', 'fr': 'fre',\n  'ga': 'gle', 'hr': 'hrv', 'it': 'ita', 'lv': 'lav', 'lt': 'lit',\n  'hu': 'hun', 'mt': 'mlt', 'nl': 'dut', 'pl': 'pol', 'pt': 'por',\n  'ru': 'rum', 'sk': 'slo', 'sl': 'slv', 'sv': 'swe'\n}\nalpha3 = lang_map.get(src.language.lower() if src.language else '', src.language or '')\ntarget = f\"http://publications.europa.eu/resource/authority/language/{alpha3}\" if alpha3 else None\n"
+        }
+      }
+    },
+    "PeriodOfTime": {
+      "description": "Transform Date to dct:PeriodOfTime by parsing the date range in the value field.\nExtracts start and end dates from a date range like \"2004-03-02/2005-06-02\"\n",
+      "name": "PeriodOfTime",
+      "populated_from": "Date",
+      "slot_derivations": {
+        "type": {
+          "description": "Set RDF type to PeriodOfTime",
+          "name": "type",
+          "expr": "'PeriodOfTime'"
+        },
+        "start_date": {
+          "description": "Extract start date (before the slash) from the value field",
+          "name": "start_date",
+          "expr": "target = src.value.split('/')[0]\n"
+        },
+        "end_date": {
+          "description": "Extract end date (after the slash) from the value field",
+          "name": "end_date",
+          "expr": "target = src.value.split('/')[1]\n"
+        }
+      }
+    }
+  },
+  "@type": "TransformationSpecification",
+  "@context": {
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "STATO": {
+      "@id": "http://purl.obolibrary.org/obo/STATO_",
+      "@prefix": true
+    },
+    "dcterms": "http://purl.org/dc/terms/",
+    "linkml": "https://w3id.org/linkml/",
+    "linkmlmap": "https://w3id.org/linkml/transformer/",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sssom": "https://w3id.org/sssom/",
+    "@vocab": "https://w3id.org/linkml/transformer/",
+    "invalid_value_handling": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "invalid_value_handling"
+    },
+    "null_handling": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "null_handling"
+    },
+    "operator": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "operator"
+    },
+    "alias": {
+      "@id": "alias"
+    },
+    "class_named": {
+      "@id": "class_named"
+    },
+    "joins": {
+      "@type": "@id",
+      "@id": "joins"
+    },
+    "populated_from": {
+      "@id": "populated_from"
+    },
+    "slot_derivations": {
+      "@type": "@id",
+      "@id": "slot_derivations"
+    },
+    "sources": {
+      "@id": "sources"
+    },
+    "target_definition": {
+      "@type": "@id",
+      "@id": "target_definition"
+    },
+    "add": {
+      "@type": "@id",
+      "@id": "add"
+    },
+    "copy_all": {
+      "@type": "xsd:boolean",
+      "@id": "copy_all"
+    },
+    "element_name": {
+      "@id": "element_name"
+    },
+    "exclude": {
+      "@type": "@id",
+      "@id": "exclude"
+    },
+    "exclude_all": {
+      "@type": "xsd:boolean",
+      "@id": "exclude_all"
+    },
+    "include": {
+      "@type": "@id",
+      "@id": "include"
+    },
+    "copy_directives": {
+      "@type": "@id",
+      "@id": "copy_directives"
+    },
+    "expression_to_expression_mappings": {
+      "@type": "@id",
+      "@id": "expression_to_expression_mappings"
+    },
+    "expression_to_value_mappings": {
+      "@type": "@id",
+      "@id": "expression_to_value_mappings"
+    },
+    "is_a": {
+      "@type": "@id",
+      "@id": "linkml:is_a"
+    },
+    "mirror_source": {
+      "@type": "xsd:boolean",
+      "@id": "mirror_source"
+    },
+    "mixins": {
+      "@type": "@id",
+      "@id": "linkml:mixins"
+    },
+    "name": {
+      "@id": "name"
+    },
+    "overrides": {
+      "@type": "@id",
+      "@id": "overrides"
+    },
+    "value_mappings": {
+      "@type": "@id",
+      "@id": "value_mappings"
+    },
+    "expr": {
+      "@id": "expr"
+    },
+    "hide": {
+      "@type": "xsd:boolean",
+      "@id": "hide"
+    },
+    "permissible_value_derivations": {
+      "@type": "@id",
+      "@id": "permissible_value_derivations"
+    },
+    "class_name": {
+      "@id": "class_name"
+    },
+    "slot_name": {
+      "@id": "slot_name"
+    },
+    "key": {
+      "@id": "key"
+    },
+    "value": {
+      "@type": "@id",
+      "@id": "value"
+    },
+    "class_derivations": {
+      "@type": "@id",
+      "@id": "class_derivations"
+    },
+    "direction": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "direction"
+    },
+    "unmelt_to_class": {
+      "@id": "unmelt_to_class"
+    },
+    "unmelt_to_slots": {
+      "@id": "unmelt_to_slots"
+    },
+    "value_slot": {
+      "@id": "value_slot"
+    },
+    "variable_slot": {
+      "@id": "variable_slot"
+    },
+    "aggregation_operation": {
+      "@type": "@id",
+      "@id": "aggregation_operation"
+    },
+    "cast_collection_as": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "cast_collection_as"
+    },
+    "derived_from": {
+      "@id": "derived_from"
+    },
+    "dictionary_key": {
+      "@id": "dictionary_key"
+    },
+    "inverse_of": {
+      "@type": "@id",
+      "@id": "inverse_of"
+    },
+    "object_derivations": {
+      "@type": "@id",
+      "@id": "object_derivations"
+    },
+    "range": {
+      "@id": "linkml:range"
+    },
+    "stringification": {
+      "@type": "@id",
+      "@id": "stringification"
+    },
+    "type_designator": {
+      "@type": "xsd:boolean",
+      "@id": "type_designator"
+    },
+    "unit_conversion": {
+      "@type": "@id",
+      "@id": "unit_conversion"
+    },
+    "comments": {
+      "@id": "rdfs:comment"
+    },
+    "description": {
+      "@id": "dcterms:description"
+    },
+    "implements": {
+      "@type": "xsd:anyURI",
+      "@id": "implements"
+    },
+    "delimiter": {
+      "@id": "delimiter"
+    },
+    "over_slots": {
+      "@id": "over_slots"
+    },
+    "reversed": {
+      "@type": "xsd:boolean",
+      "@id": "reversed"
+    },
+    "syntax": {
+      "@context": {
+        "text": "skos:notation",
+        "description": "skos:prefLabel",
+        "meaning": "@id"
+      },
+      "@id": "syntax"
+    },
+    "author_id": {
+      "@type": "xsd:anyURI",
+      "@id": "sssom:author_id"
+    },
+    "creator_id": {
+      "@type": "xsd:anyURI",
+      "@id": "sssom:creator_id"
+    },
+    "enum_derivations": {
+      "@type": "@id",
+      "@id": "enum_derivations"
+    },
+    "id": {
+      "@id": "schema:identifier"
+    },
+    "license": {
+      "@type": "xsd:anyURI",
+      "@id": "dcterms:license"
+    },
+    "mapping_method": {
+      "@type": "xsd:anyURI",
+      "@id": "sssom:mapping_justification"
+    },
+    "prefixes": {
+      "@type": "@id",
+      "@id": "sh:declare"
+    },
+    "publication_date": {
+      "@type": "xsd:date",
+      "@id": "dcterms:issued"
+    },
+    "source_schema": {
+      "@id": "source_schema"
+    },
+    "target_schema": {
+      "@id": "target_schema"
+    },
+    "title": {
+      "@id": "dcterms:title"
+    },
+    "version": {
+      "@id": "dcterms:version"
+    },
+    "source_magnitude_slot": {
+      "@id": "source_magnitude_slot"
+    },
+    "source_unit": {
+      "@id": "source_unit"
+    },
+    "source_unit_scheme": {
+      "@id": "source_unit_scheme"
+    },
+    "source_unit_slot": {
+      "@id": "source_unit_slot"
+    },
+    "target_magnitude_slot": {
+      "@id": "target_magnitude_slot"
+    },
+    "target_unit": {
+      "@id": "target_unit"
+    },
+    "target_unit_scheme": {
+      "@id": "target_unit_scheme"
+    },
+    "target_unit_slot": {
+      "@id": "target_unit_slot"
+    },
+    "AggregationOperation": {
+      "@id": "AggregationOperation"
+    },
+    "AliasedClass": {
+      "@id": "AliasedClass"
+    },
+    "Any": {
+      "@id": "linkml:Any"
+    },
+    "ClassDerivation": {
+      "@id": "ClassDerivation"
+    },
+    "CopyDirective": {
+      "@id": "CopyDirective"
+    },
+    "ElementDerivation": {
+      "@id": "ElementDerivation"
+    },
+    "EnumDerivation": {
+      "@id": "EnumDerivation"
+    },
+    "GroupingOperation": {
+      "@id": "GroupingOperation"
+    },
+    "Inverse": {
+      "@id": "Inverse"
+    },
+    "KeyVal": {
+      "@id": "KeyVal"
+    },
+    "ObjectDerivation": {
+      "@id": "ObjectDerivation"
+    },
+    "PermissibleValueDerivation": {
+      "@id": "PermissibleValueDerivation"
+    },
+    "PivotOperation": {
+      "@id": "PivotOperation"
+    },
+    "PrefixDerivation": {
+      "@id": "PrefixDerivation"
+    },
+    "SlotDerivation": {
+      "@id": "SlotDerivation"
+    },
+    "SpecificationComponent": {
+      "@id": "SpecificationComponent"
+    },
+    "StringificationConfiguration": {
+      "@id": "StringificationConfiguration"
+    },
+    "TransformationOperation": {
+      "@id": "TransformationOperation"
+    },
+    "TransformationSpecification": {
+      "@id": "TransformationSpecification"
+    },
+    "UnitConversionConfiguration": {
+      "@id": "UnitConversionConfiguration"
+    }
+  }
+}

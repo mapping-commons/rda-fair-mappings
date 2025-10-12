@@ -1,0 +1,11 @@
+{
+  "temporal": [
+    {
+      "type": "PeriodOfTime",
+      "start_date": "2004-03-02",
+      "end_date": "2005-06-02"
+    }
+  ],
+  "language": "http://publications.europa.eu/resource/authority/language/eng",
+  "@type": "DatasetMetadata"
+}

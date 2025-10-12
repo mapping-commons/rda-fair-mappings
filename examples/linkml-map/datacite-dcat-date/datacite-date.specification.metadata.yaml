@@ -1,0 +1,27 @@
+id: https://example.org/transforms/dataset-to-dcat
+name: Dataset Metadata to DCAT Transformation
+description: Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods
+  and language code to EU authority URI.
+author: 
+  id: https://orcid.org/0000-0002-7356-1779
+  name: Nicolas Matentzoglu
+publication_date: 2025-10-10
+license: https://creativecommons.org/licenses/by/4.0/
+version: "0.1.0"
+representation_technique: linkml-map
+mapping_method: https://w3id.org/semapv/vocab/ManualMappingCuration
+content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/linkml-map/datacite-dcat-date/datacite-dcat-date.transform.yml
+subject_source:
+  id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml
+  name: DataCite Date Schema (simplified for date transformation example)
+  type: schema
+  documentation: https://doi.org/10.14454/3w3z-sa82
+  content_url: https://raw.githubusercontent.com/mapping-commons/rda-fair-mappings/refs/heads/example-mapping/examples/linkml-map/datacite-dcat-date/datacite.schema.yml
+  representation_technique: linkml
+object_source:
+  id: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml
+  name: DCAT Date Schema (simplified for date transformation example)
+  type: schema
+  documentation: https://www.w3.org/TR/vocab-dcat-2/
+  content_url: https://github.com/mapping-commons/rda-fair-mappings/raw/refs/heads/example-mapping/examples/linkml-map/datacite-dcat-date/dcat.schema.yml
+  representation_technique: linkml

@@ -1,0 +1,47 @@
+id: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml
+name: datacite-date-schema
+title: DataCite Date Schema (simplified for date transformation example)
+description: |
+  Simplified DataCite schema focusing on date and language fields for demonstrating
+  temporal period transformations in DCAT-AP.
+prefixes:
+  linkml: https://w3id.org/linkml/
+  datacite: http://datacite.org/schema/kernel-4/
+imports:
+  - linkml:types
+default_prefix: datacite
+
+classes:
+  DatasetInstance:
+    tree_root: true
+    description: A simplified dataset instance with dates and language
+    slots:
+      - dates
+      - language
+
+  Date:
+    description: Date information with type and value
+    slots:
+      - date_type
+      - value
+
+slots:
+  dates:
+    description: List of dates relevant to the resource
+    range: Date
+    multivalued: true
+    inlined_as_list: true
+
+  language:
+    description: Primary language code
+    range: string
+
+  date_type:
+    description: Type of date (e.g., Collected, Created, Issued)
+    range: string
+    required: true
+
+  value:
+    description: Date value (can be a range like 2004-03-02/2005-06-02)
+    range: string
+    required: true

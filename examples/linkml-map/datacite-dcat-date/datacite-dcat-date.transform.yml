@@ -1,0 +1,49 @@
+id: https://example.org/transforms/dataset-to-dcat
+title: Dataset Metadata to DCAT Transformation
+description: |
+  Demonstrates transformation of DataCite date ranges to DCAT-AP temporal periods
+  and language code to EU authority URI.
+source_schema: https://mapping-commons.github.io/rda-fair-mappings/example/datacite-date.schema.yml
+target_schema: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml
+#license: https://creativecommons.org/licenses/by/4.0/
+#mapping_method: sempav:ManualMappingCuration
+#version: 0.1.0
+
+class_derivations:
+  DatasetMetadata:
+    populated_from: DatasetInstance
+    description: Transform DatasetInstance to DCAT DatasetMetadata
+    slot_derivations:
+      temporal:
+        populated_from: dates
+        description: Transform first collected date to temporal period
+      language:
+        expr: |
+          lang_map = {
+            'bg': 'bul', 'cs': 'cze', 'da': 'dan', 'de': 'ger', 'el': 'gre',
+            'en': 'eng', 'es': 'spa', 'et': 'est', 'fi': 'fin', 'fr': 'fre',
+            'ga': 'gle', 'hr': 'hrv', 'it': 'ita', 'lv': 'lav', 'lt': 'lit',
+            'hu': 'hun', 'mt': 'mlt', 'nl': 'dut', 'pl': 'pol', 'pt': 'por',
+            'ru': 'rum', 'sk': 'slo', 'sl': 'slv', 'sv': 'swe'
+          }
+          alpha3 = lang_map.get(src.language.lower() if src.language else '', src.language or '')
+          target = f"http://publications.europa.eu/resource/authority/language/{alpha3}" if alpha3 else None
+        description: Map ISO 639-1 to ISO 639-2 and construct EU authority URI
+
+  PeriodOfTime:
+    populated_from: Date
+    description: |
+      Transform Date to dct:PeriodOfTime by parsing the date range in the value field.
+      Extracts start and end dates from a date range like "2004-03-02/2005-06-02"
+    slot_derivations:
+      type:
+        expr: "'PeriodOfTime'"
+        description: Set RDF type to PeriodOfTime
+      start_date:
+        expr: |
+          target = src.value.split('/')[0]
+        description: Extract start date (before the slash) from the value field
+      end_date:
+        expr: |
+          target = src.value.split('/')[1]
+        description: Extract end date (after the slash) from the value field

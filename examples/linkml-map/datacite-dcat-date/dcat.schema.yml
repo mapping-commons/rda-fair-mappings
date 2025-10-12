@@ -1,0 +1,49 @@
+id: https://mapping-commons.github.io/rda-fair-mappings/example/dcat-date.schema.yml
+name: dcat-date-schema
+title: DCAT Date Schema (simplified for date transformation example)
+description: |
+  Simplified DCAT-AP schema focusing on temporal period representation.
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dcat: http://www.w3.org/ns/dcat#
+  dct: http://purl.org/dc/terms/
+imports:
+  - linkml:types
+default_prefix: dcat
+
+classes:
+  DatasetMetadata:
+    description: Dataset metadata with temporal and language information
+    slots:
+      - temporal
+      - language
+
+  PeriodOfTime:
+    description: A temporal period with start and end dates
+    slots:
+      - type
+      - start_date
+      - end_date
+
+slots:
+  temporal:
+    description: Temporal coverage (dct:temporal)
+    range: PeriodOfTime
+    multivalued: true
+    inlined_as_list: true
+
+  language:
+    description: Language code or URI (dct:language)
+    range: string
+
+  type:
+    description: RDF type
+    range: string
+
+  start_date:
+    description: Start date (dcat:startDate)
+    range: string
+
+  end_date:
+    description: End date (dcat:endDate)
+    range: string

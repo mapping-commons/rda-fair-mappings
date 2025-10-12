@@ -1,0 +1,198 @@
+# Comprehensive DataCite Resource instance example
+identifier: "10.5281/zenodo.1234567"
+publication_year: "2024"
+publisher: "Example University Press"
+
+titles:
+  - title_text: "Comprehensive Climate Change Dataset for European Regions"
+    title_type: null
+    lang: "en"
+  - title_text: "Umfassender Klimawandel-Datensatz für europäische Regionen"
+    title_type: "TranslatedTitle"
+    lang: "de"
+
+descriptions:
+  - description_text: "This dataset contains comprehensive climate measurements including temperature, precipitation, and atmospheric pressure data collected from monitoring stations across European regions between 2020-2024."
+    description_type: "Abstract"
+    lang: "en"
+  - description_text: "Data was collected using standardized meteorological instruments calibrated according to WMO standards. Quality control procedures included automated outlier detection and manual validation."
+    description_type: "Methods"
+    lang: "en"
+
+creators:
+  - creator_name: "Smith, Jane"
+    name_type: "Personal"
+    given_name: "Jane"
+    family_name: "Smith"
+    name_identifier: "https://orcid.org/0000-0002-1234-5678"
+    name_identifier_scheme: "ORCID"
+    scheme_uri: "https://orcid.org/"
+    affiliations:
+      - affiliation_name: "University of Example"
+        affiliation_identifier: "https://ror.org/012345678"
+        affiliation_identifier_scheme: "ROR"
+        scheme_uri: "https://ror.org/"
+        lang: null
+      - affiliation_name: "Climate Research Institute"
+        affiliation_identifier: "https://ror.org/087654321"
+        affiliation_identifier_scheme: "ROR"
+        scheme_uri: "https://ror.org/"
+        lang: null
+  - creator_name: "European Climate Consortium"
+    name_type: "Organizational"
+    given_name: null
+    family_name: null
+    name_identifier: "https://ror.org/098765432"
+    name_identifier_scheme: "ROR"
+    scheme_uri: "https://ror.org/"
+    affiliations: []
+
+contributors:
+  - contributor_name: "Johnson, Robert"
+    contributor_type: "DataCollector"
+    name_type: "Personal"
+    given_name: "Robert"
+    family_name: "Johnson"
+    name_identifier: "https://orcid.org/0000-0003-9876-5432"
+    name_identifier_scheme: "ORCID"
+    scheme_uri: "https://orcid.org/"
+    affiliations:
+      - affiliation_name: "Meteorological Service Center"
+        affiliation_identifier: "https://ror.org/056781234"
+        affiliation_identifier_scheme: "ROR"
+        scheme_uri: "https://ror.org/"
+        lang: null
+  - contributor_name: "Martinez, Elena"
+    contributor_type: "DataCurator"
+    name_type: "Personal"
+    given_name: "Elena"
+    family_name: "Martinez"
+    name_identifier: "https://orcid.org/0000-0001-2345-6789"
+    name_identifier_scheme: "ORCID"
+    scheme_uri: "https://orcid.org/"
+    affiliations: []
+  - contributor_name: "Data Quality Team"
+    contributor_type: "ContactPerson"
+    name_type: "Organizational"
+    given_name: null
+    family_name: null
+    name_identifier: null
+    name_identifier_scheme: null
+    scheme_uri: null
+    affiliations: []
+
+subjects:
+  - subject_text: "Climate change"
+    subject_scheme: "LCSH"
+    scheme_uri: "http://id.loc.gov/authorities/subjects"
+    value_uri: "http://id.loc.gov/authorities/subjects/sh85027037"
+    lang: "en"
+  - subject_text: "Meteorological data"
+    subject_scheme: null
+    scheme_uri: null
+    value_uri: null
+    lang: "en"
+  - subject_text: "Europe"
+    subject_scheme: "LCSH"
+    scheme_uri: "http://id.loc.gov/authorities/subjects"
+    value_uri: "http://id.loc.gov/authorities/subjects/sh85045631"
+    lang: "en"
+
+dates:
+  - date_value: "2024-01-15"
+    date_type: "Created"
+    date_information: "Initial dataset creation"
+  - date_value: "2024-08-20"
+    date_type: "Issued"
+    date_information: "Public release date"
+  - date_value: "2024-09-10"
+    date_type: "Updated"
+    date_information: "Added validation metadata"
+  - date_value: "2020/2024"
+    date_type: "Collected"
+    date_information: "Data collection period"
+
+language: "en"
+
+resource_type: "Dataset"
+
+alternate_identifiers:
+  - identifier_value: "urn:example:climate:dataset:2024:001"
+    identifier_type: "URN"
+  - identifier_value: "https://example.org/datasets/climate-europe-2024"
+    identifier_type: "URL"
+
+related_identifiers:
+  - related_identifier_value: "10.5281/zenodo.7654321"
+    related_identifier_type: "DOI"
+    relation_type: "IsSupplementTo"
+    related_metadata_scheme: null
+    scheme_uri: null
+    scheme_type: null
+    resource_type_general: "Dataset"
+  - related_identifier_value: "10.1234/example.publication.2024"
+    related_identifier_type: "DOI"
+    relation_type: "IsDocumentedBy"
+    related_metadata_scheme: null
+    scheme_uri: null
+    scheme_type: null
+    resource_type_general: "Text"
+  - related_identifier_value: "arXiv:2408.12345"
+    related_identifier_type: "arXiv"
+    relation_type: "IsCitedBy"
+    related_metadata_scheme: null
+    scheme_uri: null
+    scheme_type: null
+    resource_type_general: "Text"
+
+sizes:
+  - "25600000 bytes"
+  - "1250 records"
+  - "48 monitoring stations"
+
+formats:
+  - "application/netcdf"
+  - "text/csv"
+  - "application/json"
+
+version: "2.1.0"
+
+rights_list:
+  - rights_text: "Creative Commons Attribution 4.0 International"
+    rights_uri: "https://creativecommons.org/licenses/by/4.0/"
+    rights_identifier: "CC-BY-4.0"
+    rights_identifier_scheme: "SPDX"
+    scheme_uri: "https://spdx.org/licenses/"
+    lang: "en"
+  - rights_text: "Open Access"
+    rights_uri: "http://purl.org/coar/access_right/c_abf2"
+    rights_identifier: null
+    rights_identifier_scheme: null
+    scheme_uri: null
+    lang: "en"
+
+funding_references:
+  - funder_name: "European Commission"
+    funder_identifier: "https://doi.org/10.13039/501100000780"
+    funder_identifier_type: "Crossref Funder ID"
+    scheme_uri: "https://www.crossref.org/services/funder-registry/"
+    award_number: "EC-H2020-987654"
+    award_uri: "https://cordis.europa.eu/project/id/987654"
+    award_title: "Climate Data Infrastructure for Europe"
+  - funder_name: "National Science Foundation"
+    funder_identifier: "https://doi.org/10.13039/100000001"
+    funder_identifier_type: "Crossref Funder ID"
+    scheme_uri: "https://www.crossref.org/services/funder-registry/"
+    award_number: "NSF-2024-12345"
+    award_uri: null
+    award_title: "Advanced Climate Monitoring Systems"
+
+geo_locations:
+  - geo_location_place: "European Union"
+    geo_location_point: "50.85 4.35"
+    geo_location_box: "35.0 -10.0 71.0 40.0"
+    geo_location_polygon: null
+  - geo_location_place: "Central Europe"
+    geo_location_point: "48.85 2.35"
+    geo_location_box: null
+    geo_location_polygon: "48.0 2.0 49.0 2.0 49.0 3.0 48.0 3.0 48.0 2.0"

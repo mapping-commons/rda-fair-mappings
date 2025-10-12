@@ -1,0 +1,37 @@
+{
+  "id": "https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.transform.yml",
+  "title": "PersonInfo to Agent example transformation",
+  "prefixes": {
+    "sssom": {
+      "key": "sssom",
+      "value": "https://w3id.org/sssom/"
+    },
+    "semapv": {
+      "key": "semapv",
+      "value": "https://w3id.org/semapv/vocab/"
+    }
+  },
+  "source_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.schema.yml",
+  "target_schema": "https://mapping-commons.github.io/rda-fair-mappings/example/personinfo.transform.yml",
+  "class_derivations": {
+    "Individual": {
+      "name": "Individual",
+      "populated_from": "Person",
+      "slot_derivations": {
+        "name": {
+          "description": "Concatenating given and family names note this is a bad assumption for names in general, this is just for demonstration",
+          "name": "name",
+          "expr": "{given_name} + ' ' + {family_name}"
+        },
+        "height_in_meters": {
+          "name": "height_in_meters",
+          "populated_from": "height_in_cm",
+          "unit_conversion": {
+            "target_unit": "m"
+          }
+        }
+      }
+    }
+  },
+  "@type": "TransformationSpecification"
+}
