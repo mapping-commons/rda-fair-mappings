@@ -243,3 +243,4 @@ The conceptual model aligns with established standards:
 - [FAIR Mapping Recommendations](recommendation.md) - Technical recommendations for making mappings FAIR
 - [Case Studies](use-cases.md) - Real-world examples of different mapping types
 - [Resources](resources.md) - Tools and standards for working with mappings
+- [The Semantic Mapping Vocabulary](https://mapping-commons.github.io/semantic-mapping-vocabulary/) - specifying some of the concepts from this code model (and more) as a formal RDF Vocabulary ([Browse on OLS](https://www.ebi.ac.uk/ols4/ontologies/semapv))
