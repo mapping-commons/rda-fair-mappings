@@ -178,7 +178,7 @@ Examples include:
 
 #### Mapping Set
 
-A **mapping set** is a type of mapping specification that groups related mapping relationships together, typically for a specific purpose or representing mappings between two particular sources. A mapping set is often the unit of publication and sharing.
+A **mapping set** is a type of mapping specification that groups predicate-based mapping relationships together, typically in the form of subject, (mapping) predicate, object triples along with additional metadata. A mapping set is often the unit of publication and sharing.
 
 A mapping set:
 
