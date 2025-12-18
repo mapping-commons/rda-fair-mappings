@@ -130,7 +130,7 @@ A **mapping relationship** is a correspondence within a mapping specification th
 
 A mapping relationship may specify:
 
-- One or more **subjects** (source elements being mapped)
+- One or more **source elements**
 - One or more **objects** (target elements being mapped to)
 - A **predicate** or **relation** describing how subjects and objects correspond (e.g., `skos:exactMatch`, `skos:broadMatch`, `owl:equivalentClass`)
 - **Transformation rules** defining how source values are converted to target values (e.g., concatenation, splitting, unit conversion, conditional logic)
