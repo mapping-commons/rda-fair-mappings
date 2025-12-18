@@ -23,6 +23,7 @@ We invite everyone interested in the FAIR Mappings WG to join the working group 
 
 - [Use cases and case studies](use-cases.md)
 - [How to contribute?](https://github.com/mapping-commons/rda-fair-mappings/blob/main/CONTRIBUTING.md)
+- [FAIR Mappings Schema](https://mapping-commons.github.io/fair-mappings-schema/)
 - [FAIR Mappings WG Activity](https://www.rd-alliance.org/groups/fair-mappings-wg/activity/)
 - [Statement of Work](https://www.rd-alliance.org/groups/fair-mappings-wg/work-statement/?sow=174262)
 - [Member list](https://www.rd-alliance.org/groups/fair-mappings-wg/members/all-members/)
