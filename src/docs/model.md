@@ -228,6 +228,8 @@ The choice of serialization format depends on factors such as:
 - The source and target data formats
 - Tooling availability and community adoption
 - Requirements for human readability vs. machine executability
+- Requirements for reusability / composability.
+- Does the format support easy mix-and-match type of mapping specification creation?
 
 ## Relationship to Standards
 
