@@ -2,3 +2,4 @@ python-frontmatter
 jinja2
 click
 mkdocs-awesome-pages-plugin
+mkdocs-mermaid2-plugin

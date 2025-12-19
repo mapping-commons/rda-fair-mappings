@@ -3,3 +3,4 @@
 .DS_Store
 src/docs/use-cases.md
 /tmp
+/src/rda_fair_mappings.egg-info
