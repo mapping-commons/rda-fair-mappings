@@ -71,7 +71,7 @@ def document_case_studies(case_study_dir, output_dir, overview_file):
 
     cases_by_mapping_type = defaultdict(list)  # Store grouped metadata for overview
 
-    for filename in os.listdir(case_study_dir):
+    for filename in sorted(os.listdir(case_study_dir)):
         if filename.endswith(".md"):
             filepath = os.path.join(case_study_dir, filename)
 
@@ -102,9 +102,22 @@ def document_case_studies(case_study_dir, output_dir, overview_file):
             with open(output_path, "w", encoding="utf-8") as out_file:
                 out_file.write(case_study_template.render(case_metadata))
 
+    # Sort cases within each mapping type by title
+    for mapping_type in cases_by_mapping_type:
+        cases_by_mapping_type[mapping_type].sort(key=lambda x: x["title"].lower())
+
+    # Sort mapping types alphabetically, but put "TBD" and "Unknown" at the end
+    def mapping_type_sort_key(item):
+        mapping_type = item[0]
+        if mapping_type in ("TBD", "Unknown"):
+            return (1, mapping_type)
+        return (0, mapping_type)
+
+    sorted_cases = dict(sorted(cases_by_mapping_type.items(), key=mapping_type_sort_key))
+
     # Generate the overview page
     with open(overview_file, "w", encoding="utf-8") as out_file:
-        out_file.write(overview_template.render(cases_by_mapping_type=cases_by_mapping_type, now="2025-02-17"))
+        out_file.write(overview_template.render(cases_by_mapping_type=sorted_cases, now="2025-02-17"))
 
     click.echo(f"✅ Generated {sum(len(v) for v in cases_by_mapping_type.values())} case study files and an overview page: {overview_file}")
 

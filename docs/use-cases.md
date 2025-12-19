@@ -15,30 +15,6 @@
 ### Entity Mapping
 
 
-#### [Mondo Case Study](case-study/case-study-mondo.md)
-
-- **Author:** Nicolas Matentzoglu (@matentzn)
-- **Last updated:** 2025-02-15
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Ontology Mapping, Data Integration
-
-
-#### [Uberon Case Study](case-study/case-study-uberon.md)
-
-- **Author:** Damien Goutte-Gattat (@gouttegd)
-- **Last updated:** 2025-02-17
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Ontology mapping, Data Integration
-
-
-#### [Ontology Mappings COMP-LOINC Case Study](case-study/case-study-comp-loinc.md)
-
-- **Author:** Joe Flack (@joeflack4)
-- **Last updated:** 2025-04-02
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Data integration
-
-
 #### [ARIADNE European Archaeology Infrastructure Project Case Study](case-study/case-study-ariadne.md)
 
 - **Author:** Doug Tudhope (@dstudhope-24)
@@ -47,52 +23,20 @@
 - **Tags:** Discovery
 
 
-#### [INRAE Case Study](case-study/case-study-inrae.md)
+#### [BFO-PROV Case Study](case-study/case-study-bfoprov.md)
 
-- **Author:** Sophie Aubin (@saubin78)
+- **Author:** Philip Strömert (@StroemPhi)
+- **Last updated:** 2025-05-19
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability, Discovery, Data integration
+
+
+#### [BODC Case Study](case-study/case-study-bodc.md)
+
+- **Author:** Gwen Moncoiffé (@gwemon)
 - **Last updated:** 2025-02-17
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** FAIR, Semantic interoperability
-
-
-#### [Wheat Trait and Phenotype Ontology and the Wheat Ontology Case Study](case-study/case-study-wheatontology.md)
-
-- **Author:** Sophie Aubin (@saubin78)
-- **Last updated:** 2025-02-17
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Discovery
-
-
-#### [DLITE Mapping Case Study](case-study/case-study-dlite.md)
-
-- **Author:** Jesper Friis (@jesper-friis)
-- **Last updated:** 2025-03-17
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Semantic interoperability
-
-
-#### [World Ocean Database (WOD) terms (unpublished) mappings to NVS Case Study](case-study/case-study-wod-ices.md)
-
-- **Author:** Alexandra Kokkinaki (@alko-k)
-- **Last updated:** 2025-06-18
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Semantic interoperability
-
-
-#### [Information Extraction from Biomedical Literature Case Study](case-study/case-study-ontogpt-ie.md)
-
-- **Author:** Harry Caufield (@caufieldjh)
-- **Last updated:** 2025-04-02
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Data integration
-
-
-#### [LGBTQ+ Case Study](case-study/case-study-lgbtq.md)
-
-- **Author:** Clair Kronk (@Superraptor)
-- **Last updated:** 2025-04-27
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Semantic interoperability
+- **Tags:** FAIR, Data Integration, Semantic interoperability
 
 
 #### [CEON Case Study](case-study/case-study-ceon.md)
@@ -103,12 +47,12 @@
 - **Tags:** FAIR, Data Integration, Semantic interoperability
 
 
-#### [BFO-PROV Case Study](case-study/case-study-bfoprov.md)
+#### [DLITE Mapping Case Study](case-study/case-study-dlite.md)
 
-- **Author:** Philip Strömert (@StroemPhi)
-- **Last updated:** 2025-05-19
+- **Author:** Jesper Friis (@jesper-friis)
+- **Last updated:** 2025-03-17
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Semantic interoperability, Discovery, Data integration
+- **Tags:** Semantic interoperability
 
 
 #### [Food Case Study](case-study/case-study-food.md)
@@ -127,14 +71,6 @@
 - **Tags:** Variable Mapping, Data Integration
 
 
-#### [BODC Case Study](case-study/case-study-bodc.md)
-
-- **Author:** Gwen Moncoiffé (@gwemon)
-- **Last updated:** 2025-02-17
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** FAIR, Data Integration, Semantic interoperability
-
-
 #### [ICOS Case Study](case-study/case-study-icos.md)
 
 - **Author:** Maggie Hellstrom (@DrMaggie)
@@ -143,32 +79,72 @@
 - **Tags:** FAIR, Data Integration
 
 
+#### [Information Extraction from Biomedical Literature Case Study](case-study/case-study-ontogpt-ie.md)
 
-### Schema Mapping
+- **Author:** Harry Caufield (@caufieldjh)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
 
 
-#### [Fresh Catalog Case Study](case-study/case-study-fresh.md)
+#### [INRAE Case Study](case-study/case-study-inrae.md)
 
-- **Author:** Alessandro Morichetta (@alemorigh)
-- **Last updated:** 2025-05-19
+- **Author:** Sophie Aubin (@saubin78)
+- **Last updated:** 2025-02-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** FAIR, Semantic interoperability
+
+
+#### [LGBTQ+ Case Study](case-study/case-study-lgbtq.md)
+
+- **Author:** Clair Kronk (@Superraptor)
+- **Last updated:** 2025-04-27
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
+
+
+#### [Mondo Case Study](case-study/case-study-mondo.md)
+
+- **Author:** Nicolas Matentzoglu (@matentzn)
+- **Last updated:** 2025-02-15
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Ontology Mapping, Data Integration
+
+
+#### [Ontology Mappings COMP-LOINC Case Study](case-study/case-study-comp-loinc.md)
+
+- **Author:** Joe Flack (@joeflack4)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
+#### [Uberon Case Study](case-study/case-study-uberon.md)
+
+- **Author:** Damien Goutte-Gattat (@gouttegd)
+- **Last updated:** 2025-02-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Ontology mapping, Data Integration
+
+
+#### [Wheat Trait and Phenotype Ontology and the Wheat Ontology Case Study](case-study/case-study-wheatontology.md)
+
+- **Author:** Sophie Aubin (@saubin78)
+- **Last updated:** 2025-02-17
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Discovery
 
 
-#### [DCAT-AP to Schema.org Case Study](case-study/case-study-dcat-ap-schemaorg.md)
+#### [World Ocean Database (WOD) terms (unpublished) mappings to NVS Case Study](case-study/case-study-wod-ices.md)
 
-- **Author:** Philip Strömert (@StroemPhi)
-- **Last updated:** 2025-07-17
+- **Author:** Alexandra Kokkinaki (@alko-k)
+- **Last updated:** 2025-06-18
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Semantic interoperability, Integration, Discovery, Transformation
+- **Tags:** Semantic interoperability
 
 
-#### [Schema subsetting with LinkML-Map Case Study](case-study/case-study-linkml-map-subset.md)
 
-- **Author:** Sierra Moxon (@sierra-moxon)
-- **Last updated:** 2025-04-02
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Data integration
+### Schema Mapping
 
 
 #### [DCAT-AP to DataCite Case Study](case-study/case-study-dcat-ap-datacite.md)
@@ -179,20 +155,20 @@
 - **Tags:** Semantic interoperability, Integration, Analysis, Discovery, Transformation
 
 
-#### [NII Case Study](case-study/case-study-nii.md)
+#### [DCAT-AP to Schema.org Case Study](case-study/case-study-dcat-ap-schemaorg.md)
 
-- **Author:** Toshiyuki Hiraki (@hirakinii)
-- **Last updated:** 2025-04-03
+- **Author:** Philip Strömert (@StroemPhi)
+- **Last updated:** 2025-07-17
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Semantic interoperability
+- **Tags:** Semantic interoperability, Integration, Discovery, Transformation
 
 
-#### [Schema normalization with LinkML-Map Case Study](case-study/case-study-linkml-map-normalization.md)
+#### [Fresh Catalog Case Study](case-study/case-study-fresh.md)
 
-- **Author:** Sierra Moxon (@sierra-moxon)
-- **Last updated:** 2025-04-02
+- **Author:** Alessandro Morichetta (@alemorigh)
+- **Last updated:** 2025-05-19
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Data integration
+- **Tags:** Discovery
 
 
 #### [Lunaris Case Study](case-study/case-study-lunaris.md)
@@ -203,7 +179,31 @@
 - **Tags:** FAIR, Data Integration
 
 
+#### [NII Case Study](case-study/case-study-nii.md)
+
+- **Author:** Toshiyuki Hiraki (@hirakinii)
+- **Last updated:** 2025-04-03
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Semantic interoperability
+
+
 #### [Schema element mapping with LinkML-Map Case Study](case-study/case-study-linkml-map.md)
+
+- **Author:** Sierra Moxon (@sierra-moxon)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
+#### [Schema normalization with LinkML-Map Case Study](case-study/case-study-linkml-map-normalization.md)
+
+- **Author:** Sierra Moxon (@sierra-moxon)
+- **Last updated:** 2025-04-02
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration
+
+
+#### [Schema subsetting with LinkML-Map Case Study](case-study/case-study-linkml-map-subset.md)
 
 - **Author:** Sierra Moxon (@sierra-moxon)
 - **Last updated:** 2025-04-02
