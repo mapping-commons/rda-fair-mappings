@@ -80,6 +80,7 @@ nav:
           - ARIADNE mappings: case-study/case-study-ariadne.md
   - FAIR Mapping recommendations: recommendation.md
   - FAIR Mappings conceptual model: model.md
+  - Integration with other efforts: integration.md
   - FAIR Mappings schema: https://mapping-commons.github.io/fair-mappings-schema/
   - Decision log of the Working Group: decision-log.md
   - Related efforts: related-efforts.md
