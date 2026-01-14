@@ -147,6 +147,14 @@
 ### Schema Mapping
 
 
+#### [DataCite to Schema.org Case Study](case-study/case-study-datacite-schemaorg.md)
+
+- **Author:** TBD (TBD)
+- **Last updated:** 2025-01-13
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Schema Mapping, Discovery, Integration, Transformation
+
+
 #### [DCAT-AP to DataCite Case Study](case-study/case-study-dcat-ap-datacite.md)
 
 - **Author:** Philip Strömert (@StroemPhi)
