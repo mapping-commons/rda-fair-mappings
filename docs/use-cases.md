@@ -149,7 +149,7 @@
 
 #### [DataCite to Schema.org Case Study](case-study/case-study-datacite-schemaorg.md)
 
-- **Author:** TBD (TBD)
+- **Author:** Dr. Rebecca Ringuette (rebeccaringuette)
 - **Last updated:** 2025-01-13
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Schema Mapping, Discovery, Integration, Transformation
