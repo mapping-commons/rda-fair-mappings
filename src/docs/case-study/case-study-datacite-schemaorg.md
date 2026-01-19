@@ -1,7 +1,7 @@
 ---
 title: "DataCite to Schema.org Case Study"
-author: "TBD"
-author_github: "TBD"
+author: "Dr. Rebecca Ringuette"
+author_github: "rebeccaringuette"
 date: "2025-01-13"
 tags:
   - Schema Mapping
