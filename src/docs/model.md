@@ -237,7 +237,7 @@ The conceptual model aligns with established standards:
 
 - **DCAT** (Data Catalog Vocabulary): Mapping specifications are treated as datasets that can be cataloged and discovered
 - **PROV** (Provenance Ontology): Mapping activities and executions are tracked as provenance activities, with clear inputs and outputs
-- **SSSOM**: The recommended format for representing instance-level mappings
+- **SSSOM**: The recommended format for representing mapping sets
 - **LinkML-Map**: A framework for schema mappings with executable transformation logic
 
 ## See Also
