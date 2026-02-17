@@ -1,0 +1,1443 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mapping-commons.github.io/rda-fair-mappings/case-study/case-study-dlite-transform/">
+      
+      
+        <link rel="prev" href="../case-study-i-adopt/">
+      
+      
+        <link rel="next" href="../case-study-dlite/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>DLITE transform - RDA Fair Mappings Working Group</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bcfcd587.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#domain" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="RDA Fair Mappings Working Group" class="md-header__button md-logo" aria-label="RDA Fair Mappings Working Group" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RDA Fair Mappings Working Group
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DLITE transform
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mapping-commons/rda-fair-mappings/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="RDA Fair Mappings Working Group" class="md-nav__button md-logo" aria-label="RDA Fair Mappings Working Group" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RDA Fair Mappings Working Group
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mapping-commons/rda-fair-mappings/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About our work
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Use Cases
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use-cases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Case Studies
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Case Studies
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-lunaris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lunaris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-mondo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mondo Ontology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-uberon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Uberon Ontology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-icos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrated Carbon Observation System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-bodc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    British Oceanographic Data Centre
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-inrae/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    INRAE Thesaurus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-ceon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Circular Economy Ontologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-wheatontology/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wheat Ontology
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-nii/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NII Data Governance
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-i-adopt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I-ADOPT
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    DLITE transform
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    DLITE transform
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-of-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose of the mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-purpose-of-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other purpose of the mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-of-mapped-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type of mapped resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-an-existing-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links to an existing mappings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-used-for-creating-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools used for creating the mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-of-mapping-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type of mapping relations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-samples-of-different-types-of-mapping-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples (samples) of different types of mapping implementations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-dlite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DLITE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-comp-loinc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    COMP-LOINC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-ontogpt-ie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Information Extraction from Literature
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-linkml-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema element mapping with LinkML-Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-linkml-map-subset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema subsetting with LinkML-Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-linkml-map-normalization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schema normalization with LinkML-Map
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-food/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FoodOn to FoodEx2 mapping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-lgbtq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapping LGBTQ+-related thesauri
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-fresh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fresh Catalog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-bfoprov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BFO-PROV-O
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-wod-ices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WOD to ICES platforms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-dcat-ap-datacite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DCAT-AP-DataCite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-dcat-ap-schemaorg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DCAT-AP-Schema.org
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-datacite-schemaorg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataCite-Schema.org
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../case-study-ariadne/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ARIADNE mappings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recommendation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAIR Mapping recommendations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAIR Mappings conceptual model
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration with other efforts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://mapping-commons.github.io/fair-mappings-schema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAIR Mappings schema
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decision-log/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Decision log of the Working Group
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../related-efforts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Related efforts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resources about FAIR mappings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      Domain
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purpose-of-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose of the mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-purpose-of-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other purpose of the mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-of-mapped-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type of mapped resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#links-to-an-existing-mappings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Links to an existing mappings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tools-used-for-creating-the-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools used for creating the mapping
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#type-of-mapping-relations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type of mapping relations
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples-samples-of-different-types-of-mapping-implementations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples (samples) of different types of mapping implementations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/mapping-commons/rda-fair-mappings/edit/main/src/docs/case-study/case-study-dlite-transform.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>DLITE transform</h1>
+
+<!-- DO NOT EDIT: This file is auto-generated. Any changes will be overwritten. -->
+
+<p><span style="display:inline-block; background:#eee; color:#333; padding:4px 8px; border-radius:4px;">Semantic interoperability</span> </p>
+<div class="admonition info">
+<p class="admonition-title">DLITE Transformation Case Study Infobox</p>
+<ul>
+<li><strong>Author:</strong> Jesper Friis  (@jesper-friis)</li>
+<li><strong>Last updated:</strong> 2025-03-17  </li>
+<li><strong>Mapping Type:</strong> <img alt="Mapping Type" src="https://img.shields.io/badge/TBD-blue" /> </li>
+<li><strong>Status of this case study:</strong> <img alt="Status" src="https://img.shields.io/badge/Draft-yellow" /></li>
+</ul>
+</div>
+<p>Semantic transformations.</p>
+<h3 id="domain">Domain<a class="headerlink" href="#domain" title="Permanent link">&para;</a></h3>
+<p>Any applied scientific domain dealing with semantic data.</p>
+<h3 id="purpose-of-the-mapping">Purpose of the mapping<a class="headerlink" href="#purpose-of-the-mapping" title="Permanent link">&para;</a></h3>
+<p>Semantic interoperability</p>
+<h3 id="other-purpose-of-the-mapping">Other purpose of the mapping<a class="headerlink" href="#other-purpose-of-the-mapping" title="Permanent link">&para;</a></h3>
+<p>Can also be used for data integration.</p>
+<h3 id="type-of-mapped-resources">Type of mapped resources<a class="headerlink" href="#type-of-mapped-resources" title="Permanent link">&para;</a></h3>
+<p>By combining the the use case of <a href="https://github.com/mapping-commons/rda-fair-mappings/issues/2">Semantic mappings of datamodels</a>  with mappings of input and output of <em>mapping functions</em> to ontological concepts, it is possible to obtain semantically driven data transformations.</p>
+<p>The figure below shows three datamodels and three mapping functions that are all mapped to ontological concepts.</p>
+<p><img alt="DLITE Example Transformation" src="../../img/dlite_example1.png" />
+<strong>Figure 1</strong>. Example of semantic transformations.</p>
+<p>Lets assume that we have instances of the <code>Structure</code> and <code>CalcResults</code> datamodels (named <code>C3H6</code> and <code>C3H6_result</code> in the figure). Given that it is possible to ask a semantic system to instantiate an instance of the <code>Molecule</code> datamodel. If the system can find a route from the properties of the <code>Molecule</code> datamodel, via the mappings and mapping functions, to existing data, it will be able to return a <code>Molecule</code> instance.</p>
+<p>This is a very powerful use of semantic mappings that enables seamless data integration. It allows independent data providers document their datasets by creating datamodels for them and map them to ontologies. An data consumer can then document what data he/she needs by creating a datamodel for that and map it to the ontologies. With support from an ontologist that may provide generic mapping functions enabling generic transformations between individuals of different ontological concepts, the data consumer is then able to get a selection of the available data represented in the form he/she needs it in. Note that the data consumer does not need to know anything about the structure of the existing datasets.</p>
+<h3 id="links-to-an-existing-mappings">Links to an existing mappings<a class="headerlink" href="#links-to-an-existing-mappings" title="Permanent link">&para;</a></h3>
+<p>An implementation of semantic transformations is available on https://github.com/SINTEF/dlite/tree/master/examples/mappings
+Note that the mappings does not necessary have to be complete in order to be useful. In this example the mappings are entered progammaticrally in Python, but under the hood are they stored in the knowledge base as a set of RDF triples of the form:</p>
+<div class="highlight"><pre><span></span><code>&lt;source IRI&gt; refs:subClassOf &lt;target IRI&gt; .
+</code></pre></div>
+<p>Hence, it is easy to enter the mappings in a declarative way.</p>
+<h3 id="tools-used-for-creating-the-mapping">Tools used for creating the mapping<a class="headerlink" href="#tools-used-for-creating-the-mapping" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/SINTEF/dlite">DLite</a> and <a href="https://github.com/EMMC-ASBL/tripper">Tripper</a></p>
+<h3 id="type-of-mapping-relations">Type of mapping relations<a class="headerlink" href="#type-of-mapping-relations" title="Permanent link">&para;</a></h3>
+<p>Main mapping relation: rdfs:subClassOf</p>
+<p><strong>Note</strong>: Before we used the non-standard <code>map:mapsTo</code> relation. This relation may still be seen in examples.</p>
+<h3 id="examples-samples-of-different-types-of-mapping-implementations">Examples (samples) of different types of mapping implementations<a class="headerlink" href="#examples-samples-of-different-types-of-mapping-implementations" title="Permanent link">&para;</a></h3>
+<p>Mapping the data models may look like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">struct:</span><span class="w"> </span><span class="nv">&lt;http://onto-ns.org/meta/dlite/0.1/Structure#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">cr:</span><span class="w"> </span><span class="nv">&lt;http://onto-ns.org/meta/dlite/0.1/CalcResult#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">mol:</span><span class="w"> </span><span class="nv">&lt;http://onto-ns.org/meta/dlite/0.1/Molecule#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">emmo:</span><span class="w"> </span><span class="nv">&lt;https://w3id.org/emmo#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">don:</span><span class="w"> </span><span class="nv">&lt;http://example.com/demo-ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nn">struct</span><span class="p">:</span><span class="nt">symbols</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">don</span><span class="p">:</span><span class="nt">ChemicalSymbol</span> <span class="p">.</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nn">cr</span><span class="p">:</span><span class="nt">potential_energy</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">PotentialEnergy</span> <span class="p">.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nn">cr</span><span class="p">:</span><span class="nt">forces</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">Force</span> <span class="p">.</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nn">mol</span><span class="p">:</span><span class="nt">formula</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">ChemicalFormula</span> <span class="p">.</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nn">mol</span><span class="p">:</span><span class="nt">energy</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">PotentialEnergy</span> <span class="p">.</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nn">mol</span><span class="p">:</span><span class="nt">maxforce</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">don</span><span class="p">:</span><span class="nt">MaxForce</span> <span class="p">.</span>
+</code></pre></div>
+<p>Here <code>struct:symbols</code> is a unique IRI that refer to the <code>symbols</code> property of the datamodel <a href="http://onto-ns.com/meta/0.1/Structure">http://onto-ns.com/meta/0.1/Structure</a>.
+Hence, the mapping relation <code>struct:symbols rdfs:subClassOf don:ChemicalSymbol</code> states that the <code>symbols</code> property of the Structure data model is a chemical symbol.
+Similar for the other mapping relations.</p>
+<p>The mappings for the mapping functions are typically generated via the <a href="https://github.com/EMMC-ASBL/tripper">Tripper</a> API, and are therefore not shown here.</p>
+<p>The full RDF representation of the DLite transformation example is as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;https://github.com/SINTEF/dlite/tree/master/examples/mappings#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">at:</span><span class="w"> </span><span class="nv">&lt;http://onto-ns.com/meta/0.1/Structure#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">dcterms:</span><span class="w"> </span><span class="nv">&lt;http://purl.org/dc/terms/&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">don:</span><span class="w"> </span><span class="nv">&lt;http://example.com/demo-ontology#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">emmo:</span><span class="w"> </span><span class="nv">&lt;https://w3id.org/emmo#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">mol:</span><span class="w"> </span><span class="nv">&lt;http://onto-ns.com/meta/0.1/Molecule#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">oteio:</span><span class="w"> </span><span class="nv">&lt;https://w3id.org/emmo/domain/oteio#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">res:</span><span class="w"> </span><span class="nv">&lt;http://onto-ns.com/meta/0.1/CalcResult#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">:</span><span class="nt">formula_4a498652</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_4299e344_a321_4ef2_a744_bacfcce80afc</span> <span class="p">;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;formula&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Convert a list of atomic symbols to a chemical formula.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_36e69413_8c59_4799_946c_10b05d266e22</span> <span class="nn">don</span><span class="p">:</span><span class="nt">ChemicalSymbol</span> <span class="p">;</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840</span> <span class="nn">don</span><span class="p">:</span><span class="nt">Formula</span> <span class="p">;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasPythonFunctionName</span> <span class="s">&quot;formula&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasPythonModuleName</span> <span class="s">&quot;mappingfunc_module&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">.</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">:</span><span class="nt">maximum_6ddb63c3</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_4299e344_a321_4ef2_a744_bacfcce80afc</span> <span class="p">;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;maximum&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Returns the largest element.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_36e69413_8c59_4799_946c_10b05d266e22</span> <span class="nn">don</span><span class="p">:</span><span class="nt">ForceNorm</span> <span class="p">;</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840</span> <span class="nn">don</span><span class="p">:</span><span class="nt">MaxForce</span> <span class="p">;</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasPythonFunctionName</span> <span class="s">&quot;maximum&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasPythonModuleName</span> <span class="s">&quot;mappingfunc_module&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">.</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">:</span><span class="nt">norm_5c6c64f5</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_4299e344_a321_4ef2_a744_bacfcce80afc</span> <span class="p">;</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;norm&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="nn">dcterms</span><span class="p">:</span><span class="nt">description</span> <span class="s">&quot;Returns the norm array along the given axis (default the last).&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_36e69413_8c59_4799_946c_10b05d266e22</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef</span> <span class="p">;</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840</span> <span class="nn">don</span><span class="p">:</span><span class="nt">ForceNorm</span> <span class="p">;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasPythonFunctionName</span> <span class="s">&quot;norm&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">;</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasPythonModuleName</span> <span class="s">&quot;mappingfunc_module&quot;</span><span class="p">^^</span><span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">.</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="p">:</span><span class="nt">C3H6</span> <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasMeta</span> <span class="nv">&lt;http://onto-ns.com/meta/0.1/Structure&gt;</span> <span class="p">;</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasUUID</span> <span class="s">&quot;44d14f64-de9d-4131-ac39-2b6305f75e77&quot;</span> <span class="p">;</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">oteio</span><span class="p">:</span><span class="nt">Instance</span> <span class="p">.</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="nn">res</span><span class="p">:</span><span class="nt">forces</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef</span> <span class="p">.</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="nn">res</span><span class="p">:</span><span class="nt">potential_energy</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_4c151909_6f26_4ef9_b43d_7c9e9514883a</span> <span class="p">.</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="nn">mol</span><span class="p">:</span><span class="nt">energy</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_4c151909_6f26_4ef9_b43d_7c9e9514883a</span> <span class="p">.</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="nn">mol</span><span class="p">:</span><span class="nt">formula</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">don</span><span class="p">:</span><span class="nt">Formula</span> <span class="p">.</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="nn">mol</span><span class="p">:</span><span class="nt">maxforce</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">don</span><span class="p">:</span><span class="nt">MaxForce</span> <span class="p">.</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="nn">at</span><span class="p">:</span><span class="nt">symbols</span> <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">don</span><span class="p">:</span><span class="nt">ChemicalSymbol</span> <span class="p">.</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a><span class="p">:</span><span class="nt">result</span> <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasMeta</span> <span class="nv">&lt;http://onto-ns.com/meta/0.1/CalcResult&gt;</span> <span class="p">;</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>    <span class="nn">oteio</span><span class="p">:</span><span class="nt">hasUUID</span> <span class="s">&quot;f91bbdaa-0c03-4ea3-a35e-0777892ea334&quot;</span> <span class="p">;</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">oteio</span><span class="p">:</span><span class="nt">Instance</span> <span class="p">.</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="nn">don</span><span class="p">:</span><span class="nt">ChemicalSymbol</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a</span> <span class="p">;</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;symbols&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_4f40def1_3cd7_4067_9596_541e9a5134cf</span> <span class="p">.</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="nn">don</span><span class="p">:</span><span class="nt">ForceNorm</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a</span> <span class="p">;</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;vector&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef</span> <span class="p">.</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a><span class="nn">don</span><span class="p">:</span><span class="nt">Formula</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a</span> <span class="p">.</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="nn">don</span><span class="p">:</span><span class="nt">MaxForce</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a</span> <span class="p">;</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef</span> <span class="p">.</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_1f087811_06cb_42d5_90fb_25d0e7e068ef</span> <span class="kt">a</span> <span class="nn">emmo</span><span class="p">:</span><span class="nt">EMMO_50d6236a_7667_4883_8ae1_9bb5d190423a</span> <span class="p">;</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;array&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">.</span>
+</code></pre></div>
+<p>The <a href="https://github.com/emmo-repo/EMMO">EMMO</a> ontology is used to express the mapping function input (<a href="https://w3id.org/emmo#EMMO_36e69413_8c59_4799_946c_10b05d266e22">emmo:EMMO_36e69413_8c59_4799_946c_10b05d266e22</a>) and output (<a href="https://w3id.org/emmo#EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840">emmo:EMMO_c4bace1d_4db0_4cd3_87e9_18122bae2840</a>) as well as some chemical concepts like <a href="https://w3id.org/emmo#EMMO_4f40def1_3cd7_4067_9596_541e9a5134cf">ChemicalElement</a> and <a href="https://w3id.org/emmo#EMMO_9236d0aa_cb39_43a1_bbdd_6a2a714951c8">ChemicalFormula</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "search.suggest", "search.highlight", "content.code.annotation", "content.code.copy", "content.code.select"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://mapping-commons.github.io/rda-fair-mappings/model/" rel="canonical"/>
+<link href="../recommendation/" rel="prev"/>
+<link href="../integration/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.17" name="generator"/>
+<title>FAIR Mappings conceptual model - RDA Fair Mappings Working Group</title>
+<link href="../assets/stylesheets/main.bcfcd587.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#conceptual-model">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="RDA Fair Mappings Working Group" class="md-header__button md-logo" data-md-component="logo" href=".." title="RDA Fair Mappings Working Group">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            RDA Fair Mappings Working Group
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              FAIR Mappings conceptual model
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/mapping-commons/rda-fair-mappings/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="RDA Fair Mappings Working Group" class="md-nav__button md-logo" data-md-component="logo" href=".." title="RDA Fair Mappings Working Group">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    RDA Fair Mappings Working Group
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/mapping-commons/rda-fair-mappings/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    About our work
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Use Cases
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Use Cases
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../use-cases/">
+<span class="md-ellipsis">
+    Overview
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Case Studies
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            Case Studies
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-lunaris/">
+<span class="md-ellipsis">
+    Lunaris
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-mondo/">
+<span class="md-ellipsis">
+    Mondo Ontology
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-uberon/">
+<span class="md-ellipsis">
+    Uberon Ontology
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-icos/">
+<span class="md-ellipsis">
+    Integrated Carbon Observation System
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-bodc/">
+<span class="md-ellipsis">
+    British Oceanographic Data Centre
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-inrae/">
+<span class="md-ellipsis">
+    INRAE Thesaurus
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-ceon/">
+<span class="md-ellipsis">
+    Circular Economy Ontologies
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-wheatontology/">
+<span class="md-ellipsis">
+    Wheat Ontology
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-nii/">
+<span class="md-ellipsis">
+    NII Data Governance
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-i-adopt/">
+<span class="md-ellipsis">
+    I-ADOPT
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-dlite-transform/">
+<span class="md-ellipsis">
+    DLITE transform
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-dlite/">
+<span class="md-ellipsis">
+    DLITE
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-comp-loinc/">
+<span class="md-ellipsis">
+    COMP-LOINC
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-ontogpt-ie/">
+<span class="md-ellipsis">
+    Information Extraction from Literature
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-linkml-map/">
+<span class="md-ellipsis">
+    Schema element mapping with LinkML-Map
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-linkml-map-subset/">
+<span class="md-ellipsis">
+    Schema subsetting with LinkML-Map
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-linkml-map-normalization/">
+<span class="md-ellipsis">
+    Schema normalization with LinkML-Map
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-food/">
+<span class="md-ellipsis">
+    FoodOn to FoodEx2 mapping
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-lgbtq/">
+<span class="md-ellipsis">
+    Mapping LGBTQ+-related thesauri
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-fresh/">
+<span class="md-ellipsis">
+    Fresh Catalog
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-bfoprov/">
+<span class="md-ellipsis">
+    BFO-PROV-O
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-wod-ices/">
+<span class="md-ellipsis">
+    WOD to ICES platforms
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-dcat-ap-datacite/">
+<span class="md-ellipsis">
+    DCAT-AP-DataCite
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-dcat-ap-schemaorg/">
+<span class="md-ellipsis">
+    DCAT-AP-Schema.org
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-datacite-schemaorg/">
+<span class="md-ellipsis">
+    DataCite-Schema.org
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../case-study/case-study-ariadne/">
+<span class="md-ellipsis">
+    ARIADNE mappings
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../recommendation/">
+<span class="md-ellipsis">
+    FAIR Mapping recommendations
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    FAIR Mappings conceptual model
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    FAIR Mappings conceptual model
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+<nav aria-label="Overview" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-specification">
+<span class="md-ellipsis">
+      Mapping Specification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-execution">
+<span class="md-ellipsis">
+      Mapping Execution
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-concepts">
+<span class="md-ellipsis">
+      Core Concepts
+    </span>
+</a>
+<nav aria-label="Core Concepts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-specification_1">
+<span class="md-ellipsis">
+      Mapping Specification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-relationship">
+<span class="md-ellipsis">
+      Mapping Relationship
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-mapping-specifications">
+<span class="md-ellipsis">
+      Types of Mapping Specifications
+    </span>
+</a>
+<nav aria-label="Types of Mapping Specifications" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-mapping">
+<span class="md-ellipsis">
+      Schema Mapping
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instance-level-mapping">
+<span class="md-ellipsis">
+      Instance-Level Mapping
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-set">
+<span class="md-ellipsis">
+      Mapping Set
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-activity">
+<span class="md-ellipsis">
+      Mapping Activity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-execution_1">
+<span class="md-ellipsis">
+      Mapping Execution
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#serialization-formats">
+<span class="md-ellipsis">
+      Serialization Formats
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relationship-to-standards">
+<span class="md-ellipsis">
+      Relationship to Standards
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#see-also">
+<span class="md-ellipsis">
+      See Also
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integration/">
+<span class="md-ellipsis">
+    Integration with other efforts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://mapping-commons.github.io/fair-mappings-schema/">
+<span class="md-ellipsis">
+    FAIR Mappings schema
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../decision-log/">
+<span class="md-ellipsis">
+    Decision log of the Working Group
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../related-efforts/">
+<span class="md-ellipsis">
+    Related efforts
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../resources/">
+<span class="md-ellipsis">
+    Resources about FAIR mappings
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+<nav aria-label="Overview" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-specification">
+<span class="md-ellipsis">
+      Mapping Specification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-execution">
+<span class="md-ellipsis">
+      Mapping Execution
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-concepts">
+<span class="md-ellipsis">
+      Core Concepts
+    </span>
+</a>
+<nav aria-label="Core Concepts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-specification_1">
+<span class="md-ellipsis">
+      Mapping Specification
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-relationship">
+<span class="md-ellipsis">
+      Mapping Relationship
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types-of-mapping-specifications">
+<span class="md-ellipsis">
+      Types of Mapping Specifications
+    </span>
+</a>
+<nav aria-label="Types of Mapping Specifications" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-mapping">
+<span class="md-ellipsis">
+      Schema Mapping
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instance-level-mapping">
+<span class="md-ellipsis">
+      Instance-Level Mapping
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-set">
+<span class="md-ellipsis">
+      Mapping Set
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-activity">
+<span class="md-ellipsis">
+      Mapping Activity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-execution_1">
+<span class="md-ellipsis">
+      Mapping Execution
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#serialization-formats">
+<span class="md-ellipsis">
+      Serialization Formats
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relationship-to-standards">
+<span class="md-ellipsis">
+      Relationship to Standards
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#see-also">
+<span class="md-ellipsis">
+      See Also
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/mapping-commons/rda-fair-mappings/edit/main/src/docs/model.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="conceptual-model">Conceptual Model<a class="headerlink" href="#conceptual-model" title="Permanent link">¶</a></h1>
+<p>This page describes the high-level conceptual model used by the FAIR Mappings Working Group to classify and describe different types of mappings and mapping-related activities.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The terminology and definitions on this page are preliminary and subject to change based on community feedback.</p>
+</div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>The conceptual model provides a common vocabulary for discussing mappings across different domains and use cases. It distinguishes between the <em>specification</em> of mappings (what is being mapped and how) and the <em>execution</em> of mappings (the process of applying mappings to transform data).</p>
+<h3 id="mapping-specification">Mapping Specification<a class="headerlink" href="#mapping-specification" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart BT
+    subgraph Serializations["Example Serializations"]
+        direction LR
+        LinkML["LinkML-map<br/>specification"]
+        XSLT["XSLT<br/>script"]
+        Python["pure Python<br/>script"]
+        SSSOM["SSSOM<br/>document"]
+    end
+
+    subgraph SpecTypes["Types of Mapping Specification"]
+        direction LR
+        SchemaMapping["schema<br/>mapping"]
+        InstanceMapping["instance-level<br/>mapping"]
+        MappingSet["mapping set"]
+    end
+
+    MappingSpec["Mapping<br/>specification"]
+    MappingRel["Mapping<br/>relationship"]
+
+    ProvEntity(["prov:Entity"])
+    DcatDataset(["dcat:Dataset"])
+
+    %% Serializations
+    LinkML -.-&gt; SchemaMapping
+    XSLT -.-&gt; SchemaMapping
+    Python -.-&gt; SchemaMapping
+    SSSOM -.-&gt; MappingSet
+
+    %% Subtypes of mapping specification
+    SchemaMapping -.-&gt;|"subClassOf"| MappingSpec
+    InstanceMapping -.-&gt;|"subClassOf"| MappingSpec
+    MappingSet -.-&gt;|"subClassOf"| MappingSpec
+
+    %% Entity relationships
+    MappingSpec --&gt;|"has part"| MappingRel
+
+    %% Mapping specification inheritance
+    MappingSpec -.-&gt;|"subClassOf"| ProvEntity
+    MappingSpec -.-&gt;|"subClassOf"| DcatDataset
+
+    %% Styling
+    classDef external fill:#ffe0b2,stroke:#ff9800,stroke-width:2px
+    classDef entity fill:#fff59d,stroke:#fbc02d,stroke-width:2px
+    classDef spectype fill:#e1f5fe,stroke:#03a9f4,stroke-width:1px
+    classDef serial fill:#f5f5f5,stroke:#9e9e9e,stroke-width:1px
+
+    class ProvEntity,DcatDataset external
+    class MappingSpec,MappingRel entity
+    class SchemaMapping,InstanceMapping,MappingSet spectype
+    class LinkML,XSLT,Python,SSSOM serial
+</code></pre>
+<p>A mapping specification is composed of mapping relationships and can be categorized into schema mappings, instance-level mappings, or mapping sets. See <a href="#mapping-specification_1">Mapping Specification</a> for details.</p>
+<h3 id="mapping-execution">Mapping Execution<a class="headerlink" href="#mapping-execution" title="Permanent link">¶</a></h3>
+<pre class="mermaid"><code>flowchart BT
+    MappingExecution["Mapping execution<br/>(process)"]
+    MappingActivity["Mapping activity<br/>(process)"]
+    ProvActivity(["prov:Activity"])
+
+    MappingSpec["Mapping<br/>specification"]
+    SourceInstance{{"source instance"}}
+    TargetInstance{{"target instance"}}
+    DcatDataset(["dcat:Dataset"])
+
+    %% Activity hierarchy
+    MappingExecution -.-&gt;|"subClassOf"| MappingActivity
+    MappingActivity -.-&gt;|"subClassOf"| ProvActivity
+
+    %% Source/Target instance types
+    SourceInstance -.-&gt;|"type"| DcatDataset
+    TargetInstance -.-&gt;|"type"| DcatDataset
+
+    %% Execution relationships
+    MappingExecution --&gt;|"prov:uses"| MappingSpec
+    MappingExecution --&gt;|"prov:uses"| SourceInstance
+    TargetInstance --&gt;|"prov:wasGeneratedBy"| MappingExecution
+
+    %% Styling
+    classDef activity fill:#c5e1a5,stroke:#7cb342,stroke-width:2px
+    classDef external fill:#ffe0b2,stroke:#ff9800,stroke-width:2px
+    classDef entity fill:#fff59d,stroke:#fbc02d,stroke-width:2px
+    classDef instance fill:#e1bee7,stroke:#8e24aa,stroke-width:1px
+
+    class ProvActivity,MappingActivity,MappingExecution activity
+    class DcatDataset external
+    class MappingSpec entity
+    class SourceInstance,TargetInstance instance
+</code></pre>
+<p>A mapping execution uses a mapping specification and a source instance as inputs, and generates a target instance as output. See <a href="#mapping-execution_1">Mapping Execution</a> for details.</p>
+<details class="note">
+<summary>View original diagram</summary>
+<p><img alt="Conceptual Model" src="../img/conceptual_model.png"/></p>
+</details>
+<h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">¶</a></h2>
+<h3 id="mapping-specification_1">Mapping Specification<a class="headerlink" href="#mapping-specification_1" title="Permanent link">¶</a></h3>
+<p>A <strong>mapping specification</strong> is a documented description of correspondences between elements in different information systems, schemas, or vocabularies. It serves as the central concept in our model.</p>
+<p>A mapping specification:</p>
+<ul>
+<li>Is both a <strong>dataset</strong> (can be published, versioned, and cited) and an <strong>entity</strong> (can be tracked through provenance)</li>
+<li>Contains one or more <strong>mapping relationships</strong> as its parts</li>
+<li>Can be serialized in various formats (e.g., SSSOM, LinkML-Map, XSLT, Python scripts)</li>
+<li>Should include metadata for findability and reusability (see <a href="../recommendation/">Recommendations</a>)</li>
+</ul>
+<h3 id="mapping-relationship">Mapping Relationship<a class="headerlink" href="#mapping-relationship" title="Permanent link">¶</a></h3>
+<p>A <strong>mapping relationship</strong> is a correspondence within a mapping specification that relates one or more source elements to one or more target elements. Mapping relationships can range from simple equivalence assertions to complex transformation rules.</p>
+<p>A mapping relationship may specify:</p>
+<ul>
+<li>One or more <strong>source elements</strong></li>
+<li>One or more <strong>objects</strong> (target elements being mapped to)</li>
+<li>A <strong>predicate</strong> or <strong>relation</strong> describing how subjects and objects correspond (e.g., <code>skos:exactMatch</code>, <code>skos:broadMatch</code>, <code>owl:equivalentClass</code>)</li>
+<li><strong>Transformation rules</strong> defining how source values are converted to target values (e.g., concatenation, splitting, unit conversion, conditional logic)</li>
+<li><strong>Constraints</strong> that must be satisfied for the mapping to apply (e.g., value ranges, cardinality restrictions, conditional applicability)</li>
+<li>Optional <strong>metadata</strong> such as confidence scores, justifications, or provenance</li>
+</ul>
+<p>Mapping relationships can be <strong>n:n</strong>, meaning a single relationship may involve multiple source elements mapping to multiple target elements simultaneously, which is common in schema mappings where fields need to be merged, split, or restructured.</p>
+<h3 id="types-of-mapping-specifications">Types of Mapping Specifications<a class="headerlink" href="#types-of-mapping-specifications" title="Permanent link">¶</a></h3>
+<p>The model distinguishes two primary types of mapping specifications:</p>
+<h4 id="schema-mapping">Schema Mapping<a class="headerlink" href="#schema-mapping" title="Permanent link">¶</a></h4>
+<p>A <strong>schema mapping</strong> describes correspondences between structural elements of different schemas, data models, or metadata standards. Schema mappings operate at the level of classes, properties, fields, or other structural components.</p>
+<p>Examples include:</p>
+<ul>
+<li>Mapping between DCAT-AP and Schema.org metadata schemas</li>
+<li>Mapping between a relational database schema and an RDF ontology</li>
+<li>Mapping between different versions of a data standard</li>
+</ul>
+<p>Schema mappings often require transformation logic beyond simple equivalence statements, such as:</p>
+<ul>
+<li>Combining multiple source fields into one target field</li>
+<li>Splitting one source field into multiple target fields</li>
+<li>Applying functions or lookups during transformation</li>
+</ul>
+<h4 id="instance-level-mapping">Instance-Level Mapping<a class="headerlink" href="#instance-level-mapping" title="Permanent link">¶</a></h4>
+<p>An <strong>instance-level mapping</strong> describes how a single dataset instance is transformed into a different form. Unlike schema mappings, instance-level mappings make no assumptions about schema generality—the transformation code is specific to that particular source instance and is not expected to work for arbitrary instances that might conform to the same schema.</p>
+<p>Characteristics of instance-level mappings:</p>
+<ul>
+<li>Tailored to a specific source dataset instance</li>
+<li>May include hard-coded values, instance-specific logic, or bespoke transformations</li>
+<li>Not designed to be reusable across different datasets of the same type</li>
+<li>Often created for one-off data migration or integration tasks</li>
+</ul>
+<p>Examples include:</p>
+<ul>
+<li>A custom script to transform a specific legacy database export into a new format</li>
+<li>A one-time transformation of a particular CSV file into RDF</li>
+<li>An ad-hoc conversion of a single institution's data dump</li>
+</ul>
+<h4 id="mapping-set">Mapping Set<a class="headerlink" href="#mapping-set" title="Permanent link">¶</a></h4>
+<p>A <strong>mapping set</strong> is a type of mapping specification that groups predicate-based mapping relationships together, typically in the form of subject, (mapping) predicate, object triples along with additional metadata. A mapping set is often the unit of publication and sharing.</p>
+<p>A mapping set:</p>
+<ul>
+<li>Is a type of <strong>mapping specification</strong></li>
+<li>Groups related mapping relationships</li>
+<li>Has its own metadata (author, license, version, etc.)</li>
+<li>Can be published as a standalone artifact</li>
+<li>Is commonly serialized as an <strong>SSSOM document</strong></li>
+</ul>
+<h3 id="mapping-activity">Mapping Activity<a class="headerlink" href="#mapping-activity" title="Permanent link">¶</a></h3>
+<p>A <strong>mapping activity</strong> is a type of provenance activity (<code>prov:Activity</code>) representing the broader process of creating, maintaining, or applying mappings. This includes activities such as:</p>
+<ul>
+<li>Authoring new mapping specifications</li>
+<li>Reviewing and validating existing mappings</li>
+<li>Executing mappings to transform data</li>
+<li>Updating mappings when source or target systems change</li>
+</ul>
+<h3 id="mapping-execution_1">Mapping Execution<a class="headerlink" href="#mapping-execution_1" title="Permanent link">¶</a></h3>
+<p><strong>Mapping execution</strong> is a specific type of mapping activity focused on applying a mapping specification to transform actual data.</p>
+<p>Key aspects of mapping execution:</p>
+<ul>
+<li>It is a <strong>subtype of mapping activity</strong></li>
+<li>It takes a <strong>mapping specification</strong> as input</li>
+<li>It takes a <strong>source instance</strong> (the data to be transformed) as input</li>
+<li>It produces a <strong>target instance</strong> (the transformed data) as output</li>
+<li>Different mapping specifications may require different execution environments or tools</li>
+</ul>
+<p>Both <strong>source instance</strong> and <strong>target instance</strong> are datasets that can be cataloged, versioned, and discovered through standard data catalog infrastructure.</p>
+<h2 id="serialization-formats">Serialization Formats<a class="headerlink" href="#serialization-formats" title="Permanent link">¶</a></h2>
+<p>Mapping specifications can be serialized in various formats depending on the type of mapping and intended use:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Typical Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SSSOM document</strong></td>
+<td>Mapping sets, particularly for ontology terms or identifiers</td>
+</tr>
+<tr>
+<td><strong>LinkML-Map specification</strong></td>
+<td>Schema mappings with transformation logic</td>
+</tr>
+<tr>
+<td><strong>XSLT script</strong></td>
+<td>XML-based schema transformations</td>
+</tr>
+<tr>
+<td><strong>Python script</strong></td>
+<td>Complex programmatic transformations</td>
+</tr>
+</tbody>
+</table>
+<p>The choice of serialization format depends on factors such as:</p>
+<ul>
+<li>The complexity of the mapping logic required</li>
+<li>The source and target data formats</li>
+<li>Tooling availability and community adoption</li>
+<li>Requirements for human readability vs. machine executability</li>
+<li>Requirements for reusability / composability.</li>
+<li>Does the format support easy mix-and-match type of mapping specification creation?</li>
+</ul>
+<h2 id="relationship-to-standards">Relationship to Standards<a class="headerlink" href="#relationship-to-standards" title="Permanent link">¶</a></h2>
+<p>The conceptual model aligns with established standards:</p>
+<ul>
+<li><strong>DCAT</strong> (Data Catalog Vocabulary): Mapping specifications are treated as datasets that can be cataloged and discovered</li>
+<li><strong>PROV</strong> (Provenance Ontology): Mapping activities and executions are tracked as provenance activities, with clear inputs and outputs</li>
+<li><strong>SSSOM</strong>: The recommended format for representing mapping sets</li>
+<li><strong>LinkML-Map</strong>: A framework for schema mappings with executable transformation logic</li>
+</ul>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../recommendation/">FAIR Mapping Recommendations</a> - Technical recommendations for making mappings FAIR</li>
+<li><a href="../use-cases/">Case Studies</a> - Real-world examples of different mapping types</li>
+<li><a href="../resources/">Resources</a> - Tools and standards for working with mappings</li>
+<li><a href="https://mapping-commons.github.io/semantic-mapping-vocabulary/">The Semantic Mapping Vocabulary</a> - specifying some of the concepts from this code model (and more) as a formal RDF Vocabulary (<a href="https://www.ebi.ac.uk/ols4/ontologies/semapv">Browse on OLS</a>)</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "search.suggest", "search.highlight", "content.code.annotation", "content.code.copy", "content.code.select"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script></body>
+</html>
