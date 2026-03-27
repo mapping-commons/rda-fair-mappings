@@ -11,9 +11,9 @@ prefixes:
   fair_mappings_schema: https://w3id.org/mapping-commons/fair-mappings-schema/
 
 source_schema: src/linkml_map/datamodel/transformer_model.yaml
-# Note: Use absolute path or ensure fair-mappings-schema is available locally
+# Note: target_schema should point to a local checkout of fair-mappings-schema
 # The transformation will still work without the target schema, but with warnings
-target_schema: /Users/matentzn/ws/fair-mappings-schema/src/fair_mappings_schema/schema/fair_mappings_schema.yaml
+# target_schema: path/to/fair-mappings-schema/src/fair_mappings_schema/schema/fair_mappings_schema.yaml
 
 class_derivations:
 

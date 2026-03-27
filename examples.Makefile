@@ -45,8 +45,7 @@ examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml: \
 		-o $@
 
 
-## WARNING USING A BRANCH UNSTABLE
-LINKMAP_SCHEMA="https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/linkml-map-metadata/src/linkml_map/datamodel/transformer_model.yaml"
+LINKMAP_SCHEMA="https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/main/src/linkml_map/datamodel/transformer_model.yaml"
 
 tmp/linkml-map.yml:
 	wget $(LINKMAP_SCHEMA) -O $@
@@ -123,7 +122,7 @@ tmp/sssom-schema.yaml:
 	wget $(SSSOM_SCHEMA_URL) -O $@
 
 # Download LinkML-Map schema
-LINKMLMAP_SCHEMA_URL = "https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/linkml-map-metadata/src/linkml_map/datamodel/transformer_model.yaml"
+LINKMLMAP_SCHEMA_URL = "https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/main/src/linkml_map/datamodel/transformer_model.yaml"
 
 tmp/linkml-map-schema.yaml:
 	mkdir -p tmp
