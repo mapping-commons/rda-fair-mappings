@@ -195,6 +195,14 @@
 - **Tags:** Semantic interoperability
 
 
+#### [PLUGIN-Rosetta Case Study](case-study/case-study-plugin-rosetta.md)
+
+- **Author:** Daniel Kapitan (@dkapitan)
+- **Last updated:** 2026-04-17
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration, Healthcare
+
+
 #### [Schema element mapping with LinkML-Map Case Study](case-study/case-study-linkml-map.md)
 
 - **Author:** Sierra Moxon (@sierra-moxon)
