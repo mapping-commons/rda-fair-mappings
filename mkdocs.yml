@@ -79,7 +79,9 @@ nav:
           - DCAT-AP-Schema.org: case-study/case-study-dcat-ap-schemaorg.md
           - DataCite-Schema.org: case-study/case-study-datacite-schemaorg.md
           - ARIADNE mappings: case-study/case-study-ariadne.md
+          - PLUGIN-Rosetta (FHIR to OMOP in LinkML): case-study/case-study-plugin-rosetta.md
   - FAIR Mapping recommendations: recommendation.md
+  - Best practices: bestpractices.md
   - FAIR Mappings conceptual model: model.md
   - Integration with other efforts: integration.md
   - FAIR Mappings schema: https://mapping-commons.github.io/fair-mappings-schema/
