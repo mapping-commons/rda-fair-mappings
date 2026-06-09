@@ -31,9 +31,9 @@ None given.
 - 753 traits and phenotypes
 - Deep structure: 9 levels
 
-[Crop Ontology for wheat](https://cropontology.org/term/CO_321:ROOT) (CO_321) 
-The new version of the ontology is available on [https://github.com/Planteome/CO_321-wheat-traits](https://cropontology.org/term/CO_321:ROOT)
+[Crop Ontology for wheat](https://github.com/Planteome/CO_321-wheat-traits) (CO_321) 
 
+Note: The version  used for generating the mappings was the one hosted on https://cropontology.org/term/CO_321:ROOT
 - Observation variables
 - trait +method+scale (Crop ontology model)
 - 460 trait classes
