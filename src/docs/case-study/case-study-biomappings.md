@@ -6,7 +6,6 @@ date: "2026-08-04"
 tags:
   - Data integration
   - Semantic interoperability
-  - Biomedicine
 category: "Case Studies"
 mapping_type: "Entity Mapping"
 status: "Draft"
