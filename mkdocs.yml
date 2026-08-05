@@ -80,6 +80,7 @@ nav:
           - DataCite-Schema.org: case-study/case-study-datacite-schemaorg.md
           - ARIADNE mappings: case-study/case-study-ariadne.md
           - PLUGIN-Rosetta (FHIR to OMOP in LinkML): case-study/case-study-plugin-rosetta.md
+          - Biomappings: case-study/case-study-biomappings.md
   - FAIR Mapping recommendations: recommendation.md
   - Best practices: bestpractices.md
   - FAIR Mappings conceptual model: model.md
