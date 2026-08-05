@@ -31,6 +31,14 @@
 - **Tags:** Semantic interoperability, Discovery, Data integration
 
 
+#### [Biomappings Case Study](case-study/case-study-biomappings.md)
+
+- **Author:** Charles Tapley Hoyt (@cthoyt)
+- **Last updated:** 2026-08-04
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Data integration, Semantic interoperability
+
+
 #### [BODC Case Study](case-study/case-study-bodc.md)
 
 - **Author:** Gwen Moncoiffé (@gwemon)
