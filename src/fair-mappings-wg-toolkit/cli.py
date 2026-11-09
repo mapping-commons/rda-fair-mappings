@@ -37,8 +37,10 @@ OVERVIEW_TEMPLATE = """<!-- DO NOT EDIT: This file is auto-generated. Any change
 
     Mapping type classifications and definitions on this page are preliminary and subject to change.
 
-- **Schema Mapping**: A mapping between two or more schemas, such as a mapping between a relational database schema and an RDF ontology.
-- **Entity Mapping**: A mapping between two or more entities, such as a mapping between two gene identifiers in two different databases.
+- **Entity Mapping**: A mapping between entities of two semantic entity models (such as vocabularies or ontologies), such as a mapping between two gene identifiers in two different databases.
+- **Proposition Mapping**: A mapping between two semantic proposition models (such as schemas or metadata standards), such as a mapping between DCAT-AP and Schema.org.
+
+See the [conceptual model](model.md) for details.
 
 {% for mapping_type, grouped_cases in cases_by_mapping_type.items() %}
 ### {{ mapping_type }}
