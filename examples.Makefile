@@ -160,3 +160,7 @@ examples/linkml-map/fair-mappings-schema/sssom-fair-mappings.yaml: \
 fair-mappings-transforms: \
 	examples/linkml-map/fair-mappings-schema/linkmlmap-fair-mappings.yaml \
 	examples/linkml-map/fair-mappings-schema/sssom-fair-mappings.yaml
+
+download-paper:
+	mkdir -p tmp
+	wget "https://docs.google.com/document/d/1zJemI2vLpd5P7WeMsRNj-aNFpAW-x2cdFu_8XYk8lz0/export?format=md" -O tmp/paper_fair_raw.md
