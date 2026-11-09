@@ -6,7 +6,7 @@
 
     - **Author:** Toshiyuki Hiraki  (@hirakinii)
     - **Last updated:** 2025-04-03  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping between metadata schemas used in our research data infrastructure (NII Research Data Cloud).
