@@ -7,7 +7,7 @@ tags:
   - Variable Mapping
   - Data Integration
 category: "Case Studies"
-mapping_type: "Entity Mapping"
+mapping_type: "Proposition Mapping"
 status: "Draft"
 ---
 

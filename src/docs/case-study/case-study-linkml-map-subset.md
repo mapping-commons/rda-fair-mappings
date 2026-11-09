@@ -6,7 +6,7 @@ date: "2025-04-02"
 tags:
   - Data integration
 category: "Case Studies"
-mapping_type: "Schema Mapping"
+mapping_type: "Proposition Mapping"
 status: "Draft"
 ---
 

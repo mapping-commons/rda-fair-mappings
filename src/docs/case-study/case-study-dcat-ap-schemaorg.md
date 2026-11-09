@@ -9,7 +9,7 @@ tags:
   - Discovery
   - Transformation
 category: "Case Studies"
-mapping_type: "Schema Mapping"
+mapping_type: "Proposition Mapping"
 status: "Draft"
 ---
 
