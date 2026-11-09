@@ -6,7 +6,7 @@
 
     - **Author:** Philip Strömert  (@StroemPhi)
     - **Last updated:** 2025-07-17  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping DCAT-AP to Schema.org.

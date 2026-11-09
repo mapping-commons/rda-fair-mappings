@@ -6,7 +6,7 @@
 
     - **Author:** Barbara Magagna  (@mabablue)
     - **Last updated:** 2025-04-05  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Entity Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Making it possible to specify I-ADOPT as a mapping framework and the specific conditions under which a mapping is based on

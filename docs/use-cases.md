@@ -8,8 +8,10 @@
 
     Mapping type classifications and definitions on this page are preliminary and subject to change.
 
-- **Schema Mapping**: A mapping between two or more schemas, such as a mapping between a relational database schema and an RDF ontology.
-- **Entity Mapping**: A mapping between two or more entities, such as a mapping between two gene identifiers in two different databases.
+- **Entity Mapping**: A mapping between entities of two semantic entity models (such as vocabularies or ontologies), such as a mapping between two gene identifiers in two different databases.
+- **Proposition Mapping**: A mapping between two semantic proposition models (such as schemas or metadata standards), such as a mapping between DCAT-AP and Schema.org.
+
+See the [conceptual model](model.md) for details.
 
 
 ### Entity Mapping
@@ -69,14 +71,6 @@
 - **Last updated:** 2025-04-27
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Semantic interoperability
-
-
-#### [I-ADOPT Case Study](case-study/case-study-i-adopt.md)
-
-- **Author:** Barbara Magagna (@mabablue)
-- **Last updated:** 2025-04-05
-- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
-- **Tags:** Variable Mapping, Data Integration
 
 
 #### [ICOS Case Study](case-study/case-study-icos.md)
@@ -152,7 +146,7 @@
 
 
 
-### Schema Mapping
+### Proposition Mapping
 
 
 #### [DataCite to Schema.org Case Study](case-study/case-study-datacite-schemaorg.md)
@@ -185,6 +179,14 @@
 - **Last updated:** 2025-05-19
 - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 - **Tags:** Discovery
+
+
+#### [I-ADOPT Case Study](case-study/case-study-i-adopt.md)
+
+- **Author:** Barbara Magagna (@mabablue)
+- **Last updated:** 2025-04-05
+- **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
+- **Tags:** Variable Mapping, Data Integration
 
 
 #### [Lunaris Case Study](case-study/case-study-lunaris.md)

@@ -6,7 +6,7 @@
 
     - **Author:** Daniel Kapitan  (@dkapitan)
     - **Last updated:** 2026-04-17  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Integration of information models, schemas and mappings in LinkML.

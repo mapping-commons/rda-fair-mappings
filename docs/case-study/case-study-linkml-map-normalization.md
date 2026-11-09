@@ -6,7 +6,7 @@
 
     - **Author:** Sierra Moxon  (@sierra-moxon)
     - **Last updated:** 2025-04-02  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Declaratively map a normalized schema to a denormalized/flattened schema.

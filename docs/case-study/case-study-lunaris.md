@@ -6,7 +6,7 @@
 
     - **Author:** Tristan Kuehn  (@tkkuehn)
     - **Last updated:** 2025-01-30  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping Canadian metadata records from their source schema to a unified schema for centralized discovery

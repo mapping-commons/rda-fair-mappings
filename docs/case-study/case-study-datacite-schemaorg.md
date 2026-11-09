@@ -6,7 +6,7 @@
 
     - **Author:** Dr. Rebecca Ringuette  (rebeccaringuette)
     - **Last updated:** 2025-01-13  
-    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Schema Mapping-blue) 
+    - **Mapping Type:** ![Mapping Type](https://img.shields.io/badge/Proposition Mapping-blue) 
     - **Status of this case study:** ![Status](https://img.shields.io/badge/Draft-yellow)
 
 Mapping from DataCite to Schema.org for datasets.
