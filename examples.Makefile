@@ -107,59 +107,9 @@ examples: \
 	examples/linkml-map/personinfo/agent.instance.yml \
 	examples/linkml-map/datacite-dcat-date/dcat-date.instance.yml
 
-# ==========================================
-# FAIR Mappings Schema Transformation Examples
-# ==========================================
-# These demonstrate transforming LinkML-Map and SSSOM metadata to FAIR Mappings Schema
-
-FAIR_EXAMPLE_DIR = examples/linkml-map/fair-mappings-schema
-
-# Download SSSOM schema (similar to linkml-map schema)
-SSSOM_SCHEMA_URL = "https://raw.githubusercontent.com/mapping-commons/sssom/refs/heads/master/src/sssom_schema/schema/sssom_schema.yaml"
-
-tmp/sssom-schema.yaml:
-	mkdir -p tmp
-	wget $(SSSOM_SCHEMA_URL) -O $@
-
-# Download LinkML-Map schema
-LINKMLMAP_SCHEMA_URL = "https://raw.githubusercontent.com/linkml/linkml-map/refs/heads/main/src/linkml_map/datamodel/transformer_model.yaml"
-
-tmp/linkml-map-schema.yaml:
-	mkdir -p tmp
-	wget $(LINKMLMAP_SCHEMA_URL) -O $@
-
-# Transform LinkML-Map TransformationSpecification to FAIR Mappings Schema
-examples/linkml-map/fair-mappings-schema/linkmlmap-fair-mappings.yaml: \
-	$(FAIR_EXAMPLE_DIR)/data/sample-linkmlmap-spec.yaml \
-	$(FAIR_EXAMPLE_DIR)/transform/linkmlmap-to-fair.transformation.yaml \
-	tmp/linkml-map-schema.yaml \
-	dependencies
-	.venv/bin/linkml-map map-data \
-		-T $(FAIR_EXAMPLE_DIR)/transform/linkmlmap-to-fair.transformation.yaml \
-		-s tmp/linkml-map-schema.yaml \
-		--source-type TransformationSpecification \
-		--unrestricted-eval \
-		$(FAIR_EXAMPLE_DIR)/data/sample-linkmlmap-spec.yaml \
-		-o $@
-
-# Transform SSSOM Mapping Set to FAIR Mappings Schema
-examples/linkml-map/fair-mappings-schema/sssom-fair-mappings.yaml: \
-	$(FAIR_EXAMPLE_DIR)/data/sample-sssom-mapping-set.yaml \
-	$(FAIR_EXAMPLE_DIR)/transform/sssom-to-fair.transformation.yaml \
-	tmp/sssom-schema.yaml \
-	dependencies
-	.venv/bin/linkml-map map-data \
-		-T $(FAIR_EXAMPLE_DIR)/transform/sssom-to-fair.transformation.yaml \
-		-s tmp/sssom-schema.yaml \
-		--source-type 'mapping set' \
-		--unrestricted-eval \
-		$(FAIR_EXAMPLE_DIR)/data/sample-sssom-mapping-set.yaml \
-		-o $@
-
-.PHONY: fair-mappings-transforms
-fair-mappings-transforms: \
-	examples/linkml-map/fair-mappings-schema/linkmlmap-fair-mappings.yaml \
-	examples/linkml-map/fair-mappings-schema/sssom-fair-mappings.yaml
+# The SSSOM and LinkML-Map to FAIR Mappings Schema transformations live in
+# https://github.com/mapping-commons/fair-mappings-schema; run them with
+# `fair-mappings parse -I sssom|linkml_map`.
 
 download-paper:
 	mkdir -p tmp
