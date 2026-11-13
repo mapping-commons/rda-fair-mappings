@@ -92,3 +92,4 @@ nav:
 repo_url: https://github.com/mapping-commons/rda-fair-mappings/
 site_url: https://mapping-commons.github.io/rda-fair-mappings/
 edit_uri: edit/main/src/docs/
+copyright: Content licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; code under <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
