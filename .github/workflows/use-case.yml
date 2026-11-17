@@ -11,18 +11,23 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Extract Issue Data
         id: extract_data
         run: |
-          ISSUE_TITLE="${{ github.event.issue.title }}"
+          ISSUE_TITLE="${GITHUB_EVENT_ISSUE_TITLE}"
           ISSUE_NUMBER="${{ github.event.issue.number }}"
           FILE_NAME="use-case-${{ github.event.issue.number }}".md
           
           # Create the markdown file
           echo "# $ISSUE_TITLE" > "docs/use-cases/$FILE_NAME"
           echo "" >> "docs/use-cases/$FILE_NAME"
-          echo "${{ github.event.issue.body }}" >> "docs/use-cases/$FILE_NAME"
+          echo "${GITHUB_EVENT_ISSUE_BODY}" >> "docs/use-cases/$FILE_NAME"
+        env:
+          GITHUB_EVENT_ISSUE_TITLE: ${{ github.event.issue.title }}
+          GITHUB_EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
           
       - name: Create Pull Request for Use Case
         uses: peter-evans/create-pull-request@v5
