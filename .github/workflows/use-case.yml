@@ -14,15 +14,17 @@ jobs:
 
       - name: Extract Issue Data
         id: extract_data
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
-          ISSUE_TITLE="${{ github.event.issue.title }}"
           ISSUE_NUMBER="${{ github.event.issue.number }}"
           FILE_NAME="use-case-${{ github.event.issue.number }}".md
           
           # Create the markdown file
           echo "# $ISSUE_TITLE" > "docs/use-cases/$FILE_NAME"
           echo "" >> "docs/use-cases/$FILE_NAME"
-          echo "${{ github.event.issue.body }}" >> "docs/use-cases/$FILE_NAME"
+          echo "$ISSUE_BODY" >> "docs/use-cases/$FILE_NAME"
           
       - name: Create Pull Request for Use Case
         uses: peter-evans/create-pull-request@v5
