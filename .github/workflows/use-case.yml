@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2.8.0
         with:
           persist-credentials: false
 
@@ -30,7 +30,7 @@ jobs:
           GITHUB_EVENT_ISSUE_BODY: ${{ github.event.issue.body }}
           
       - name: Create Pull Request for Use Case
-        uses: peter-evans/create-pull-request@v5
+        uses: peter-evans/create-pull-request@4e1beaa7521e8b457b572c090b25bd3db56bf1c5 # v5.0.3
         with:
             branch-suffix: short-commit-hash
             title: "Add Use Case Description from Issue #${{ github.event.issue.number }}"
